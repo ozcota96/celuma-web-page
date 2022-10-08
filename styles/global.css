@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(/fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Monserrat-Bold;
+    src: url(/fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Montserrat-Bold;
+}
+
+body{
+    font-family: Montserrat-Regular;
+}
