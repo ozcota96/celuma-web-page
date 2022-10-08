@@ -2,64 +2,42 @@
     margin:0;
     padding:0;
 }
+
 body {
     background-color: #b3fdc9;
+    width: 100%;
 }
 
 h1 {
     text-align: center;
-}
-
-img {
-    height: 200px;
-    border-radius:50%
+    width: 100%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
     text-align: center;
     width: 100%;
-    background-color:rgb(33, 247, 175);
-    padding: 20px;
 }
+
 
 footer {
     position:absolute;
     bottom: 0px;
 }
 
-.motto{
-    font-size: 44px;
-    position: relative;
-    top: 90px;
-    left: 60px;
-}
-
-.container {
+.nav_bar {
+    background-color: lightblue;
     display: flex;
+    top:0px;
+    justify-content: space-around ;
 }
 
-.item {
-    margin: 10px;
-}
-
-.sidenav {
-    height: 100%;
-    background-color:rgb(128, 142, 206);
-    width: 170px;
-    position:absolute;
-    right:0px;
-    top: 0px;
-    z-index: 1;
-
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
+.nav_bar_item {
+    padding: 5px;
     text-decoration: none;
-    font-size: 20px;
-    display: block;
 }
 
-.sidenav a:hover {
-    color: #fff;
+.nav_bar_item:hover {
+    color: white;
 }
+
