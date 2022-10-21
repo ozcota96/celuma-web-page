@@ -8,6 +8,24 @@
     src: url(../fonts/montserrat/Montserrat-Bold.ttf);
 }
 
-p, h1, h2, h3, li, footer {
+footer { 
     font-family: montserrat-regular;
+    font-size: 10px;
+    text-align: right;
+}
+
+.nav_bar {
+    background-color: lightblue;
+    display: flex;
+    top:0px;
+    justify-content: space-around ;
+}
+
+.nav_bar_item {
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav_bar_item:hover {
+    color: white;
 }

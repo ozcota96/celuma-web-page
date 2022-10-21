@@ -1,4 +1,15 @@
+@media (min-width: 1024px) {
+    h3 {
+        font-size: 3rem;
+    }
+}
+
+h3 {
+    font-family:montserrat-bold;
+}
+
 p {
+    font-family:montserrat-regular;
     width: 80%;
     margin:auto;
     text-align: justify;
