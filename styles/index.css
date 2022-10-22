@@ -3,24 +3,23 @@
     padding:0px 0px 0px 0px;
 }
 
-body {
-    background-color: #b3fdc9;
-    width: 100%;
-    font-family: montserrat-regular;
-}
+@media screen and (max-width:3050px) {
+    body {
+        background-color: #b3fdc9;
+        width: 100%;
+        font-family: montserrat-regular;
+    }
 
+    h1 {
+        font-size: 2rem;
+        font-family: montserrat-regular;
+        margin: 0.5rem;
+        text-align: center;
+        padding: 1em 0em 0em 0em;
+    }
+    
+    h3 {
+        padding: 0px 0px 0px 30px;
+    }
 
-h1 {
-    text-align: center;
-    width: 100%;
-    padding: 1em 0em 0em 0em;
-}
-
-h3 {
-    padding: 0px 0px 0px 30px;
-}
-
-header {
-    text-align: center;
-    width: 100%;
 }
