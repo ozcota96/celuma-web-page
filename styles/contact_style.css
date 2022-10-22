@@ -1,0 +1,39 @@
+@media (min-width: 768px) {
+    .row{
+        display: flex;
+    }
+
+    .column{
+        padding: 0px 10px;
+    }
+
+    .submit{
+        margin-left: 0.55rem;
+    }
+  }
+
+.column{
+    flex: 50%;
+}
+
+.contact-fieldset{
+    border-style: none;
+}
+
+.contact-form {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.form-control{
+    width: 100%;
+}
+
+.submit{
+    margin-top: 1rem;
+}
+
+.contact-phone-numbers{
+    text-align: center;
+}
