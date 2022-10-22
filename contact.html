@@ -6,21 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos Celuma</title>
-    <link rel="stylesheet" href="/styles/index.css">
-    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./styles/contact_style.css">
+    <link rel="stylesheet" href="./styles/global.css">
 </head>
 
 <body>
-    
+
     <nav class="nav_bar">
-        <a href="/index.html" class="icon-home nav_bar_item"> Inicio</a>
-        <a href="/about.html" class="icon-user nav_bar_item"> Acerca de</a>
-        <a href="/products.html" class="icon-leaf nav_bar_item"> Productos</a>
-        <a href="/contact.html" class="icon-bubbles3 nav_bar_item"> Contacto</a>
+        <a href="./index.html" class="icon-home nav_bar_item"> Inicio</a>
+        <a href="./about.html" class="icon-user nav_bar_item"> Acerca de</a>
+        <a href="./products.html" class="icon-leaf nav_bar_item"> Productos</a>
+        <a href="./contact.html" class="icon-bubbles3 nav_bar_item"> Contacto</a>
     </nav>
 
     <main>
-        <h1>Contacto</h1>
+        <h1>Contáctanos</h1>
+        <section class="contact-form">
+            <form action="">
+                <fieldset class="row contact-fieldset">
+                    <p class="column">
+                        <label for="first-name">Nombre</label><br>
+                        <input class="txt form-control" type="text" name="first-name" id="first-name"><br>
+                        <label for="last-name">Apellido</label><br>
+                        <input class="txt form-control" type="text" name="last-name" id="last-name">
+                    </p>
+                    <p class="column">
+                        <label for="email">Email</label><br>
+                        <input class="txt form-control" type="email" name="email" id="email"
+                            placeholder="mail@example.com"><br>
+                        <label for="phone-number">Teléfono</label><br>
+                        <input class="txt form-control" type="text" name="phone-number" id="phone-number">
+                    </p>
+                </fieldset>
+                <fieldset class="row contact-fieldset submit">
+                    <button class="btn btn-submit" type="submit">Enviar</button>
+                </fieldset>
+
+            </form>
+        </section>
+        <section class="contact-phone-numbers">
+            O llámanos al 333-333-333
+        </section>
     </main>
     <footer>
         <p>Code Monkey ©</p>

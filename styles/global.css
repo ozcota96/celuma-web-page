@@ -8,12 +8,6 @@
     src: url(../fonts/montserrat/Montserrat-Bold.ttf);
 }
 
-footer { 
-    font-family: montserrat-regular;
-    font-size: 10px;
-    text-align: right;
-}
-
 @media screen and (max-width:3050px) {
     .nav_bar {
         background-color: lightblue;
@@ -98,4 +92,52 @@ footer {
     .nav_bar_item:hover {
         color: white;
     }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'montserrat-bold';
+}
+
+body{
+    font-family: 'montserrat-regular';
+}
+
+.btn{
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'montserrat-regular';
+    background-color: #43AB54;
+    border-color: #43AB54;
+    color: #fff;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Montserrat-Regular';
+    background-color: #319F44;
+    border-color: #319F44;
+    color: #fff;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.txt{
+    border-style: none;
+    border-radius: 5px;
+    height: 25px;
+    cursor: text;
+    font-family: 'Montserrat-Regular';
+    padding: 0px 5px;
+}
+
+footer { 
+    font-family: montserrat-regular;
+    font-size: 10px;
+    text-align: right;
 }
