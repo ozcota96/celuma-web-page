@@ -6,13 +6,14 @@
 body {
     background-color: #b3fdc9;
     width: 100%;
+    font-family: montserrat-regular;
 }
 
 
 h1 {
     text-align: center;
     width: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em 0em 0em 0em;
 }
 
 h3 {

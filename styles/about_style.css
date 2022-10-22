@@ -6,6 +6,7 @@ body {
     h1 {
         font-size: 6rem;
         font-family: montserrat-regular;
+        padding: 1em 0em 0em 0em;
     }
 
     h3 {
@@ -15,7 +16,7 @@ body {
     p {
         font-size: 3rem;
         text-align: justify;
-        padding: 1rem 1rem 1rem 5rem;
+        padding: 1rem 1rem 1rem 7rem;
         width: 90%;
     }
 
@@ -31,6 +32,7 @@ body {
         font-size: 3rem;
         font-family: montserrat-regular;
         margin: 0.5rem;
+        padding: 1em 0em 0em 0em;
     }
 
     h3 {
@@ -55,6 +57,7 @@ body {
         font-size: 2rem;
         font-family: montserrat-regular;
         margin: 0.5rem;
+        padding: 0.7em 0em 0em 0em;
     }
 
     h3 {
