@@ -1,43 +1,26 @@
 * {
     margin:0;
-    padding:0;
+    padding:0px 0px 0px 0px;
 }
 
 body {
     background-color: #b3fdc9;
     width: 100%;
+    font-family: montserrat-regular;
 }
+
 
 h1 {
     text-align: center;
     width: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em 0em 0em 0em;
+}
+
+h3 {
+    padding: 0px 0px 0px 30px;
 }
 
 header {
     text-align: center;
     width: 100%;
 }
-
-
-footer {
-    position:absolute;
-    bottom: 0px;
-}
-
-.nav_bar {
-    background-color: lightblue;
-    display: flex;
-    top:0px;
-    justify-content: space-around ;
-}
-
-.nav_bar_item {
-    padding: 5px;
-    text-decoration: none;
-}
-
-.nav_bar_item:hover {
-    color: white;
-}
-
