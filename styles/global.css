@@ -8,89 +8,46 @@
     src: url(../fonts/montserrat/Montserrat-Bold.ttf);
 }
 
+.nav_bar {
+    background-color: lightblue;
+    display: flex;
+    width: 100%;
+    font-family: montserrat-regular;
+    position: fixed;
+    top: 0px;
+    justify-content: space-around ;
+}
+
+.nav_bar_item {
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav_bar_item:hover {
+    color: white;
+}
+
 @media screen and (max-width:3050px) {
     .nav_bar {
-        background-color: lightblue;
-        display: flex;
-        width: 100%;
-        font-family: montserrat-regular;
         font-size: 3em;
-        position: fixed;
-        top: 0px;
-        justify-content: space-around ;
-    }
-    
-    .nav_bar_item {
-        padding: 5px;
-        text-decoration: none;
-    }
-    
-    .nav_bar_item:hover {
-        color: white;
     }
 }
 
 @media screen and (max-width:1440px) {
     .nav_bar {
-        background-color: lightblue;
-        display: flex;
-        width: 100%;
-        font-family: montserrat-regular;
         font-size: 1.7em;
-        position: fixed;
-        top: 0px;
-        justify-content: space-around ;
-    }
-    
-    .nav_bar_item {
-        padding: 5px;
-        text-decoration: none;
-    }
-    
-    .nav_bar_item:hover {
-        color: white;
     }
 }
 
 @media screen and (max-width:768px) {
     .nav_bar {
-        background-color: lightblue;
-        display: flex;
-        width: 100%;
-        font-family: montserrat-regular;
         font-size: 1em;
-        top:0px;
-        justify-content: space-around ;
-    }
-    
-    .nav_bar_item {
-        padding: 5px;
-        text-decoration: none;
-    }
-    
-    .nav_bar_item:hover {
-        color: white;
     }
 }
 
 @media screen and (max-width:425px) {
     .nav_bar {
-        background-color: lightblue;
-        display: flex;
-        width: 100%;
-        font-family: montserrat-regular;
         font-size: 0.7em;
-        top:0px;
-        justify-content: space-around ;
-    }
-    
-    .nav_bar_item {
-        padding: 5px;
-        text-decoration: none;
-    }
-    
-    .nav_bar_item:hover {
-        color: white;
     }
 }
 
