@@ -70,8 +70,9 @@ body{
     padding: 0px 5px;
 }
 
-footer { 
+footer {
     font-family: montserrat-regular;
-    font-size: 10px;
+    font-size: 1rem;
     text-align: right;
+    padding-top: 1rem;
 }
