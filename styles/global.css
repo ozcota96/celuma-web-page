@@ -16,6 +16,7 @@
     position: fixed;
     top: 0px;
     justify-content: space-around ;
+    height: 48px;
 }
 
 .nav_bar_item {
@@ -55,8 +56,13 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'montserrat-bold';
 }
 
+.container{
+    margin-top: 48px;
+}
+
 body{
     font-family: 'montserrat-regular';
+    background-color: #b3fdc9;
 }
 
 .btn{
