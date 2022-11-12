@@ -12,18 +12,14 @@ body {
     background-color: #b3fdc9;
     width: 100%;
     font-family: montserrat-regular;
-<<<<<<< HEAD
-=======
-    position: fixed;
     top: 0px;
     justify-content: space-around ;
     height: 48px;
->>>>>>> f7fe7ff61406b831a091c772fedfd4261991bad7
 }
 
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'montserrat-bold';
+    font-family: 'montserrat-regular';
 }
 
 .container{
