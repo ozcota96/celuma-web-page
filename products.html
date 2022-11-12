@@ -6,33 +6,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos Celuma</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/productos.css">
     <link rel="stylesheet" href="./styles/image_style.css">
 </head>
 
 <body>
 
-    <nav class="nav_bar">
-        <a href="./index.html" class="icon-home nav_bar_item"> Inicio</a>
-        <a href="./about.html" class="icon-user nav_bar_item"> Acerca de</a>
-        <a href="./products.html" class="icon-leaf nav_bar_item"> Productos</a>
-        <a href="./contact.html" class="icon-bubbles3 nav_bar_item"> Contacto</a>
+    <nav class="navbar navbar-expand-lg navbar-light navbar_txt_color">
+        <a class="navbar-brand" href="./index.html">Celuma</a>
+        <button class="navbar-toggler btn_color" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./index.html">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./about.html">Acerca de</a>
+                <a class="nav-item nav-link active" href="./products.html">Productos</a>
+                <a class="nav-item nav-link active" href="./contact.html">Contacto</a>
+            </div>
+
+        </div>
+
     </nav>
 
-    <main>
-        <h1>Productos</h1>
 
-        <div class="container">
-            <a href="./products/serum.html"><img src="./Images/producto_1.jpg" alt="product"></a>
-            <img src="Images/producto_2.jpg" alt="product">
-            <img src="Images/producto_3.jpg" alt="product">
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <h1>Productos</h1>
+        </div>
+
+        <div class="card-deck row mt-2">
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/crema-noche-anti/Crema-anti1.jpg" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Crema anti-imperfecciones</h5>
+                    <p class="card-text">Crema ideal para pieles grasas, mixtas y/o con tendencia al acné.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/crema-noche-anti.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/crema-dia/Crema-dia1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Crema de día</h5>
+                    <p class="card-text">Hidrata y purifica la piel ayudándola a limpiarla de impurezas.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/crema-dia.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/crema-piernas/Crema-piernas1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Crema para piernas</h5>
+                    <p class="card-text">Estimula la circulacion sanguinea de tus piernas y les brinda frescura.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/crema-piernas.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-deck row mt-5">
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/desmaquillante/Desmaquillante1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Crema desmaquillante</h5>
+                    <p class="card-text">Limpia, purifica tu piel y elimina todo rastro de maquillaje.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/desmaquillante.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/crema-noche/Crema-noche1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Crema de noche</h5>
+                    <p class="card-text">Crema de noche ideal para mantener una piel fresca y radiante.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/crema-noche.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/serum/Serum1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Serum</h5>
+                    <p class="card-text">Sérum que brinda un efecto refrescante a todo tipo de piel.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/serum.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-deck row mt-5">
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/shampoo/Shampoo1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Shampoo</h5>
+                    <p class="card-text">Estimula el crecimiento capilar e hidrata.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/shampoo.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="./Images/products/silica/Silica1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Sílica</h5>
+                    <p class="card-text">Protege tu cabello y le da brillo.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> <a href="./products/silica.html">Leer más...</a> </small>
+                </div>
+            </div>
+
+            <div class="card" style="background-color: #b3fdc9;">
+
+            </div>
+
         </div>
     </main>
+
     <footer>
         <p>Code Monkey ©</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
