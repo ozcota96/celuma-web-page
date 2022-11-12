@@ -44,9 +44,6 @@ body{
 }
 
 .btn{
-    width: 60px;
-    height: 30px;
-    font-size: 15px;
     font-family: 'montserrat-regular';
     background-color: #43AB54;
     border-color: #43AB54;
@@ -57,9 +54,6 @@ body{
 }
 
 .btn:hover{
-    width: 60px;
-    height: 30px;
-    font-size: 15px;
     font-family: 'Montserrat-Regular';
     background-color: #319F44;
     border-color: #319F44;
