@@ -1,8 +1,26 @@
+function generateMessageTemplate(){
+    var firstName = document.getElementById('first-name').value;
+    var lastName = document.getElementById('last-name').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message-body').value;
+
+    var messageTemplate = 
+    `Nuevo mensaje de contacto:\n
+    De: ${firstName} ${lastName}\n
+    Asunto: ${subject}\n
+    Mensaje: ${message}`;
+
+    return messageTemplate;
+}
+
 function sendEmail() {
+    // Server side code with Django
+}
+
+function validateForm(){
     'use strict'
-    debugger;
     const forms = document.querySelectorAll('.needs-validation');
-    
+
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
@@ -10,20 +28,7 @@ function sendEmail() {
             event.stopPropagation();
         }
         else{
-            var recipient = document.getElementById('email').value;
-            Email.send({
-                Host: 'smtp.gmail.com',
-                Username: 'celuma-support@gmail.com',
-                Password: '******',
-                To: recipient,
-                From: '',
-                Subject: '',
-                Body: '',
-            })
-            .then(function (message){
-                window.location.href = './index.html';
-            });
-            console.log(recipient);
+            sendEmail();
         }
     
         form.classList.add('was-validated')
