@@ -14,7 +14,21 @@ function generateMessageTemplate(){
 }
 
 function sendEmail() {
-    // Server side code with Django
+   const request = new XMLHttpRequest();
+   
+   request.open('GET', 'http://127.0.0.1:8000/contact/', true);
+   request.send();
+
+   request.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        debugger;
+        alert(request.responseText);
+    }
+    else{
+        debugger;
+        alert(request.status);
+    }
+   }
 }
 
 function validateForm(){
