@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #b3fdc9;
+    background-color: #97C793;
     width: 100%;
     font-family: montserrat-regular;
     top: 0px;
@@ -17,26 +17,22 @@ body {
     height: 48px;
 }
 
-
-h1, h2, h3, h4, h5, h6{
-    font-family: 'montserrat-regular';
-}
-
-.container{
-    margin-top: 48px;
-}
-
-body{
-    font-family: 'montserrat-regular';
-    background-color: #b3fdc9;
-}
-
-.navbar_bg_color {
+.navbar {
     background-color: #319F44;
 }
 
-.navbar_txt_color {
-    color:aliceblue
+
+h1, h2, h3, h4, h5, h6{
+    font-family: montserrat-regular;
+}
+
+.main_color {
+    background-color: #f1f1f1;
+}
+
+
+.txt_color {
+    color:#fff;
 }
 
 .btn_color {
@@ -44,7 +40,7 @@ body{
 }
 
 .btn{
-    font-family: 'montserrat-regular';
+    font-family: montserrat-regular;
     background-color: #43AB54;
     border-color: #43AB54;
     color: #fff;
@@ -54,7 +50,7 @@ body{
 }
 
 .btn:hover{
-    font-family: 'Montserrat-Regular';
+    font-family: montserrat-regular;
     background-color: #319F44;
     border-color: #319F44;
     color: #fff;
@@ -63,17 +59,10 @@ body{
     cursor: pointer;
 }
 
-.txt{
-    border-style: none;
-    border-radius: 5px;
-    height: 25px;
-    cursor: text;
-    font-family: 'Montserrat-Regular';
-    padding: 0px 5px;
-}
 
 footer {
     font-family: montserrat-regular;
+    background-color: #3D2916;
     font-size: 1rem;
     text-align: right;
     padding-top: 1rem;
