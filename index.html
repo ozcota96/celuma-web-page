@@ -11,10 +11,15 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/image_style.css">
+    <link rel="stylesheet" href="./index.js">
 </head>
 
 
 <body>
+
+      <div class="bg-dark text-light text-center">
+        Envío gratis en pedidos mayores a $500 MXN!
+      </div>
 
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -40,17 +45,17 @@
     <main class="container main_color p-5">
         <h1>Celuma</h1>
 
-        <div class=" d-flex row align-items-center justify-content-center border border-secondary " style="height: auto">
+        <section class="d-flex row align-items-center justify-content-center border border-secondary" style="height: auto">
 
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="5">
+              <div class="carousel-item active" data-bs-interval="500">
                 <img src="./Images/products/crema-dia/Crema-dia1.jpg" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item" data-bs-interval="5">
+              <div class="carousel-item" data-bs-interval="500">
                 <img src="./Images/products/crema-noche-anti/Crema-anti1.jpg" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item" data-bs-interval="5">
+              <div class="carousel-item" data-bs-interval="500">
                 <img src="./Images/products/crema-piernas/Crema-piernas1.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
@@ -64,11 +69,51 @@
             </button>
           </div>
 
-        </div>
+        </section>
+
+        <section class="container border border-secondary">
+          <h6>Productos más vendidos</h6>
+
+          <div class="card-group">
+            <div class="card">
+              <img src="./Images/products/crema-dia/Crema-dia1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./Images/products/crema-noche/Crema-noche1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./Images/products/serum/Serum1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="border border-secondary estilo_articulos">
+          <div class="card">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>La vida es dura, pero es más dura la verdura.</p>
+                <footer class="blockquote-footer">Yocho <cite title="Source Title">La vida.</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
 
     </main>
 
-    <footer class="txt_color">
+    <footer class="footer_global txt_color">
       <div class="container border-secondary border-top">
 
         <div class="d-flex p-2 justify-content-center">

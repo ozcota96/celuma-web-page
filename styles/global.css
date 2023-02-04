@@ -59,8 +59,7 @@ h1, h2, h3, h4, h5, h6{
     cursor: pointer;
 }
 
-
-footer {
+.footer_global{
     font-family: montserrat-regular;
     background-color: #3D2916;
     font-size: 1rem;
