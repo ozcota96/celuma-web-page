@@ -21,6 +21,9 @@ body {
     background-color: #319F44;
 }
 
+.container{
+    margin-top: 56px;
+}
 
 h1, h2, h3, h4, h5, h6{
     font-family: montserrat-regular;
