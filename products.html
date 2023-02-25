@@ -5,16 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos Celuma</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/productos.css" />
     <link rel="stylesheet" href="./styles/image_style.css" />
+    <link rel="stylesheet" href="../styles/products/product_detail_style.css">
   </head>
 
   <body>
@@ -43,158 +40,715 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container main_color p-5">
       <div class="row justify-content-center">
         <h1>Productos</h1>
       </div>
 
-      <div class="card-deck row mt-2">
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/crema-noche-anti/Crema-anti1.jpg"
-            alt=""/>
-          <div class="card-body">
-            <h5 class="card-title">Crema anti-imperfecciones</h5>
-            <p class="card-text">
-              Crema ideal para pieles grasas, mixtas y/o con tendencia al acné.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/crema-noche-anti.html">Leer más...</a>
-            </small>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/crema-dia/Crema-dia1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Crema de día</h5>
-            <p class="card-text">
-              Hidrata y purifica la piel ayudándola a limpiarla de impurezas.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/crema-dia.html">Leer más...</a>
-            </small>
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-2">
+        <!--Crema de noche anti-imperfecciones-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/crema-noche-anti/Crema-anti1.jpg"
+              alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Crema anti-imperfecciones</h5>
+              <p class="card-text">
+                Crema ideal para pieles grasas, mixtas y/o con tendencia al acné.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cremaAntiModal">Leer más...</button>
           </div>
         </div>
 
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/crema-piernas/Crema-piernas1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Crema para piernas</h5>
-            <p class="card-text">
-              Estimula la circulacion sanguinea de tus piernas y les brinda
-              frescura.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/crema-piernas.html">Leer más...</a>
-            </small>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-deck row mt-5">
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/desmaquillante/Desmaquillante1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Crema desmaquillante</h5>
-            <p class="card-text">
-              Limpia, purifica tu piel y elimina todo rastro de maquillaje.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/desmaquillante.html">Leer más...</a>
-            </small>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/crema-noche/Crema-noche1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Crema de noche</h5>
-            <p class="card-text">
-              Crema de noche ideal para mantener una piel fresca y radiante.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/crema-noche.html">Leer más...</a>
-            </small>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/serum/Serum1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Serum</h5>
-            <p class="card-text">
-              Sérum que brinda un efecto refrescante a todo tipo de piel.
-            </p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/serum.html">Leer más...</a>
-            </small>
+        <!-- Modal -->
+        <div class="modal fade" id="cremaAntiModal" tabindex="-1" aria-labelledby="cremaAntiModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="cremaAntiModalLabel">Crema Anti-imperfecciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselCremaAntiIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCremaAntiIndicators" data-bs-interval="10000"
+                        data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                    </button>
+                    <button type="button" data-bs-target="#carouselCremaAntiIndicators" data-bs-interval="10000"
+                        data-bs-slide-to="1" aria-label="Slide 2">
+                    </button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../Images/products/crema-noche-anti/CREMA-ANTI.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/products/crema-noche-anti/Crema-anti1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCremaAntiIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCremaAntiIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                        Crema ideal para pieles grasas, mixtas y/o con tendencia al acné, ayuda en la prevención y
+                        disminución de imperfecciones gracias a sus ingredientes como el aloe vera, la plata coloidal y
+                        vitaminas.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <!--End Crema de noche anti-imperfecciones-->
 
-      <div class="card-deck row mt-5">
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/shampoo/Shampoo1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Shampoo</h5>
-            <p class="card-text">Estimula el crecimiento capilar e hidrata.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/shampoo.html">Leer más...</a>
-            </small>
+        <!--Crema de día-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/crema-dia/Crema-dia1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Crema de día</h5>
+              <p class="card-text">
+                Hidrata y purifica la piel ayudándola a limpiarla de impurezas.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cremaDiaModal">Leer más...</button>
           </div>
         </div>
 
-        <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="./Images/products/silica/Silica1.jpg"
-            alt="Card image cap"/>
-          <div class="card-body">
-            <h5 class="card-title">Sílica</h5>
-            <p class="card-text">Protege tu cabello y le da brillo.</p>
+        <!-- Modal -->
+        <div class="modal fade" id="cremaDiaModal" tabindex="-1" aria-labelledby="cremaDiaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="cremaDiaModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselCremaDiaIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselCremaDiaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDiaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDiaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDiaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDiaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="4" aria-label="Slide 5">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/crema-dia/CREMA-DIA.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-dia/Crema-dia1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-dia/Crema-dia2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-dia/Crema-dia3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-dia/Crema-dia4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCremaDiaIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCremaDiaIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                        Crema de día para todo tipo de piel, con FPS 50+, extracto de pepino, romero, hamamelis y colágeno.
+                        Hidrata y purifica la piel ayudándola a limpiarla de impurezas.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">
-              <a href="./products/silica.html">Leer más...</a>
-            </small>
+        </div>
+        <!--End Crema de día-->
+
+        <!--Crema para piernas-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/crema-piernas/Crema-piernas1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Crema para piernas</h5>
+              <p class="card-text">
+                Estimula la circulacion sanguinea de tus piernas y les brinda
+                frescura.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cremaPiernasModal">Leer más...</button>
           </div>
         </div>
 
-        <div class="card" style="background-color: #b3fdc9; border: 0px"></div>
+        <!-- Modal -->
+        <div class="modal fade" id="cremaPiernasModal" tabindex="-1" aria-labelledby="cremaPiernasModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="cremaPiernasModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselCremaPiernasIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="4" aria-label="Slide 5">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaPiernasIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="5" aria-label="Slide 6">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/crema-piernas/CREMA-PIERNAS.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-piernas/Crema-piernas1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-piernas/Crema-piernas2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-piernas/Crema-piernas3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-piernas/Crema-piernas4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-piernas/Crema-piernas5.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCremaPiernasIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCremaPiernasIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Dale una sensación de frescura y descanso a tus piernas con esta crema. Contiene mentol, árnica y
+                      moringa, ideal para disminuir el cansancio y el malestar provocado por várices.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End crema para piernas-->
+
+        <!--Crema desmaquillante-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/desmaquillante/Desmaquillante1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Crema desmaquillante</h5>
+              <p class="card-text">
+                Limpia, purifica tu piel y elimina todo rastro de maquillaje.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cremaDesmaquillanteModal">Leer más...</button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cremaDesmaquillanteModal" tabindex="-1" aria-labelledby="cremaDesmaquillanteModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="cremaDesmaquillanteModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselCremaDesmaquillanteIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="4" aria-label="Slide 5">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/desmaquillante/DESMAQUILLANTE.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/desmaquillante/Desmaquillante1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/desmaquillante/Desmaquillante2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/desmaquillante/Desmaquillante3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/desmaquillante/Desmaquillante4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCremaDesmaquillanteIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Limpia, purifica tu piel y elimina todo rastro de maquillaje con nuestro desmaquillante, con aceites
+                      vegetales, almendras y agua de rosas. Sin dejar rastro de sensación grasosa.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Crema desmaquillante-->
+        
+        <!--Crema de noche-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/crema-noche/Crema-noche1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Crema de noche</h5>
+              <p class="card-text">
+                Crema de noche ideal para mantener una piel fresca y radiante.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cremaNocheModal">Leer más...</button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cremaNocheModal" tabindex="-1" aria-labelledby="cremaNocheModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="cremaNocheModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselCremaNocheIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselCremaNocheIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaNocheIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaNocheIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselCremaNocheIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/crema-noche/CREMA-NOCHE.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-noche/Crema-noche1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-noche/Crema-noche2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/crema-noche/Crema-noche3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCremaNocheIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCremaNocheIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Crema de noche ideal para todo tipo de piel, contiene concha nácar, colágeno y jalea real que ayudan
+                      a mantener una piel fresca y radiante.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Crema de noche-->
+
+        <!--Serum-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/serum/Serum1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Serum</h5>
+              <p class="card-text">
+                Sérum que brinda un efecto refrescante a todo tipo de piel.
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#serumModal">Leer más...</button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="serumModal" tabindex="-1" aria-labelledby="serumModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="serumModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselSerumIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="4" aria-label="Slide 5">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSerumIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="5" aria-label="Slide 6">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/serum/SERUM.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/serum/Serum1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/serum/Serum2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/serum/Serum3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/serum/Serum4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/serum/Serum5.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSerumIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSerumIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Sérum que brinda un efecto refrescante, su consistencia ligera y de fácil absorción ayuda a prevenir el
+                      brillo facial. Con ácido hialurónico y frambuesa, ideal para todo tipo de piel
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Serum-->
+
+        <!--Shampoo-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/shampoo/Shampoo1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Shampoo</h5>
+              <p class="card-text">Estimula el crecimiento capilar e hidrata.</p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#shampooModal">Leer más...</button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="shampooModal" tabindex="-1" aria-labelledby="shampooModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="shampooModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselShampooIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselShampooIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselShampooIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselShampooIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                        <button type="button" data-bs-target="#carouselShampooIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="3" aria-label="Slide 4">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/shampoo/SHAMPOO.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/shampoo/Shampoo1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/shampoo/Shampoo2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/shampoo/Shampoo3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselShampooIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselShampooIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Ideal para todo tipo de cuero cabelludo, previene la caída, estimula el crecimiento capilar e
+                      hidrata gracias a sus ingredientes naturales como la sábila, el romero, jitomate y aceite de argán.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Shampoo-->
+
+        <!--Sílica-->
+        <div class="col mb-2">
+          <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="./Images/products/silica/Silica1.jpg"
+              alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Sílica</h5>
+              <p class="card-text">Protege tu cabello y le da brillo.</p>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#silicaModal">Leer más...</button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="silicaModal" tabindex="-1" aria-labelledby="silicaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" fs-5 id="silicaModalLabel">Crema de Día</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <section class="row">
+                  <div id="carouselSilicaIndicators" class="col-8 offset-2 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselSilicaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSilicaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="1" aria-label="Slide 2">
+                        </button>
+                        <button type="button" data-bs-target="#carouselSilicaIndicators" data-bs-interval="10000"
+                            data-bs-slide-to="2" aria-label="Slide 3">
+                        </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/products/silica/SILICA.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/silica/Silica1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/products/silica/Silica2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSilicaIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSilicaIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </section>
+                <section>
+                  <article class="col-12 product-details">
+                    <p class="mt-3">
+                      Protege tu cabello del calor y al mismo tiempo dale brillo con nuestra sílica. Contiene aceite de
+                      argán y de linaza, ideal para todo tipo de cabello.
+                    </p>
+                  </article>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Sílica-->
       </div>
     </main>
 
@@ -237,16 +791,8 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous">
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous">
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script
       src="https://kit.fontawesome.com/f6b90b9313.js"
       crossorigin="anonymous">
