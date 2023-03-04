@@ -15,6 +15,12 @@
         font-family: montserrat-regular;
         margin: 0.5rem;
         text-align: center;
+    }
+
+    h6 {
+        font-family: montserrat-regular;
+        margin: 0.5rem;
+        text-align: center;
         padding: 1em 0em 0em 0em;
     }
     
@@ -22,4 +28,33 @@
         padding: 0px 0px 0px 30px;
     }
 
+    .card-img-top {
+        border-radius: 5px;
+    }
+    
+    .card {
+        border-radius: 5px;
+    }
+
+    .estilo_articulos {
+        text-align: center;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .quiz {
+        text-align: center;
+        }
+
+    .noticias {
+        text-align: center;
+    }
+    .preguntas {
+        text-align: center;
+    }
+
+    fieldset {
+        display: inline;
+    }
 }
