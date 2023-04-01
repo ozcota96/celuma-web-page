@@ -8,6 +8,24 @@
     src: url(../fonts/montserrat/Montserrat-Bold.ttf);
 }
 
+@media (max-width: 767px) {
+    h1 {
+        font-size: 7vw;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    h3 {
+        font-size: 5vw;
+    }
+    h4 {
+        font-size: 4vw;
+    }
+    h5 {
+        font-size: 3vw;
+    }
+}
+
 body {
     background-color: #97C793;
     width: 100%;
