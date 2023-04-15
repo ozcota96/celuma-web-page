@@ -24,6 +24,10 @@
     h5 {
         font-size: 3vw;
     }
+
+    .btn {
+        font-size: small;
+    }
 }
 
 body {
