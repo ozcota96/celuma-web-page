@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6{
 .btn{
     font-family: montserrat-regular;
     background-color: #43AB54;
+    text-decoration: none;
     border-color: #43AB54;
     color: #fff;
     border-style: none;
