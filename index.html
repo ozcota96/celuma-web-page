@@ -11,6 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"/>
     <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/quiz.css" />
@@ -21,7 +22,7 @@
       <div class="bg-dark text-light text-center">
         Envío gratis en pedidos mayores a $500 MXN!
       </div>
-  
+
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="./index.html">Celuma</a>
@@ -134,89 +135,265 @@
           </div>
       </section>
 
-      <section class="quiz border border-secondary col-6">
+      <section class="quiz col-6">
 
           <form id="regForm" action="" >
   
             <h1>Conoce tu tipo de piel:</h1>
             <div class="quiz_estilo">
               <!-- One "tab" for each step in the form: -->
+              <div class="tab"> 
+                <div>
+                  En general, ¿Cómo se ve tu piel?
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Lisa y con brillo natural, no oleoso.
+                  </label>
+                </div>
+  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Algo opaca y seca.
+                  </label>
+                </div>
+  
+  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Me brilla la cara.
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Zonas están brillosas y otras secas.
+                  </label>
+                </div>
+
+              </div>
+
               <div class="tab">
+
+                <div>
+                  ¿Cómo se ven tus poros?
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="" value="">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Finos y opacos visibles.
+                  </label>
+                </div>
+  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Casi imperceptibles.
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Son grandes y visibles en todas partes.
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Son grandes en mentón, nariz y/o frente
+                  </label>
+                </div>
+
+              </div>
+  
+              <div class="tab">
+                <div>
+                  ¿Cuál es la textura de tu piel?
+                </div>
+
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Primer respuesta
+                    Suave y lisa
                   </label>
                 </div>
   
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Segunda respuesta
+                    Áspera. A veces se descama en algunas zonas
                   </label>
                 </div>
-  
-  
+
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Tercer respuesta
+                    Gruesa. Con tendencia al acné
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    En ciertas partes está lisa e hidratada y en otras hay brotes o parques de resequedad
                   </label>
                 </div>
 
               </div>
 
-              <div class="tab">Segunda pregunta:
+              <div class="tab">
+                <div>
+                  A lo largo del día, ¿Cómo se comporta tu piel?
+                </div>
+
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Primer respuesta
+                    Puede tener algo de brillo al final del día
                   </label>
                 </div>
   
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Segunda respuesta
+                    Poco brillo durante el día. De hecho, llega a verse opaca
                   </label>
                 </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Brilla mucho desde temprano y es grasa durante todo el día
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Mi zona “T” brilla como dona glaseada con el paso de las horas
+                  </label>
+                </div>
+
               </div>
-  
-              <div class="tab">Tercera pregunta:
+
+              <div class="tab">
+                <div>
+                  ¿Sueles presentar imperfecciones en la piel?
+                </div>
+
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Default radio
+                    Muy pocos y esporádicamente
                   </label>
                 </div>
   
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Default radio
+                    Nunca
                   </label>
                 </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Siempre
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    De vez en cuando
+                  </label>
+                </div>
+
               </div>
+
+              <div class="tab">
+                <div>
+                  ¿Tu rostro tiene arrugas o marcas de expresión=
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Muy pocas
+                  </label>
+                </div>
+  
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Sí y muy marcadas
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Nada de arrugas
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Alguna que otra línea de expresión, especialmente al sonreír o fruncir el ceño
+                  </label>
+                </div>
+
+              </div>
+
               <div style="overflow:auto;" class="botones">
                 <div style="float:right;">
                   <button class="boton" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                   <button class="boton" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                 </div>
               </div>
-              
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Su tipo de piel es: </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body quizResult" id="modalTitle">
+
+                    </div>
+                    <div class="quiz" id="modalText">
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Ver productos para mi piel -></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Circles which indicates the steps of the form: -->
               <div style="text-align:center;margin-top:40px;">
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
               </div>
-              
           </form>
 
       </section>
 
-      <section class="border border-secondary estilo_articulos">
+      <section class="estilo_articulos">
         <div class="card">
           <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -249,16 +426,24 @@
             </blockquote>
           </div>
         </div>
-        
+
 
       </section>
 
-      <section class="container border border-secondary mt-4">
+      <section class="container mt-4">
         <div class="row p-4">
-          <div class="col-6 test whatsapp">
-            What'sApp
+          <div class="col-6 whatsapp">
+            <div class="txt_color text-center">
+            Escríbenos para recibir promociones de los productos Celuma.
+            </div>
+
+            <div class="text-center">
+              <a href="https://api.whatsapp.com/message/DXTFXPSVMOQPE1?autoload=1&app_absent=0" class="btn btn-light">Contáctanos</a>
+            </div>
+
           </div>
-  
+
+
           <div class="col-6">
               <div class="accordion" id="accordionExample">
 
@@ -309,7 +494,7 @@
                   </div>
                 </div>
 
-                <a href="./faqs.html" class="btn">Saber más...</a>
+                <a href="./faqs.html" class="btn btn-celuma">Saber más...</a>
 
               </div>
 
@@ -354,7 +539,12 @@
     </footer>
 
     <script src="./index.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script
+    src="https://kit.fontawesome.com/f6b90b9313.js"
+    crossorigin="anonymous">
+  </script>
   </body>
 </html>
