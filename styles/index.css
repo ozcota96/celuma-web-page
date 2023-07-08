@@ -47,14 +47,18 @@
 
     .estilo_articulos {
         text-align: center;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
     }
 
     .quiz {
-        text-align: center;
+        margin: 5%;
+        font-size: 1rem;
+        text-align: justify;
+        text-justify:inter-word;
         }
+
+    .quizResult {
+        font-size: 2rem;
+    }
 
     .noticias {
         text-align: center;
@@ -66,7 +70,8 @@
     }
 
     .whatsapp {
-        height: 20rem;
+        background-color: #319F44;
+        border-radius: 0.5rem;
     }
 
     .faqs {

@@ -58,13 +58,15 @@ h1, h2, h3, h4, h5, h6{
 
 .txt_color {
     color:#fff;
+    font-family: montserrat-regular;
+    font-size: 1.3rem;
 }
 
 .btn_color {
     background-color:#76DB82;
 }
 
-.btn{
+.btn-celuma {
     font-family: montserrat-regular;
     background-color: #43AB54;
     text-decoration: none;
@@ -75,7 +77,7 @@ h1, h2, h3, h4, h5, h6{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn-celuma:hover {
     font-family: montserrat-regular;
     background-color: #319F44;
     border-color: #319F44;
