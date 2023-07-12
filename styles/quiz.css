@@ -8,8 +8,8 @@
   input {
     padding: 10px;
     width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
+    font-size: 25px;
+    font-family: montserrat-regular;
     border: 1px solid #aaaaaa;
   }
   
@@ -22,14 +22,9 @@
   .tab {
     display: none;
     padding: 2rem;
+    font-size: 0.9rem;
   }
   
-  .quiz_estilo {
-    background-color: #b3fdc9;
-    border: 1px solid black;
-    border-radius: 2rem;
-    margin: 2rem;
-  }
   
   .boton {
     border-radius: 0.5rem;
@@ -39,6 +34,8 @@
   .botones {
     margin: auto 2rem;
   }
+
+ 
   
   /* Make circles that indicate the steps of the form: */
   .step {
