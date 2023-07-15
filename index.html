@@ -29,8 +29,8 @@
           <button
             class="navbar-toggler btn_color"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavAltMarkup"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation">
@@ -47,16 +47,16 @@
           </div>
         </div>
       </nav>
+
+      
     </div>
 
-    <main class="container main_color p-5">
+    <main class="container main_color p-3">
 
-      <section
-        class="d-flex row align-items-center justify-content-center"
-        style="height: auto">
+      <section class="row mt-5">
         <div
           id="carouselExampleInterval"
-          class="carousel slide"
+          class="mt-5 carousel slide "
           data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
@@ -135,12 +135,12 @@
           </div>
       </section>
 
-      <section class="quiz col-6">
+      <section class="quiz col-lg-6">
 
-          <form id="regForm" action="" >
+          <form class="p-2" id="regForm" action="" >
   
             <h1>Conoce tu tipo de piel:</h1>
-            <div class="quiz_estilo">
+            <div class="">
               <!-- One "tab" for each step in the form: -->
               <div class="tab"> 
                 <div>
@@ -355,7 +355,7 @@
               <div style="overflow:auto;" class="botones">
                 <div style="float:right;">
                   <button class="boton" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                  <button class="boton" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                  <button class="boton btn-celuma" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                 </div>
               </div>
 
@@ -429,21 +429,21 @@
 
       </section>
 
-      <section class="container mt-4">
-        <div class="row p-4">
-          <div class="col-6 whatsapp">
+      <section class="container text-center">
+        <div class="row">
+          <div class="whatsapp col col-12 col-sm-6 mb-3" >
             <div class="txt_color text-center">
             Escríbenos para recibir promociones de los productos Celuma.
             </div>
 
-            <div class="text-center">
+            <div class="text-center m-2">
               <a href="https://api.whatsapp.com/message/DXTFXPSVMOQPE1?autoload=1&app_absent=0" class="btn btn-light">Contáctanos</a>
             </div>
 
           </div>
 
 
-          <div class="col-6">
+          <div class="col col-12 col-sm-6">
               <div class="accordion" id="accordionExample">
 
                 <div class="accordion-item">
@@ -493,7 +493,7 @@
                   </div>
                 </div>
 
-                <a href="./faqs.html" class="btn btn-celuma">Saber más...</a>
+                <a href="./faqs.html" class="btn btn-celuma m-2">Saber más...</a>
 
               </div>
 
@@ -505,7 +505,7 @@
 
     <footer class="footer_global txt_color">
       <div class="container border-secondary border-top">
-        <div class="d-flex p-2 justify-content-center">
+        <div class="text-center p-2">
           Contáctanos a través de nuestras redes sociales:
         </div>
 
