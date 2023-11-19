@@ -1,0 +1,45 @@
+package com.celuma.webapi.persistence.mapper;
+
+import com.celuma.webapi.domain.Category;
+import com.celuma.webapi.persistence.entity.Categoria;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2023-11-17T00:07:12-0600",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.2.1.jar, environment: Java 17.0.8 (Oracle Corporation)"
+)
+@Component
+public class CategoryMapperImpl implements CategoryMapper {
+
+    @Override
+    public Category toCategory(Categoria categoria) {
+        if ( categoria == null ) {
+            return null;
+        }
+
+        Category category = new Category();
+
+        category.setCategoryId( categoria.getCategoriaId() );
+        category.setDescription( categoria.getDescripcion() );
+        category.setActive( categoria.getEstado() );
+
+        return category;
+    }
+
+    @Override
+    public Categoria toCategoria(Category category) {
+        if ( category == null ) {
+            return null;
+        }
+
+        Categoria categoria = new Categoria();
+
+        categoria.setCategoriaId( category.getCategoryId() );
+        categoria.setDescripcion( category.getDescription() );
+        categoria.setEstado( category.getActive() );
+
+        return categoria;
+    }
+}
