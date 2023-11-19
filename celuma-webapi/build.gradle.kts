@@ -16,10 +16,16 @@ repositories {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.data:spring-data-jpa")
+	implementation("org.springframework:spring-jdbc")
 
-	runtimeOnly("org.postgresql:postgresql")
+	runtimeOnly("com.mysql:mysql-connector-j")
+
+
+	implementation ("org.mapstruct:mapstruct:1.5.5.Final")
+
+	annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
