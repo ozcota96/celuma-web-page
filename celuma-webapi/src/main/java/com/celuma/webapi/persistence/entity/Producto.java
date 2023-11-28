@@ -2,10 +2,12 @@ package com.celuma.webapi.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 
 @Entity
 @Table(name = "products")
-public class Producto {
+public class Producto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -99,4 +101,5 @@ public class Producto {
     public void setCategorias(Categoria categorias) {
         this.categorias = categorias;
     }
+
 }

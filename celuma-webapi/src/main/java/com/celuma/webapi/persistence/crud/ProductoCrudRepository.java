@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
-    List<Producto> findByEstado(Boolean estado);
+
 
 
 }

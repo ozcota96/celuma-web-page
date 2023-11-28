@@ -22,15 +22,11 @@ public class ProductService {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByStatus(Boolean status) {
-        return productRepository.getByStatus(status);
-    }
-
     public Product save(Product product) {
         return productRepository.save(product);
     }
 
-    public Boolean delete(Integer productId) {
+    public Boolean delete(int productId) {
         return getProduct(productId).map(product -> {productRepository.delete(productId);
             return true;
         }).orElse(false);

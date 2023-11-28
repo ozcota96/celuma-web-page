@@ -24,24 +24,18 @@ public class ProductController {
         return productService.getAll();
     };
 
-    @GetMapping("/{Id}")
-    public Optional<Product> getProduct(@PathVariable("/Id") Integer productId) {
+    @GetMapping("/{id}")
+    public Optional<Product> getProduct(@PathVariable("id") Integer productId) {
         return productService.getProduct(productId);
     }
-
-    @GetMapping("/{status}")
-    public Optional<List<Product>> getByStatus(@PathVariable("/status") Boolean status) {
-        return productService.getByStatus(status);
-    }
-
 
     @PostMapping("/save")
     public Product save(@RequestBody Product product) {
         return productService.save(product);
     }
 
-    @DeleteMapping("/delete/id")
-    public Boolean delete(@PathVariable("/id") Integer productId) {
+    @DeleteMapping("/delete/{id}")
+    public Boolean delete(@PathVariable("id") int productId) {
         return productService.delete(productId);
     }
 

@@ -29,7 +29,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<Product> getProduct(Integer idProducto) {
+    public Optional<Product> getProduct(int idProducto) {
         return productoCrudRepository.findById(idProducto).map(producto -> mapper.toProduct(producto));
     }
 
@@ -39,11 +39,9 @@ public class ProductoRepository implements ProductRepository {
         return mapper.toProduct(productoCrudRepository.save(producto));
     }
 
-
     @Override
-    public void delete(Integer productId) {
+    public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
-
 
 }

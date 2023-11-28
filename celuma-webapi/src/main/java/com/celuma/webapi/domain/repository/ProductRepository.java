@@ -8,9 +8,13 @@ import java.util.Optional;
 public interface ProductRepository {
 
     List<Product> getAll();
+
     Optional<List<Product>> getByStatus(Boolean status);
-    Optional<Product> getProduct(Integer idProducto);
+
+    Optional<Product> getProduct(int productId);
+
     Product save(Product product);
-    void delete(Integer productId);
+
+    void delete(int productId);
 
 }
