@@ -1,8 +1,7 @@
 package com.celuma.webapi.domain;
 
 
-public class Product {
-
+public class ProductDTO {
     private Integer productId;
     private String name;
     private Integer categoryId;
@@ -10,7 +9,6 @@ public class Product {
     private String instructions;
     private String cautions;
     private Boolean active;
-    private Category category;
 
     // Getters and setters
 
@@ -68,13 +66,5 @@ public class Product {
 
     public void setActive(Boolean active) {
         this.active = active;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 }

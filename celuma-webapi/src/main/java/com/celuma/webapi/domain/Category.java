@@ -7,8 +7,7 @@ public class Category {
     private Integer categoryId;
     private String description;
     private Boolean active;
-    private List<Product> products;
-
+    private List<ProductDTO> productDTOS;
 
     // Getters and Setters
 
@@ -36,11 +35,11 @@ public class Category {
         this.active = active;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<ProductDTO> getProducts() {
+        return productDTOS;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProducts(List<ProductDTO> productDTOS) {
+        this.productDTOS = productDTOS;
     }
 }

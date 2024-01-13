@@ -1,19 +1,20 @@
 package com.celuma.webapi.domain.repository;
 
-import com.celuma.webapi.domain.Product;
+import com.celuma.webapi.domain.ProductDTO;
+import com.celuma.webapi.domain.ProductDetailDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository {
 
-    List<Product> getAll();
+    List<ProductDTO> getAll();
 
-    Optional<List<Product>> getByStatus(Boolean status);
+    Optional<List<ProductDTO>> getByStatus(Boolean status);
 
-    Optional<Product> getProduct(int productId);
+    Optional<ProductDetailDTO> getProduct(int productId);
 
-    Product save(Product product);
+    ProductDTO save(ProductDTO productDTO);
 
     void delete(int productId);
 

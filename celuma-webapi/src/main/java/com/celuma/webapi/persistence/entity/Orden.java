@@ -1,39 +1,39 @@
 package com.celuma.webapi.persistence.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
-public class Orden implements Serializable {
+@Table(name = "orders")
+public class Orden {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private Integer IdOrder;
+    private Integer IdOrden;
 
-    @Column(name = "creation_date", insertable = true, updatable = false)
-    @CreationTimestamp
+    @Column(name = "creation_date")
     private LocalDateTime fechaCreacion;
 
     @Column(name = "status")
-    private Boolean estatus;
+    private boolean estado;
 
     @OneToMany(mappedBy = "orden")
-    private List<ProductoOrden> detalles;
+    private List<ProductoOrden> productoOrden;
 
-    // Getters and Setters
+    @OneToOne(mappedBy = "orden")
+    private Factura factura;
 
-    public Integer getIdOrder() {
-        return IdOrder;
+    // Getters and Setter
+
+    public Integer getIdOrden() {
+        return IdOrden;
     }
 
-    public void setIdOrder(Integer idOrder) {
-        IdOrder = idOrder;
+    public void setIdOrden(Integer idOrden) {
+        IdOrden = idOrden;
     }
 
     public LocalDateTime getFechaCreacion() {
@@ -44,19 +44,19 @@ public class Orden implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Boolean getEstatus() {
-        return estatus;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setEstatus(Boolean estatus) {
-        this.estatus = estatus;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
-    public List<ProductoOrden> getDetalles() {
-        return detalles;
+    public List<ProductoOrden> getProductoOrden() {
+        return productoOrden;
     }
 
-    public void setDetalles(List<ProductoOrden> detalles) {
-        this.detalles = detalles;
+    public void setProductoOrden(List<ProductoOrden> productoOrden) {
+        this.productoOrden = productoOrden;
     }
 }

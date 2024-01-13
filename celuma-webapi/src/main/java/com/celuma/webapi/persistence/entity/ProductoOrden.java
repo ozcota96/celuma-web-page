@@ -7,8 +7,10 @@ import java.io.Serializable;
 @Table(name = "product_order")
 public class ProductoOrden implements Serializable {
 
-    @EmbeddedId
-    private ProductoOrdenPK id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_order_id")
+    private Integer id;
 
     @Column(name = "products_quantity")
     private Integer cantidad;
@@ -19,16 +21,15 @@ public class ProductoOrden implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "order_id", updatable = false, insertable = false)
-    @MapsId("ordenId")
     private Orden orden;
 
     // Getters and Setters
 
-    public ProductoOrdenPK getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ProductoOrdenPK id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

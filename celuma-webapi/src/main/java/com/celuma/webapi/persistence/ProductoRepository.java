@@ -1,5 +1,6 @@
 package com.celuma.webapi.persistence;
-import com.celuma.webapi.domain.Product;
+import com.celuma.webapi.domain.ProductDTO;
+import com.celuma.webapi.domain.ProductDetailDTO;
 import com.celuma.webapi.domain.repository.ProductRepository;
 import com.celuma.webapi.persistence.crud.ProductoCrudRepository;
 import com.celuma.webapi.persistence.entity.Producto;
@@ -18,26 +19,26 @@ public class ProductoRepository implements ProductRepository {
     private ProductMapper mapper;
 
     @Override
-    public List<Product> getAll () {
+    public List<ProductDTO> getAll () {
         List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
         return mapper.toProducts(productos);
     }
 
     @Override
-    public Optional<List<Product>> getByStatus(Boolean status) {
+    public Optional<List<ProductDTO>> getByStatus(Boolean status) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<Product> getProduct(int idProducto) {
-        return productoCrudRepository.findById(idProducto).map(producto -> mapper.toProduct(producto));
+    public Optional<ProductDetailDTO> getProduct(int idProducto) {
+        return productoCrudRepository.findById(idProducto).map(producto -> mapper.toProductDetail(producto));
     }
 
     @Override
-    public Product save(Product product) {
-        Producto producto = mapper.toProducto(product);
-        return mapper.toProduct(productoCrudRepository.save(producto));
+    public ProductDTO save(ProductDTO productDTO) {
+        return null;
     }
+
 
     @Override
     public void delete(int productId) {

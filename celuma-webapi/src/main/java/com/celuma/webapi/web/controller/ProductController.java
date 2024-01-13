@@ -1,6 +1,7 @@
 package com.celuma.webapi.web.controller;
 
-import com.celuma.webapi.domain.Product;
+import com.celuma.webapi.domain.ProductDTO;
+import com.celuma.webapi.domain.ProductDetailDTO;
 import com.celuma.webapi.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,23 +21,23 @@ public class ProductController {
     }
 
     @GetMapping("/all")
-    public List<Product> getAll(){
+    public List<ProductDTO> getAll(){
         return productService.getAll();
     };
 
     @GetMapping("/{id}")
-    public Optional<Product> getProduct(@PathVariable("id") Integer productId) {
+    public Optional<ProductDetailDTO> getProduct(@PathVariable("id") Integer productId) {
         return productService.getProduct(productId);
     }
 
     @PostMapping("/save")
-    public Product save(@RequestBody Product product) {
-        return productService.save(product);
+    public ProductDTO save(@RequestBody ProductDTO productDTO) {
+        return productService.save(productDTO);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Boolean delete(@PathVariable("id") int productId) {
-        return productService.delete(productId);
+    public void delete(@PathVariable("id") int productId) {
+        productService.delete(productId);
     }
 
 }

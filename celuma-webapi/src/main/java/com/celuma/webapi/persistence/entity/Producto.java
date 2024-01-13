@@ -3,7 +3,7 @@ package com.celuma.webapi.persistence.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -35,6 +35,9 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn(name = "category_id", updatable = false, insertable = false)
     private Categoria categorias;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ProductoOrden> ordenes;
 
     // Getters and Setters
 
@@ -102,4 +105,11 @@ public class Producto implements Serializable {
         this.categorias = categorias;
     }
 
+    public List<ProductoOrden> getOrdenes() {
+        return ordenes;
+    }
+
+    public void setOrdenes(List<ProductoOrden> ordenes) {
+        this.ordenes = ordenes;
+    }
 }

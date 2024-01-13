@@ -28,6 +28,10 @@ dependencies {
 	annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	compileOnly("org.projectlombok:lombok:1.18.30")
+	annotationProcessor("org.projectlombok:lombok:1.18.30")
+
 }
 
 tasks.withType<Test> {

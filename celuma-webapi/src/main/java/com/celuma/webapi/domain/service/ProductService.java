@@ -1,6 +1,7 @@
 package com.celuma.webapi.domain.service;
 
-import com.celuma.webapi.domain.Product;
+import com.celuma.webapi.domain.ProductDTO;
+import com.celuma.webapi.domain.ProductDetailDTO;
 import com.celuma.webapi.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,16 +15,16 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll(){
+    public List<ProductDTO> getAll(){
         return productRepository.getAll();
     }
 
-    public Optional<Product> getProduct(int productId) {
+    public Optional<ProductDetailDTO> getProduct(int productId) {
         return productRepository.getProduct(productId);
     }
 
-    public Product save(Product product) {
-        return productRepository.save(product);
+    public ProductDTO save(ProductDTO productDTO) {
+        return productRepository.save(productDTO);
     }
 
     public Boolean delete(int productId) {

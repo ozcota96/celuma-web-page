@@ -23,8 +23,7 @@ public class Categoria {
     @OneToMany(mappedBy = "categorias")
     private List<Producto> productos;
 
-
-    // Getters and Setters
+    //Getters and setters
 
     public Integer getCategoriaId() {
         return categoriaId;
