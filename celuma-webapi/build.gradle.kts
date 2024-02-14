@@ -29,6 +29,8 @@ dependencies {
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+	testImplementation ("org.apache.httpcomponents.client5:httpclient5")
+
 	compileOnly("org.projectlombok:lombok:1.18.30")
 	annotationProcessor("org.projectlombok:lombok:1.18.30")
 

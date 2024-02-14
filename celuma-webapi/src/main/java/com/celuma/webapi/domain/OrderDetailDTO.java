@@ -13,6 +13,10 @@ public class OrderDetailDTO {
 
     private List<ProductOrder> productOrder;
 
+    private InvoiceDTO invoice;
+
+    private SaleDTO sale;
+
     // Getters and Setters
 
     public Integer getOrderId() {
@@ -45,5 +49,21 @@ public class OrderDetailDTO {
 
     public void setProductOrder(List<ProductOrder> productOrder) {
         this.productOrder = productOrder;
+    }
+
+    public InvoiceDTO getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(InvoiceDTO invoice) {
+        this.invoice = invoice;
+    }
+
+    public SaleDTO getSale() {
+        return sale;
+    }
+
+    public void setSale(SaleDTO sale) {
+        this.sale = sale;
     }
 }

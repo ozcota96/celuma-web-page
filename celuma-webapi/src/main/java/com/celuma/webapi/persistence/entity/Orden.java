@@ -24,7 +24,10 @@ public class Orden {
     private List<ProductoOrden> productoOrden;
 
     @OneToOne(mappedBy = "orden")
-    private Factura factura;
+    private Invoice invoice;
+
+    @OneToOne(mappedBy = "orden")
+    private Sale sale;
 
     // Getters and Setter
 
@@ -58,5 +61,21 @@ public class Orden {
 
     public void setProductoOrden(List<ProductoOrden> productoOrden) {
         this.productoOrden = productoOrden;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 }

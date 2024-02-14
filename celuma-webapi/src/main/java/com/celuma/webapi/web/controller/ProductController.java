@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 @RequestMapping("/products")
 public class ProductController {
     @Autowired
@@ -23,7 +24,7 @@ public class ProductController {
     @GetMapping("/all")
     public List<ProductDTO> getAll(){
         return productService.getAll();
-    };
+    }
 
     @GetMapping("/{id}")
     public Optional<ProductDetailDTO> getProduct(@PathVariable("id") Integer productId) {
