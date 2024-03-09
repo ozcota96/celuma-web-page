@@ -37,7 +37,9 @@
             <section class="">
                 <div class="">
                     <div class="p-2 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-success me-md-2" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">Añadir producto</button>
+                        <button type="button" class="btn btn-celuma me-md-2" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">
+                            Añadir producto
+                        </button>
                     </div>
 
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -88,15 +90,15 @@
                 </div>
             </section>
 
-            <!--Tabla de productos-->
+            <!--Products table-->
             <section>
                 <table class="table" >
                     <thead>
                         <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Id</th>
-                            <th scope="col">Estatus</th>
-                            <th scope="col">Acciones</th>
+                            <th class="text-center" scope="col">Nombre</th>
+                            <th class="text-center" scope="col">Id</th>
+                            <th class="" scope="col">Contenido</th>
+                            <th class="text-center" scope="col">Acciones</th>
                         </tr>
                     </thead>
 
@@ -106,7 +108,7 @@
                     </tbody>
                 </table>
 
-                <!-- Modal -->
+                <!-- Delete product modal -->
                 <div class="modal fade" id="deleteButton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
@@ -121,12 +123,63 @@
                         ¿Está seguro que desea eliminar el producto?
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-celuma-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-outline-danger" id="eliminarBtn" value="" onclick="getValue()">Eliminar</button>
                         </div>
                     </div>
                     </div>
                 </div>
+
+                <!--Edit product modal-->
+                <div class="modal fade" id="editButton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" id="editModal" value="">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar un producto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Nombre del producto:</label>
+                                        <input type="text" class="form-control" id="editName">
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
+                                        <select class="form-select" id="editCategory">
+                                            <option selected value="1">Skincare</option>
+                                            <option value="2">Cabello</option>
+                                            <option value="3">Otros</option>
+                                        </select>
+
+                                        <label for="recipient-name" class="col-form-label ">Id: </label>
+                                        <input class="form-control" type="text" value="" id="editId" aria-label="Disabled input example" disabled readonly>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Descripción:</label>
+                                        <textarea class="form-control" id="editDescription"></textarea>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" class="form-control" id="product_price" aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-text">MXN</span>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-celuma-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-celuma" onclick="editProduct()">Guardar cambios</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </section>
         </main>
 
