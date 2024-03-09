@@ -33,4 +33,7 @@ public class ProductService {
         }).orElse(false);
     }
 
+    public void  updateProduct(ProductDTO productDTO) {
+        productRepository.updateProduct(productDTO);
+    }
 }

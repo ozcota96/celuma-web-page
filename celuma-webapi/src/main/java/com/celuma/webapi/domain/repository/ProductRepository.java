@@ -10,12 +10,11 @@ public interface ProductRepository {
 
     List<ProductDTO> getAll();
 
-    Optional<List<ProductDTO>> getByStatus(Boolean status);
-
     Optional<ProductDetailDTO> getProduct(int productId);
 
     ProductDTO save(ProductDTO productDTO);
 
     void delete(int productId);
 
+    void updateProduct(ProductDTO productDTO);
 }

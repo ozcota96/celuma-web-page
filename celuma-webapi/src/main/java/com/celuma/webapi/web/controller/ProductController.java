@@ -41,4 +41,12 @@ public class ProductController {
         productService.delete(productId);
     }
 
+    @PutMapping("/update")
+    public void updateProduct(@RequestBody ProductDTO productDTO) {
+        System.out.println("Este es el contenido: " + productDTO.getContent());
+        System.out.println("Esta es la categoría: " + productDTO.getCategoryId().getClass());
+        System.out.println("Este es el Id: " + productDTO.getProductId().getClass());
+        productService.updateProduct(productDTO);
+    }
+
 }

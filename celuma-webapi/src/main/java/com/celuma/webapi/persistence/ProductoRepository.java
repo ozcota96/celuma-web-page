@@ -25,11 +25,6 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public Optional<List<ProductDTO>> getByStatus(Boolean status) {
-        return Optional.empty();
-    }
-
-    @Override
     public Optional<ProductDetailDTO> getProduct(int idProducto) {
         return productoCrudRepository.findById(idProducto).map(producto -> mapper.toProductDetail(producto));
     }
@@ -44,6 +39,17 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
+    }
+
+    @Override
+    public void updateProduct(ProductDTO productDTO) {
+        Producto producto = mapper.toProducto(productDTO);
+        String name = producto.getNombre();
+        Integer category = producto.getIdCategoria();
+        String content = producto.getContenido();
+        Integer id = producto.getIdProducto();
+
+        productoCrudRepository.updateProduct(name, category, content, id);
     }
 
 }
