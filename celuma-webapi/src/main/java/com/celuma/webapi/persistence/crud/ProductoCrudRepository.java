@@ -1,6 +1,5 @@
 package com.celuma.webapi.persistence.crud;
 
-import com.celuma.webapi.domain.ProductDTO;
 import com.celuma.webapi.persistence.entity.Producto;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
