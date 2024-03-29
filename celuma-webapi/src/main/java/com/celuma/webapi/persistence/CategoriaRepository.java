@@ -41,4 +41,11 @@ public class CategoriaRepository implements CategoryRepository {
     public void delete(int categoryId) {
         categoriaCrudRepository.deleteById(categoryId);
     }
+
+    public void update(Category category) {
+        Categoria categoria = mapper.toCategoria(category);
+        String name = categoria.getDescripcion();
+        Integer id = categoria.getCategoriaId();
+        categoriaCrudRepository.updateCategory(name, id);
+    }
 }

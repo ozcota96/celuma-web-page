@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 @RequestMapping("/categories")
 public class CategoryController {
 
@@ -27,12 +28,19 @@ public class CategoryController {
 
     @PostMapping("/save")
     public Category save(@RequestBody Category category) {
+        System.out.println(category.getDescription());
         return categoryService.save(category);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(Integer categoryId) {
+    public void delete(@PathVariable("id") int categoryId) {
+        System.out.println(categoryId);
         categoryService.delete(categoryId);
+    }
+
+    @PutMapping("/update")
+    public void updateCategory(@RequestBody Category category) {
+        categoryService.update(category);
     }
 
 }

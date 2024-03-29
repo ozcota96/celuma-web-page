@@ -30,4 +30,8 @@ public class CategoryService {
         categoryRepository.delete(categoryId);
     }
 
+    public void update(Category category) {
+        categoryRepository.update(category);
+    }
+
 }
