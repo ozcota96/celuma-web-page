@@ -1,0 +1,79 @@
+* {
+    margin:0;
+    padding:0px 0px 0px 0px;
+}
+
+@media screen and (max-width:3050px) {
+    body {
+        background-color: #b3fdc9;
+        width: 100%;
+        font-family: montserrat-regular;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-family: montserrat-regular;
+        margin: 0.5rem;
+        text-align: center;
+    }
+
+    h6 {
+        font-family: montserrat-regular;
+        margin: 0.5rem;
+        text-align: center;
+        padding: 1em 0em 0em 0em;
+    }
+    
+    h3 {
+        padding: 0px 0px 0px 30px;
+    }
+
+    .card-img-top {
+        border-radius: 5px;
+    }
+    
+    .card {
+        border-radius: 5px;
+    }
+
+    .estilo_articulos {
+        text-align: center;
+    }
+
+    .quiz {
+        font-size: 0.8rem;
+        text-align: justify;
+        text-justify:inter-word;
+        }
+
+    .quizResult {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .noticias {
+        text-align: center;
+    }
+    .test {
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .whatsapp {
+        background-color: #319F44;
+        border-radius: 0.5rem;
+    }
+
+    .faqs {
+        height: 5rem;
+    }
+
+    .paquetes {
+        height: 5rem;
+    }
+
+    fieldset {
+        display: inline;
+    }
+}

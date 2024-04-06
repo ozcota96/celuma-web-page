@@ -47,6 +47,19 @@ a {
 .navbar {
     background-color: #319F44;
 }
+    
+.nav-link {
+    color: rgba(255, 255, 255, .55);
+}
+
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-link:hover{
+    color: rgba(255, 255, 255, .75);
+}
+
 
 h1, h2, h3, h4, h5, h6{
     font-family: montserrat-regular;
