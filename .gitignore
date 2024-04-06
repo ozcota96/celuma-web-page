@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/celuma-web-app/node_modules
+/celuma-web-app/.pnp
+/celuma-web-app/.pnp.js
+
+# testing
+/celuma-web-app/coverage
+
+# production
+/celuma-web-app/build
+
+# misc
+/celuma-web-app/.DS_Store
+/celuma-web-app/.env.local
+/celuma-web-app/.env.development.local
+/celuma-web-app/.env.test.local
+/celuma-web-app/.env.production.local
+
+/celuma-web-app/npm-debug.log*
+/celuma-web-app/yarn-debug.log*
+/celuma-web-app/yarn-error.log*
