@@ -1,0 +1,28 @@
+body {
+
+   flex-wrap: wrap;
+}
+
+.register {
+   width: 40%;
+}
+
+.form-container {
+align-items: center;
+justify-content: center;
+display: flex;
+}
+
+.formulario {
+   width: 40%;
+}
+
+
+.celuma-logo-container {
+   height: auto;
+   padding-top: 5rem;
+}
+
+.celuma-logo {
+   height: 5rem;
+}
