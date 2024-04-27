@@ -52,7 +52,6 @@ function getCategories() {
                     tableRow.appendChild(id);
                     tableRow.appendChild(buttons)
 
-
                 }
             }
         }
