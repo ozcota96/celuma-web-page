@@ -1,226 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Productos</title>
-        <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-        crossorigin="anonymous"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <link rel="stylesheet" href="../styles/global.css" />
-        <link rel="stylesheet" href="../styles/fonts.css" />
-        <link rel="icon" href="../Images/celuma-logo.svg">
-    </head>
-    <body class="mt-5" onload="getProducts()">
 
-        <!--Barra de navegación-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../index/index.html">Celuma</a>
-                <button class="navbar-toggler btn_color" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="skin care, skincare, cosmeticos, naturales, artesanales, FPS, Crema, Facial, día, celuma, productos, productos celuma, shampoo, sílica" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos Celuma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/quiz.css" />
+    <link rel="icon" href="../../Images/celuma-logo.svg">
+</head>
+
+<body onload="getProducts()">
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Celuma</a>
+
+            <button class="navbar-toggler btn_color" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="../index/index.html">Inicio</a>
-                    <a class="nav-item nav-link" href="../about/about.html">Acerca de</a>
-                    <a class="nav-item nav-link" href="../products/products.html">Productos</a>
-                    <a class="nav-item nav-link" href="../contact/contact.html">Contacto</a>
-                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../../index/index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../about/about.html">Acerca de</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../products/products.html">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../contact/contact.html">Contacto</a>
+                    </li>
+
+                </ul>
+
+                <div class="navbar-nav mb-2 mb-lg-0">
+
+                    <div class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../../log_in.html">Iniciar sesión</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <a class="nav-link" href="../../sign-up/sign_up.html">Registrarse</a>
+                    </div>
                 </div>
             </div>
-        </nav>
+    </nav>
 
-        <main class="container main_color p-5">
-            <!--Botones-->
-            <section class="">
-                <div class="">
-                    <div class="p-2 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-celuma me-md-2" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">
-                            Añadir producto
-                        </button>
-                    </div>
-
-                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar un producto</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Nombre del producto:</label>
-                                            <input type="text" class="form-control" id="product_name">
-                                        </div>
-
-                                        <div class="input-group mb-3">
-                                            <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
-                                            <select class="form-select" id="category_option">
-                                                <option selected value="1">Skincare</option>
-                                                <option value="2">Cabello</option>
-                                                <option value="3">Otros</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Descripción:</label>
-                                            <textarea class="form-control" id="descriptionText"></textarea>
-                                        </div>
-
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text">$</span>
-                                            <input type="text" class="form-control" id="product_price" aria-label="Amount (to the nearest dollar)">
-                                            <span class="input-group-text">MXN</span>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" onclick="newProduct()">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!--Products table-->
-            <section>
-                <table class="table" >
-                    <thead>
-                        <tr>
-                            <th class="text-center" scope="col">Nombre</th>
-                            <th class="text-center" scope="col">Id</th>
-                            <th class="" scope="col">Contenido</th>
-                            <th class="text-center" scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="allProducts">
-
-                        
-                    </tbody>
-                </table>
-
-                <!-- Delete product modal -->
-                <div class="modal fade" id="deleteButton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel"> 
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                        </h1>
-                        
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="deleteText">
-                        ¿Está seguro que desea eliminar el producto?
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-celuma-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-outline-danger" id="eliminarBtn" value="" onclick="getValue()">Eliminar</button>
-                        </div>
-                    </div>
-                    </div>
+    <main class="container main_color p-5">
+        <!--Botones-->
+        <section class="">
+            <div class="">
+                <div class="p-2 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-celuma me-md-2" data-bs-toggle="modal"
+                        data-bs-target="#addModal" data-bs-whatever="@mdo">
+                        Añadir producto
+                    </button>
                 </div>
 
-                <!--Edit product modal-->
-                <div class="modal fade" id="editButton" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content" id="editModal" value="">
+                        <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar un producto</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar un producto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
-                            
+
                             <div class="modal-body">
                                 <form>
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Nombre del producto:</label>
-                                        <input type="text" class="form-control" id="editName">
+                                        <input type="text" class="form-control" id="product_name">
                                     </div>
 
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
-                                        <select class="form-select" id="editCategory">
+                                        <select class="form-select" id="category_option">
                                             <option selected value="1">Skincare</option>
                                             <option value="2">Cabello</option>
                                             <option value="3">Otros</option>
                                         </select>
-
-                                        <label for="recipient-name" class="col-form-label ">Id: </label>
-                                        <input class="form-control" type="text" value="" id="editId" aria-label="Disabled input example" disabled readonly>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Descripción:</label>
-                                        <textarea class="form-control" id="editDescription"></textarea>
+                                        <textarea class="form-control" id="descriptionText"></textarea>
                                     </div>
 
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">$</span>
-                                        <input type="text" class="form-control" id="product_price" aria-label="Amount (to the nearest dollar)">
+                                        <input type="text" class="form-control" id="product_price"
+                                            aria-label="Amount (to the nearest dollar)">
                                         <span class="input-group-text">MXN</span>
                                     </div>
                                 </form>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-celuma-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-celuma" onclick="editProduct()">Guardar cambios</button>
+                                <button type="button" class="btn btn-celuma-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-celuma" onclick="newProduct()">Guardar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-            </section>
-        </main>
-
-
-        <!--Footer-->
-        <footer class="footer_global txt_color">
-            <div class="container border-secondary border-top">
-                <div class="text-center p-2">
-                Contáctanos a través de nuestras redes sociales:
-                </div>
-        
-                <div class="d-flex justify-content-center p-2">
-                    <a href="https://www.facebook.com/ProductosCelumaOficial/" class="me-4 pr-4 text-reset">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-        
-                    <a href="https://www.instagram.com/productosceluma/" class="me-4 pr-4 text-reset">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-        
-                    <a href="https://api.whatsapp.com/message/DXTFXPSVMOQPE1?autoload=1&app_absent=0" class="me-4 pr-4 text-reset">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                </div>
-        
-                <div class="d-flex col-8 justify-content-start">
-                    <a href="">Política de privacidad </a>
-                </div>
-        
-                <div class="d-flex justify-content-end">Code Monkey ®</div>
             </div>
-        </footer>
+        </section>
+
+        <!--Products table-->
+        <section>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Id</th>
+                        <th class="" scope="col">Contenido</th>
+                        <th class="text-center" scope="col">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="allProducts">
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/f6b90b9313.js" crossorigin="anonymous"></script>
-        <script src="./admin_products.js"></script>
-    </body>
+                </tbody>
+            </table>
+
+            <!-- Delete product modal -->
+            <div class="modal fade" id="deleteButton" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </h1>
+
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="deleteText">
+                            ¿Está seguro que desea eliminar el producto?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-celuma-secondary"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-outline-danger" id="eliminarBtn" value=""
+                                onclick="getValue()">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Edit product modal-->
+            <div class="modal fade" id="editButton" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="editModal" value="">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar un producto</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Nombre del producto:</label>
+                                    <input type="text" class="form-control" id="editName">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
+                                    <select class="form-select" id="editCategory">
+                                        <option selected value="1">Skincare</option>
+                                        <option value="2">Cabello</option>
+                                        <option value="3">Otros</option>
+                                    </select>
+
+                                    <label for="recipient-name" class="col-form-label ">Id: </label>
+                                    <input class="form-control" type="text" value="" id="editId"
+                                        aria-label="Disabled input example" disabled readonly>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Descripción:</label>
+                                    <textarea class="form-control" id="editDescription"></textarea>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" id="product_price"
+                                        aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-text">MXN</span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-celuma-secondary"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-celuma" onclick="editProduct()">Guardar
+                                cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <!--Footer-->
+    <footer class="footer_global txt_color">
+        <div class="container border-secondary border-top">
+            <div class="text-center p-2">
+                Contáctanos a través de nuestras redes sociales:
+            </div>
+
+            <div class="d-flex justify-content-center p-2">
+                <a href="https://www.facebook.com/ProductosCelumaOficial/" class="me-4 pr-4 text-reset">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/productosceluma/" class="me-4 pr-4 text-reset">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://api.whatsapp.com/message/DXTFXPSVMOQPE1?autoload=1&app_absent=0"
+                    class="me-4 pr-4 text-reset">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <div class="d-flex col-8 justify-content-start">
+                <a href="">Política de privacidad </a>
+            </div>
+
+            <div class="d-flex justify-content-end">Code Monkey ®</div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f6b90b9313.js" crossorigin="anonymous"></script>
+    <script src="admin_products.js"></script>
+</body>
+
 </html>
