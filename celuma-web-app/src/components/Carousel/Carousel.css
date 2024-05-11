@@ -1,0 +1,101 @@
+.carousel {
+    display: flex;
+}
+
+.carousel-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:r column;
+    position: relative;
+}
+
+.carousel-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 80%;
+    border-radius: 20px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease-in-out;
+    margin-top: 55rem;
+}
+
+.carousel-card button:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    font-family: montserrat-regular;
+    font-size: 4rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .4;
+    transition: opacity .15s ease;
+
+}
+
+.carousel-control-prev {
+    left:0;
+    padding-right: 7rem;
+
+}
+
+.carousel-control-next {
+    right:  0;
+    padding-left: 7rem;
+}
+
+.carousel-card-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: visible;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.carousel_pagination {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.pagination-dot {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    margin: 0 1rem;
+}
+
+.pagination-dot-active {
+    opacity: 1;
+}
+
+.pagination-dot:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
