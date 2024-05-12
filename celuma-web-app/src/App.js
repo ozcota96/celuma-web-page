@@ -1,27 +1,17 @@
-import "./App.css";
-import { NavigationBar } from "./navigation-bar/navigation-bar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
+import Carousel from "./components/Carousel/Carousel";
+import Navbar from "./components/Navbar/Navbar";
+import { CAROUSEL_IMAGES } from "./data";
 
 function App() {
   return (
     <div className="App">
-      <NavigationBar></NavigationBar>
-      <script
-        src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
-        crossorigin
-      ></script>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
-        crossorigin
-      ></script>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-        crossorigin
-      ></script>
-
-      <script>var Alert = ReactBootstrap.Alert;</script>
+      <>
+      <Navbar/>
+      <div className="container">
+        <Carousel images={CAROUSEL_IMAGES}/>
+      </div>
+      </>
     </div>
   );
 }
