@@ -1,0 +1,18 @@
+.best-sellers-container {
+    display: block;
+    background-color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    font-family: montserrat-regular;
+}
+
+.best-sellers-container h3 {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.best-sellers-content{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
