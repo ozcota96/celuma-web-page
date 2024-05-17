@@ -3,9 +3,17 @@
 }
 
 .App {
-  background-color: #b3fdc9;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
 
+}
+
+.app-wrapper {
+  background-color: #97C793;
+}
+
+.container {
+  background-color: #f1f1f1;
+  padding:0 4rem ;
+  margin: 0 6rem;
 }

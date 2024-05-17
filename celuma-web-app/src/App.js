@@ -1,4 +1,5 @@
 import "./App.css"
+import BestSellers from "./components/BestSellers/BestSellers";
 import Carousel from "./components/Carousel/Carousel";
 import Navbar from "./components/Navbar/Navbar";
 import { CAROUSEL_IMAGES } from "./data";
@@ -8,9 +9,13 @@ function App() {
     <div className="App">
       <>
       <Navbar/>
-      <div className="container">
-        <Carousel images={CAROUSEL_IMAGES}/>
+      <div className="app-wrapper">
+        <div className="container">
+          <Carousel images={CAROUSEL_IMAGES}/>
+          <BestSellers/>
+        </div>
       </div>
+
       </>
     </div>
   );
