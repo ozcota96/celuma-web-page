@@ -33,3 +33,67 @@ export const BEST_SELLERS = [
     },
 
 ];
+
+export const QUIZ_QUESTIONS = [
+    {
+        question: "En general, ¿Cómo se ve tu piel.",
+        answers: [
+            {answer: "Lisa y con brillo natural, no oleoso.", type:"a"},
+            {answer: "Algo opaca y seca.", type:"b"},
+            {answer: "Me brilla la cara.", type: "c"},
+            {answer: "Zonas están brillosas y otras secas.", type:"d"}
+        ]
+
+    },
+    
+    {
+        question: "¿Cómo se ven tus poros?",
+        answers: [
+            {answer: "Finos y opacos visibles.", type: "a"},
+            {answer: "Casi imperceptibles.", type: "b"},
+            {answer: "Son grandes y visibles en todas partes.", type: "c"},
+            {answer: "Son grandes en mentón, nariz y/o frente.", type: "d"}
+        ]
+    },
+    
+    {
+        question: "¿Cuál es la textura de tu piel?",
+        answers: [
+            {answer: "Suave y lisa.", type: "a"},
+            {answer: "Áspera. A veces se descama en algunas zonas.", type: "b"},
+            {answer: "Gruesa. Con tendencia al acné.", type: "c"},
+            {answer: "En ciertas partes está lisa e hidratada y en otras hay brotes o parques de resequedad.", type: "d"}
+        ]
+    },
+    
+    {
+        question: "A lo largo del día, ¿Cómo se comporta tu piel?",
+        answers: [
+            {answer: "Puede tener algo de brillo al final del día.", type: "a"},
+            {answer: "Poco brillo durante el día. De hecho, llega a verse opaca.", type: "b"},
+            {answer: "Brilla mucho desde temprano y es grasa durante todo el día.", type: "c"},
+            {answer: "Mi zona “T” brilla como dona glaseada con el paso de las horas.", type: "d"}
+        ]
+    },
+    
+    {
+        question: "¿Sueles presentar imperfecciones en la piel?",
+        answers: [
+            {answer: "Muy pocos y esporádicamente.", type: "a"},
+            {answer: "Nunca.", type: "b"},
+            {answer: "Siempre.", type: "c"},
+            {answer: "De vez en cuando.", type: "d"}
+        ]
+    },
+    
+    {
+        question: "¿Tu rostro tiene arrugas o marcas de expresión?",
+        answers: [
+            {answer: "Muy pocas.", type: "a"},
+            {answer: "Sí y muy marcadas.", type: "b"},
+            {answer: "Nada de arrugas", type: "c"},
+            {answer: "Alguna que otra línea de expresión, especialmente al sonreír o fruncir el ceño.", type: "d"}
+        ]
+    },
+
+];

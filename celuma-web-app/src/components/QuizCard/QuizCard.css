@@ -1,0 +1,26 @@
+.card {
+    width: 100%;
+    padding: 2rem 0rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    text-align: left;
+    display: block;
+}
+
+
+
+.card > ul > li {
+    list-style: none;
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+
+
+.custom-radio {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    margin-right: 1rem;
+}
+
