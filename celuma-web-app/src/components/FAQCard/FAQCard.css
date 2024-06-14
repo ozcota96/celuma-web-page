@@ -1,0 +1,50 @@
+.faqcard-container {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto 0;
+}
+
+.faq-question {
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    cursor: pointer; /* Indicate that it's clickable */
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.2rem;
+}
+
+.faq-question > p {
+    font-size: 1rem;
+}
+
+.faq-question:hover {
+    background-color: #e0e0e0;
+}
+
+.faq-answers {
+    overflow: hidden;
+    max-height: 0; /* Initially hidden */
+    transition: max-height 0.5s ease-out; /* Smooth transition */
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 0 1rem; /* Initial padding is set to zero */
+    opacity: 0; /* Initially hidden */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition for padding and opacity */
+}
+
+.faq-answers p {
+    margin: 0.5rem 0;
+}
+
+.faq-answers.visible {
+    max-height: 500px; /* A large enough value to show all content */
+    opacity: 1; /* Make content visible */
+    padding: 1rem; /* Reset padding */
+}
+
+.down-arrow {
+    width: 1rem;
+}

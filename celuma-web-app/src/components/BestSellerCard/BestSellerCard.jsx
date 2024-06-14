@@ -11,6 +11,7 @@ const BestSellerCard = ({details}) => {
 
                 <p className="best-seller-description">
                     {details.description}
+                    
                 </p>
             </div>
         </div>

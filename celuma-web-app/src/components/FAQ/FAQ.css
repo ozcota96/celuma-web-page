@@ -1,0 +1,11 @@
+.faq-container {
+    width: 50%;
+    padding: 0 0.5rem;
+}
+
+@media (max-width:425px){
+    .faq-container{
+        width: 100%;
+        margin: 1rem 0;
+    }
+}

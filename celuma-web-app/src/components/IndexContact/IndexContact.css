@@ -1,0 +1,37 @@
+.indexcontact-container {
+    color: #fff;
+    background-color: #319F44;
+    padding: 2rem;
+    margin: 2rem;
+    display: block;
+    text-align: center;
+    border-radius: 0.5rem;
+    width: 50%;
+    margin: auto 0;
+}
+
+.indexcontact-button{
+    background-color: #3D2916;
+    font-size: 1rem;
+    color: #fff;
+    width: 70%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-family: montserrat-regular;
+}
+
+.indexcontact-button:hover{
+    background-color: #51361d;
+}
+
+@media (max-width:425px){
+    .indexcontact-button{
+        font-size: 0.5rem;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .indexcontact-container {
+        width: 100%;
+    }
+}

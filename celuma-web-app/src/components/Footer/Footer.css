@@ -1,0 +1,32 @@
+.footer-container{
+    background-color: #3D2916;
+    color: #fff;
+    display: grid;
+}
+
+.text{
+    justify-self: center;
+}
+
+.icons{
+    display:flex;
+    justify-content: center;
+}
+
+.icons > a > img{
+    height: 1rem;
+    font-weight: 100;
+    margin: 0.4rem;
+}
+
+.policy{
+    margin: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:320px) {
+    .text{
+        font-size: 0.9rem;
+    }
+}
