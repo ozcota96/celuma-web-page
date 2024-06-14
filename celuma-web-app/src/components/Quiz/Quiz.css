@@ -1,12 +1,13 @@
 .quiz-wrapper {
     background: #fff;
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     font-family: montserrat-regular;
     display: block;
     text-align: center;
     border-radius: 1rem;
 }
+
 .quiz-container {
     width: 100%;
     display: flex;
@@ -31,25 +32,39 @@
 .quiz-card-active {
     opacity: 1;
     width: 100%;
-    padding: 2rem 2rem;
 
 }
 
 .botones {
-    padding: 1rem;
     margin-left: auto;
+}
+
+.boton-quiz{
+    font-size: 1.3rem;
+    padding: 0.2rem 1rem;
+    font-family: montserrat-regular;
+    background-color: #3D2916;
+    color: #fff;
+    border-radius: 0.3rem;
+}
+
+.boton-quiz:hover{
+    scale: 1.05;
 }
 
 .disabled {
     opacity: 0;
 }
 
-button {
+.addIndex {
     background:#319F44;
     color: #fff;
-    font-family: montserrat-regular;
-    font-size: 1.5rem;
-    padding: 0.7rem 1.5rem ;
-    border-radius: 1rem;
+
+    border-radius: 0.2rem;
     margin:0 0.5rem;
+}
+
+
+@media screen and (max-width: 425px) {
+
 }

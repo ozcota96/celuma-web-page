@@ -7,7 +7,9 @@
     display: block;
 }
 
-
+li{
+    display:flex;
+}
 
 .card > ul > li {
     list-style: none;
@@ -19,8 +21,20 @@
 
 
 .custom-radio {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
     margin-right: 1rem;
 }
 
+
+@media screen and (max-width: 426px) {
+    .card{
+        font-size: 0.95rem;
+    }
+
+    .card > ul > li {
+        font-size: 0.8rem;
+    }
+
+    ul {
+        padding: 0;
+    }
+}

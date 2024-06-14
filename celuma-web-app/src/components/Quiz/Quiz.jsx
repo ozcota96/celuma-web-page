@@ -69,19 +69,19 @@ const Quiz = () => {
                     ))
                 ) : (
                     <div className="result-container">
-                        <h2>Results</h2>
-                        <p>Your skin type is: {calculateResult()}</p>
+                        <h2>Resultado</h2>
+                        <p>Tu tipo de piel es: {calculateResult()}</p>
                     </div>
                 )}
                 {!showResult && (
                     <div className="botones">
                         <button
                             onClick={subIndex}
-                            className={currentIndex === 0 ? "botones disabled" : "botones active"}
+                            className={currentIndex === 0 ? "disabled" : "boton-quiz active"}
                         >
                             Atrás
                         </button>
-                        <button onClick={addIndex}>
+                        <button onClick={addIndex} className="addIndex boton-quiz">
                             {currentIndex === QUIZ_QUESTIONS.length - 1 ? "Enviar" : "Siguiente"}
                         </button>
                     </div>

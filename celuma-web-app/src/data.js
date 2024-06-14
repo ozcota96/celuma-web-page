@@ -97,3 +97,46 @@ export const QUIZ_QUESTIONS = [
     },
 
 ];
+
+export const QUOTES = [
+    {
+        quote:"Cada cosa tiene su belleza, pero no todos pueden verla",
+        author: "Confucio"
+    },
+
+    {
+        quote:"La belleza comienza en el momento en el que decides ser tú misma.",
+        author: "Coco Chanel"
+    },
+
+    {
+        quote:"Que la belleza sea consecuencia de tu salud",
+        author: "Marta Montaño"
+    },
+];
+
+export const FAQs = [
+    {
+        question: "¿Cuáles son los métodos de entrega?",
+        answers: [
+            {answer: "Si tu compra la realizas desde la Zona Metropolitana de Guadalajara tienes la opción de entrega a domicilio con repartidor, el costo del envío dependerá de tu domicilio y el total de tu compra."},
+            {answer: "Si tu compra la realizas desde cualquier estado de la república mexicana realizaremos el envío de tu paquete una vez confirmado tu pago, al compartirnos el comprobante de la transferencia o depósito."}
+        ]
+    },
+
+
+    {
+        question: "¿Cuáles son los métodos de pago que se manejan?",
+        answers: [
+            {answer: "Si realizas tu compra desde la ZMG puedes realizar el pago al repartidor al momento de tu entrega."},
+            {answer: "Para compras desde el interior de la república mexicana deberás enviar comprobante de tu transferencia o depósito a través de tu medio de contacto para poder corroborar el pago y así iniciar los procesos de envío."}
+        ]
+    },
+    
+    {
+        question: "¿Qué servicios de paquetería manejan?",
+        answers: [
+            {answer: "Para el envío al interior de la república usamos Fedex o Paquetexpress, buscando ofrecer el mejor precio para el cliente."},
+        ]
+    },
+];
