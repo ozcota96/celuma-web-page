@@ -1,0 +1,14 @@
+.quotecard-container {
+    background-color: #fff;
+    border-radius: 0.2rem;
+    display: block;
+    text-align: center;
+    margin: 0rem;
+}
+.quotecard-quote {
+    font-size: 1.25rem;
+}
+.quotecard-author {
+    color: #6C757D;
+    font-size: 1.1rem;
+}

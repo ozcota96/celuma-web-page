@@ -16,3 +16,28 @@
     justify-content: center;
     text-align: left;
 }
+
+@media screen and (max-width:1440px) {
+    
+}
+
+@media screen and (max-width:1024px) {
+    
+}
+
+@media screen and (max-width:768px) {
+
+}
+
+@media screen and (max-width:426px) {
+        .best-sellers-content{
+            display: flex;
+            flex-direction: column;
+        }
+}
+
+
+
+
+
+

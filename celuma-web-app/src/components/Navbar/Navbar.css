@@ -29,6 +29,7 @@
 .nav-content ul a {
     color: #fff;
     text-decoration: none;
+    
 }
 
 .nav-content li {
@@ -56,16 +57,6 @@
     display: none;
 }
 
-@media (max-width:769px) {
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-content ul {
-        display: none;
-    }
-}
-
 @media (max-width:1325px) {
     .nav-wrapper {
         padding: 0 2rem;
@@ -73,5 +64,22 @@
 
     .nav-content{
         padding: 0;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .nav-content ul {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width:769px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-content ul {
+        display: none;
     }
 }

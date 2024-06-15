@@ -17,3 +17,29 @@
   padding:0 4rem ;
   margin: 0 6rem;
 }
+
+.index-about-container {
+  font-family: montserrat-regular;
+  display:inline-flex;
+  align-items: center;
+  display: flex;
+}
+
+@media (max-width:768px){
+  .container {
+    padding:2rem 2rem ;
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width:425px){
+  .container {
+    padding:0 0.5rem ;
+    margin: 0 0.6rem;
+  }
+  
+  .index-about-container{
+    display: grid;
+    flex-direction: column;
+  }
+}
