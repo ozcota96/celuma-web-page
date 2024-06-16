@@ -1,3 +1,5 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "./App.css"
 import BestSellers from "./components/BestSellers/BestSellers";
 import Carousel from "./components/Carousel/Carousel";
@@ -8,28 +10,37 @@ import IndexContact from "./components/IndexContact/IndexContact";
 import { CAROUSEL_IMAGES } from "./data";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
 
 function App() {
   return (
-    <div className="App">
-      <>
-      <Navbar/>
-      <div className="app-wrapper">
-        <div className="container">
-          <Carousel images={CAROUSEL_IMAGES}/>
-          <BestSellers/>
-          <Quiz/>
-          <Quotes/>
-          <div className="index-about-container">
-            <IndexContact/>
-            <FAQ/>
+    <Router>
+      <div className="App">
+        <>
+        <Navbar/>
+        <div className="app-wrapper">
+          <div className="container">
+            <Routes>
+              <Route path="/" element= {
+                <>
+                  <Carousel images={CAROUSEL_IMAGES}/>
+                  <BestSellers/>
+                  <Quiz/>
+                  <Quotes/>
+                  <div className="index-about-container">
+                    <IndexContact/>
+                    <FAQ/>
+                  </div>
+              </>
+              }/>
+              <Route path="/about" element={<About/>} />
+            </Routes>
           </div>
-          
         </div>
+        <Footer/>
+        </>
       </div>
-      <Footer/>
-      </>
-    </div>
+    </Router>
   );
 }
 

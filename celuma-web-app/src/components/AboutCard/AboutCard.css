@@ -1,0 +1,38 @@
+.aboutcard-button{
+    font-size: 1rem;
+    font-family: montserrat-regular;
+    color: #319F44;
+    padding: 1rem 7rem;
+    border: 1px solid rgb(213, 211, 211);
+    border-radius: 0.5rem;
+}
+
+.aboutcard-button:hover{
+    background-color: #fff;
+}
+
+.active{
+    background-color: #fff;
+    color: black;
+}
+
+@media screen and (max-width:1024px) {
+    .aboutcard-button{
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .aboutcard-button{
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .aboutcard-button{
+        width: 100%;
+        padding: 1rem 3rem;
+    }
+}

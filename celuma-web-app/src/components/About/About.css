@@ -1,0 +1,58 @@
+.about-wrapper{
+    padding: 2rem 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-wrapper> img {
+    height: 9rem;
+    justify-self: center
+}
+
+h1{
+    text-align: center
+}
+
+.about-sections{
+    display: flex;
+    justify-content: center;
+}
+
+.section-button{
+    font-size: 1rem;
+    font-family: montserrat-regular;
+    color: #319F44;
+    padding: 0.5rem 7rem;
+}
+
+.about-content{
+    font-family: montserrat-regular;
+    font-size: 1.1rem;
+    text-align: justify;
+    padding: 0 4rem;
+}
+
+@media screen and (max-width:426px) {
+
+    .about-wrapper{
+        padding: 0;
+    }
+    
+    .about-wrapper> img {
+        height: 4rem;
+    }
+    
+    .about-sections{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .about-content{
+        font-family: montserrat-regular;
+        font-size: 1rem;
+        text-align: justify;
+        padding: 0 1rem;
+    }
+}

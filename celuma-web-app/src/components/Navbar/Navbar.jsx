@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css"
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     
@@ -22,19 +23,19 @@ const Navbar = () => {
                 <div>
                     <ul>
                         <li>
-                            <a href="">Inicio</a>
+                            <Link to="/">Inicio</Link>
                         </li>
 
                         <li>
-                            <a href="">Acerca de</a>
+                            <Link to="/about">Acerca de</Link>
                         </li>
 
                         <li>
-                            <a href="">Productos</a>
+                            <Link to="/products">Productos</Link>
                         </li>
 
                         <li>
-                            <a href="">Contacto</a>
+                            <Link to="/contact">Contacto</Link>
                         </li>
                         
                     </ul>
