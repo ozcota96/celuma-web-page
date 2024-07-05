@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: montserrat-regular;
+}
+
+.modal-main {
+    background: white;
+    width: 40%;
+    height: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    text-align:justify;
+    margin: 3rem auto;
+    display: grid;
+}
+
+.modal-main > div > button {
+    background-color: #3D2916;
+    color: #fff;
+    font-family: montserrat-regular;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.modal-main > div > a {
+    color: #319F44;
+    text-decoration: none;
+    margin: 0 0.7rem;
+}
+
+.modal-close {
+    height: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+.modal-content > img {
+    width: 70%;
+    margin: 0rem auto;
+}
+
+.modal-content > p {
+    margin-top: 3rem;
+}
+
+
+.modal-slider {
+    width: 100%;
+}
+
+.modal-image {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 0.7rem;
+}
+
+.modal-bottom {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

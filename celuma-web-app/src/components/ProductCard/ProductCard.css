@@ -1,0 +1,35 @@
+.productcard-container{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 0.5rem;
+    margin: 0 0.3rem;
+    background-color: #fff;
+}
+
+.productcard-container > img {
+    max-width: 100%;
+    max-height: 430.400PX;
+    border-radius: 0.5rem;
+}
+
+.productcard-container > h1 {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.productcard-container > button {
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    padding:0.5rem;
+    background-color: #319F44;
+    color: #fff;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.productcard-container > button:hover {
+
+    background-color: #257d34;
+
+}
