@@ -1,0 +1,39 @@
+.productsection-wrapper > h5 {
+    background-color: #319F44;
+    color: #fff;
+    margin-bottom: 0;
+    width:fit-content;
+    border-radius: 0.4rem;
+    padding: 0 0.5rem;
+}
+
+.productsection-container{
+
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding:0.5rem;
+    margin-top: 0%;
+}
+
+.slider {
+    max-width: 100%;
+}
+
+.slick-next::before{
+    margin-left:1rem !important;
+    width: 0px;
+}
+
+.slick-prev::before{
+    margin-right:1.5rem !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #319F44 !important;
+}

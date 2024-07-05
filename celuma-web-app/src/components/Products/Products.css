@@ -1,0 +1,38 @@
+.products-main {
+    display: block;
+    padding: 3rem 0;
+}
+
+.products-main > h5 {
+    font-family: montserrat-regular;
+    background-color: #319F44;
+    color: #fff;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    margin-bottom: 0;
+}
+
+.products-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+}
+
+.products-productcard > h5 {
+    color: #fff;
+    width: fit-content;
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    color: #319F44 !important;
+}

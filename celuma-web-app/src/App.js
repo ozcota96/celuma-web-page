@@ -11,6 +11,9 @@ import { CAROUSEL_IMAGES } from "./data";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
+import Products from "./components/Products/Products";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
@@ -34,6 +37,7 @@ function App() {
               </>
               }/>
               <Route path="/about" element={<About/>} />
+              <Route path="/products" element={<Products/>} />
             </Routes>
           </div>
         </div>
