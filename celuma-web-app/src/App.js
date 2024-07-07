@@ -14,6 +14,7 @@ import About from "./components/About/About";
 import Products from "./components/Products/Products";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               }/>
               <Route path="/about" element={<About/>} />
               <Route path="/products" element={<Products/>} />
+              <Route path="/contact" element={<Contact/>} />
             </Routes>
           </div>
         </div>
