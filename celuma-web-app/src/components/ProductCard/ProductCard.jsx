@@ -12,7 +12,7 @@ const ProductCard = ({ item }) => {
     const firstImage = item.images[0];
     
     return (
-        <div>
+        <div className="productcard-wrapper">
             <div className='productcard-container'>
                 <img src={firstImage} alt="" />
                 <h1>{item.title}</h1>
