@@ -48,7 +48,7 @@ const Navbar = () => {
                         </li>
                         
                         <li>
-                            <a href="">Registro</a>
+                            <a href="/signin">Registro</a>
                         </li>
                     </ul>
                 </div>
