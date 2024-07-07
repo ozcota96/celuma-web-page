@@ -1,6 +1,6 @@
 .products-main {
     display: block;
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .products-main > h5 {
@@ -35,4 +35,22 @@
 .slick-next:before
 {
     color: #319F44 !important;
+}
+
+@media screen and (max-width:426px) {
+    .products-section {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .products-main {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .products-main {
+        padding: 0;
+    }
 }

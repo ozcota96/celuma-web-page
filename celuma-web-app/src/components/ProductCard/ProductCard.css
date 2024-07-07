@@ -33,3 +33,9 @@
     background-color: #257d34;
 
 }
+
+@media screen and (max-width:426px) {
+    .productcard-wrapper {
+        margin-bottom: 1rem;
+    }
+}
