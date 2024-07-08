@@ -1,0 +1,96 @@
+.login-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: montserrat-regular;
+}
+
+.login-container > img {
+    height: 9rem;
+    margin-top: 1rem;
+}
+
+.login-container > p {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.login-formulario {
+    border-radius: 0.8rem;
+    padding: 1rem 0;
+    width: 50%;
+}
+
+.login-formulario > input {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+}
+
+.login-formulario > label {
+    font-size: 1rem;
+}
+
+.login-options{
+    display: inline-flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.login-options > button {
+    height: 2.5rem;
+    padding: 0 1rem;
+    background-color: #319F44;
+    border: #43AB54;
+    color: #fff;
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+.login-options > button:hover {
+    background-color: #257d34;
+}
+
+.login-options > a {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width:1024px) {
+    .login-formulario {
+        width: 100%;
+    }
+
+    .login-options{
+        width: 70%;
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    .login-formulario {
+        width: 100%;
+    }
+
+    .login-options{
+        width: 70%;
+
+    }
+}
+
+@media screen and (max-width:426px) {
+    .login-formulario {
+        width: 100%;
+    }
+
+    .login-options{
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -44,11 +44,11 @@ const Navbar = () => {
                 <div className="account">
                     <ul>
                         <li>
-                            <a href="">Iniciar sesión</a>
+                            <a href="/login">Iniciar sesión</a>
                         </li>
                         
                         <li>
-                            <a href="">Registro</a>
+                            <a href="/signin">Registro</a>
                         </li>
                     </ul>
                 </div>
