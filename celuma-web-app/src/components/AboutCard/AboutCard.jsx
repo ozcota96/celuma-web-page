@@ -7,7 +7,7 @@ const AboutCard = ({item, index, isActive, onClick}) => {
         <div className="aboutcard-container">
 
                 <button 
-                className={isActive ? "aboutcard-button active" : "aboutcard-button"}
+                className={isActive ? "aboutcard-button aboutcard-active" : "aboutcard-button"}
                 onClick={onclick}
                 >
                     {item.section}
