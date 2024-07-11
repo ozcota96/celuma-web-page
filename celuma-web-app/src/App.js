@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
-import SignIn from "./SignIn/SignIn";
+import SignIn from "./components/SignIn/SignIn";
 
 function App() {
   return (
