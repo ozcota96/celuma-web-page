@@ -30,6 +30,7 @@ export const skincare = [
         description: 'Crema ideal para pieles grasas, mixtas y/o con tendencia al acné, ayuda en la prevención y disminución de imperfecciones gracias a sus ingredientes como el aloe vera, la plata coloidal y vitaminas.',
         images: [
             './images/products/crema-noche-anti/Crema-anti1.jpg',
+            './images/products/crema-noche-anti/CREMA-ANTI.png',
         ]
     },
 

@@ -37,7 +37,7 @@ const MobileNavbar = ({isOpen, toggleMenu}) => {
                     </li>
 
                     <li>
-                        <Link to={"/signin"} className={activeLink === "/singin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</Link>
+                        <Link to={"/signin"} className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</Link>
                     </li>
 
                     <li>

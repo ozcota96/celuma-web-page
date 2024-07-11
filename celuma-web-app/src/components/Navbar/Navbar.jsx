@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="nav-wrapper">
             <div className="nav-content">
                 <h1>
-                    Celuma
+                <Link to="/" className="navbar-active" onClick={() => handleClick("/")}>Celuma</Link>
                 </h1>
 
                 <div>
