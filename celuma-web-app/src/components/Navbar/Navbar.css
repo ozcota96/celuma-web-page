@@ -27,9 +27,12 @@
 }
 
 .nav-content ul a {
-    color: #fff;
+    color: #f1f1f190;
     text-decoration: none;
-    
+}
+
+.navbar-active {
+    color: #fff !important;
 }
 
 .nav-content li {
