@@ -1,13 +1,13 @@
 import React from "react";
-import './Login.css';
+import './SignIn.css';
 
-const Login = () => {
+const SignIn = () => {
     return (
-        <div className="login-container">
+        <div className="signin-container">
             <img src="/images/celuma-logo.svg" alt="" />
             <p>Acceso</p>
 
-            <form className="login-formulario">
+            <form className="signin-formulario">
                 <label for="name">Correo electrónico:</label>
                 <br />
                 <input type="text" id="name" name="name"/>
@@ -18,7 +18,7 @@ const Login = () => {
                 <br />
             </form>
 
-            <div className="login-options">
+            <div className="signin-options">
                 <button>
                     Acceder
                 </button>
@@ -33,4 +33,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default SignIn;

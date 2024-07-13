@@ -1,93 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../Carousel/Carousel.css";
+import Slider from "react-slick";
 
 const Carousel = ({images}) => {
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [autoPlay, setAutoPlay] = useState(true);
-    let timeOut = null;
+    const carouselSlidersettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 80,
+    pauseOnHover: true,
+    };
 
-    useEffect(() => {
-        timeOut = 
-        autoPlay && 
-        setTimeout(() => {
-            addIndex();
-        }, 2500);
-    });
+    return(
+        <div className="carousel-container">
 
-    const addIndex = () => {
-        if (currentIndex === 3) {
-            setCurrentIndex(0);
-        } else {
-            setCurrentIndex(currentIndex + 1);
-        }
-        return setCurrentIndex;
-    }
-
-    const subIndex = () => {
-        if (currentIndex === 0) {
-            setCurrentIndex(3);
-        } else {
-            setCurrentIndex(currentIndex - 1);
-        }
-        return setCurrentIndex;
-    }
-
-    return (
-    <div className="carousel"
-    onMouseEnter={() => {
-        (setAutoPlay(false));
-        clearTimeout(timeOut);
-    }}
-    onMouseLeave={() => {
-        (setAutoPlay(true))
-    }}
-    >
-
-        <div className="carousel-wrapper">
-            {images.map((image, index) => {
-                return(
-                <div 
-                key={index}
-                className={
-                    index === currentIndex
-                    ? "carousel-card carousel-card-active"
-                    : "carousel-card"
-                }
-                >
-                    <button className='carousel-control-prev' onClick={subIndex}>
-                        <span>&lt;</span>
-                    </button>
-
-                    <img className="card-image" src={image.image} alt="" onClick={addIndex}/>
-
-                    <button className='carousel-control-next' onClick={addIndex}>
-                        <span>&gt;</span>
-                    </button>
-
-                    <div className="carousel_pagination">
-                        {images.map((_, index) => {
-                            return(
-                                <div key={index}
-                                className={
-                                    index === currentIndex
-                                    ? "pagination-dot pagination-dot-active"
-                                    : "pagination-dot"
-                                }
-                                onClick={() => setCurrentIndex(index)}
-                                >
-
-                                </div>
-                            )
-                        })}
+            <Slider {...carouselSlidersettings}>
+                {images.map((item, index) => (
+                    <div key={index} className="carousel-card">
+                        <img src={item.image} alt={item.title} />
                     </div>
-                </div>
-                ) 
-            })}
-        </div>
+                ))}
+            </Slider>
 
-    </div>
+
+        </div>
     )
+
 }
 
 export default Carousel;

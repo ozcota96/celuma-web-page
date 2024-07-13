@@ -3,7 +3,7 @@
     padding: 0 0.5rem;
 }
 
-@media (max-width:425px){
+@media (max-width:426px){
     .faq-container{
         width: 100%;
         margin: 1rem 0;

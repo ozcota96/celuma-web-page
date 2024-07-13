@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MobileNavbar.css";
 import "../../ReactFonts.css";
+import { Link, useLocation } from "react-router-dom";
 
 const MobileNavbar = ({isOpen, toggleMenu}) => {
 
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(location.pathname);
+    const handleClick = (path) => {
+        setActiveLink(path);
+    };
 
     return(
         <>
@@ -15,28 +21,29 @@ const MobileNavbar = ({isOpen, toggleMenu}) => {
 
                 <ul>
                     <li>
-                        <a href="">Inicio</a>
+                        <Link to={"/"} className={activeLink === "/" ? "navbar-active" : ""} onClick={() => handleClick("/")}>Inicio</Link>
                     </li>
 
                     <li>
-                        <a href="">Acerca de</a>
+                        <Link to={"/about"} className={activeLink === "/about" ? "navbar-active" : ""} onClick={() => handleClick("/about")}>Acerca de</Link>
                     </li>
 
                     <li>
-                        <a href="">Productos</a>
+                        <Link to={"/products"} className={activeLink === "/products" ? "navbar-active" : ""} onClick={() => handleClick("/products")}>Productos</Link>
                     </li>
 
                     <li>
-                        <a href="">Contacto</a>
+                        <Link to={"/contact"} className={activeLink === "/contact" ? "navbar-active" : ""} onClick={() => handleClick("/contact")}>Contacto</Link>
                     </li>
 
                     <li>
-                        <a href="">Iniciar sesión</a>
+                        <Link to={"/signin"} className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</Link>
                     </li>
 
                     <li>
-                        <a href="">Registro</a>
+                        <Link to={"/signup"} className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</Link>
                     </li>
+
                 </ul>
 
             </div>

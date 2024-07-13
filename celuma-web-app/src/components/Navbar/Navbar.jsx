@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css"
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     
@@ -11,31 +11,41 @@ const Navbar = () => {
     const toggleMenu = () => {
         setOpenMenu(!openMenu);
     }
+
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(location.pathname);
+
+    const handleClick = (path) => {
+        setActiveLink(path);
+    };
+
+
+
     return(
         <>
         <MobileNavbar isOpen={openMenu} toggleMenu={toggleMenu}/>
         <div className="nav-wrapper">
             <div className="nav-content">
                 <h1>
-                    Celuma
+                <Link to="/" className="navbar-active" onClick={() => handleClick("/")}>Celuma</Link>
                 </h1>
 
                 <div>
                     <ul>
                         <li>
-                            <Link to="/">Inicio</Link>
+                            <Link to="/" className={activeLink === "/" ? "navbar-active" : ""} onClick={() => handleClick("/")}>Inicio</Link>
                         </li>
 
                         <li>
-                            <Link to="/about">Acerca de</Link>
+                            <Link to="/about" className={activeLink === "/about" ? "navbar-active" : ""} onClick={() => handleClick("/about")}>Acerca de</Link>
                         </li>
 
                         <li>
-                            <Link to="/products">Productos</Link>
+                            <Link to="/products" className={activeLink === "/products" ? "navbar-active" : ""} onClick={() => handleClick("/products")}>Productos</Link>
                         </li>
 
                         <li>
-                            <Link to="/contact">Contacto</Link>
+                            <Link to="/contact" className={activeLink === "/contact" ? "navbar-active" : ""} onClick={() => handleClick("/contact")}>Contacto</Link>
                         </li>
                         
                     </ul>
@@ -44,11 +54,11 @@ const Navbar = () => {
                 <div className="account">
                     <ul>
                         <li>
-                            <a href="/login">Iniciar sesión</a>
+                            <a href="/signin" className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</a>
                         </li>
                         
                         <li>
-                            <a href="/signin">Registro</a>
+                            <a href="/signup" className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</a>
                         </li>
                     </ul>
                 </div>

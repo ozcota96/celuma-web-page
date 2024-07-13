@@ -83,3 +83,17 @@
     justify-content: end;
     align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+    .modal-main {
+
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .modal-main {
+
+        width: 80%;
+    }
+}

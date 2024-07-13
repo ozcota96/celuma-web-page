@@ -6,14 +6,13 @@
 }
 
 .signin-container > img {
-    height: 5rem;
+    height: 9rem;
     margin-top: 1rem;
 }
 
 .signin-container > p {
     font-size: 2.5rem;
     text-align: center;
-    margin: 0.5rem ;
 }
 
 .signin-formulario {
@@ -31,15 +30,14 @@
     border: 1px solid #ced4da;
 }
 
-.singin-formulario > label {
+.signin-formulario > label {
     font-size: 1rem;
 }
 
 .signin-options{
     display: inline-flex;
-
+    width: 40%;
     justify-content: space-between;
-    margin-bottom: 1rem;
 }
 
 .signin-options > button {
@@ -66,6 +64,10 @@
         width: 100%;
     }
 
+    .signin-options{
+        width: 70%;
+
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -73,7 +75,10 @@
         width: 100%;
     }
 
- 
+    .signin-options{
+        width: 70%;
+
+    }
 }
 
 @media screen and (max-width:426px) {
