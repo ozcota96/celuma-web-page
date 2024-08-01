@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import {React, useContext, useState } from "react";
 import "./Navbar.css"
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../AuthContext/AuthContext";
 
 const Navbar = () => {
     
     const [openMenu, setOpenMenu] = useState(false);
-
-    const toggleMenu = () => {
-        setOpenMenu(!openMenu);
-    }
-
     const location = useLocation();
     const [activeLink, setActiveLink] = useState(location.pathname);
+    const {isAuthenticated, logout} = useContext(AuthContext);
+
+        const toggleMenu = () => {
+        setOpenMenu(!openMenu);
+    }
 
     const handleClick = (path) => {
         setActiveLink(path);
@@ -52,16 +53,38 @@ const Navbar = () => {
                 </div>
 
                 <div className="account">
-                    <ul>
-                        <li>
-                            <a href="/signin" className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/signup" className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</a>
-                        </li>
-                    </ul>
-                </div>
+                        <ul>
+                            {isAuthenticated ? (
+                                <>
+                                    <li>
+                                        <Link to="/account" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/account")}>
+                                            <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
+                                            <img src="/images/cart.svg" className="navbar-icon" alt="" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="" className="" onClick={logout}>
+                                            <img src="/images/logout.svg" className="navbar-icon" alt="" />
+                                        </Link>
+
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link to="/signin" className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/signup" className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</Link>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
+                    </div>
 
                 <button className="menu-btn" onClick={(toggleMenu)}>
                         <span>

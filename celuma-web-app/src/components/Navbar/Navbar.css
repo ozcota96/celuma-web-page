@@ -46,6 +46,10 @@
     margin-left: auto;
 }
 
+.navbar-icon {
+    width: 1.5rem;
+}
+
 .menu-btn {
     width: 2.5rem;
     height: 2.5rem;
