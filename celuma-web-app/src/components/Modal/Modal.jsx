@@ -46,9 +46,6 @@ const Modal = ({ show, handleClose, item}) => {
                     </div>
                 </div>
             </Portal>
-
-
-
         )
     );
 };

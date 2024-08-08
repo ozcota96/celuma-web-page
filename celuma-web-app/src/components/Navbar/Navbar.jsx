@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import {React, useContext, useState } from "react";
 import "./Navbar.css"
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../AuthContext/AuthContext";
+import LogoutModal from "../LogoutModal/LogoutModal";
 
 const Navbar = () => {
     
     const [openMenu, setOpenMenu] = useState(false);
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(location.pathname);
+    const {isAuthenticated, logout} = useContext(AuthContext);
+    const [activeModal, setActiveModal] = useState(false);
 
     const toggleMenu = () => {
         setOpenMenu(!openMenu);
     }
 
-    const location = useLocation();
-    const [activeLink, setActiveLink] = useState(location.pathname);
-
     const handleClick = (path) => {
         setActiveLink(path);
     };
 
-
+    const toggleLogout = () => {
+        setActiveModal(!activeModal);
+    }
 
     return(
         <>
@@ -52,16 +57,41 @@ const Navbar = () => {
                 </div>
 
                 <div className="account">
-                    <ul>
-                        <li>
-                            <a href="/signin" className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/signup" className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</a>
-                        </li>
-                    </ul>
-                </div>
+                        <ul>
+                            {isAuthenticated ? (
+                                <>
+                                    <li>
+                                        <Link to="/account" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/account")}>
+                                            <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
+                                            <img src="/images/cart.svg" className="navbar-icon" alt="" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="" onClick={toggleLogout}>
+                                            <img src="/images/logout.svg" className="navbar-icon" alt="" />
+                                        </Link>
+
+                                    </li>
+
+                                        
+
+                                </>
+                            ) : (
+                                <>
+                                    <li>
+                                        <Link to="/signin" className={activeLink === "/signin" ? "navbar-active" : ""} onClick={() => handleClick("/signin")}>Iniciar sesión</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/signup" className={activeLink === "/signup" ? "navbar-active" : ""} onClick={() => handleClick("/signup")}>Registro</Link>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
+                    </div>
 
                 <button className="menu-btn" onClick={(toggleMenu)}>
                         <span>
@@ -70,8 +100,8 @@ const Navbar = () => {
                 </button>
 
             </div>
-
         </div>
+        <LogoutModal show={activeModal} handleClose={toggleLogout}/>
         </>
     )
 }

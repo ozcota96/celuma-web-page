@@ -17,40 +17,43 @@ import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Contact/Contact";
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
+import { AuthProvider } from "./components/AuthContext/AuthContext";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <>
-        <Navbar/>
-        <div className="app-wrapper">
-          <div className="container">
-            <Routes>
-              <Route path="/" element= {
-                <>
-                  <Carousel images={CAROUSEL_IMAGES}/>
-                  <BestSellers/>
-                  <Quiz/>
-                  <Quotes/>
-                  <div className="index-about-container">
-                    <IndexContact/>
-                    <FAQ/>
-                  </div>
-              </>
-              }/>
-              <Route path="/about" element={<About/>} />
-              <Route path="/products" element={<Products/>} />
-              <Route path="/contact" element={<Contact/>} />
-              <Route path="/signin" element={<SignIn/>} />
-              <Route path="/signup" element={<SignUp/>}/>
-            </Routes>
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <>
+          <Navbar/>
+          <div className="app-wrapper">
+            <div className="container">
+              <Routes>
+                <Route path="/" element= {
+                  <>
+                    <Carousel images={CAROUSEL_IMAGES}/>
+                    <BestSellers/>
+                    <Quiz/>
+                    <Quotes/>
+                    <div className="index-about-container">
+                      <IndexContact/>
+                      <FAQ/>
+                    </div>
+                </>
+                }/>
+                <Route path="/about" element={<About/>} />
+                <Route path="/products" element={<Products/>} />
+                <Route path="/contact" element={<Contact/>} />
+                <Route path="/signin" element={<SignIn/>} />
+                <Route path="/signup" element={<SignUp/>}/>
+              </Routes>
+            </div>
           </div>
+          <Footer/>
+          </>
         </div>
-        <Footer/>
-        </>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
