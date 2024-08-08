@@ -67,6 +67,14 @@
     display: none;
 }
 
+.isActive {
+    color: red;
+}
+
+.notActive {
+    color: #000;
+}
+
 @media (max-width:1920px) {
     .nav-content ul {
         font-size: 1rem;

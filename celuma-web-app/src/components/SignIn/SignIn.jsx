@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './SignIn.css';
 import {serviceSignIn } from "../Services/Services";
 import { AuthContext } from "../AuthContext/AuthContext";
@@ -8,6 +8,7 @@ const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const {login} = useContext(AuthContext);
+    const [warning, setWarning] = useState(false);
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -24,7 +25,8 @@ const SignIn = () => {
             login(response.data.token);
             window.location.href= "/";
         } catch (error) {
-            console.error("Hubo un error: " , error)
+            console.log(warning);
+            setWarning(true);
         }
     };
 
@@ -45,6 +47,10 @@ const SignIn = () => {
 
                 <button type="submit">Acceder</button>
             </form>
+
+            <div className={warning ? "signin-warning-active" : "signin-warning"}>
+                <p>Contraseña y/o correo incorrecto</p>
+            </div>
 
             <div className="signin-options">
 

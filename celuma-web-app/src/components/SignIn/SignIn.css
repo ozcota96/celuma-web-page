@@ -6,7 +6,7 @@
 }
 
 .signin-container > img {
-    height: 9rem;
+    height: 10rem;
     margin-top: 1rem;
 }
 
@@ -58,6 +58,18 @@
 .signin-options > a {
     font-size: 0.8rem;
 }
+
+.signin-warning {
+    visibility: hidden;
+}
+
+.signin-warning-active {
+    border: 1px red solid;
+    border-radius: 0.5rem;
+    background-color: lightpink;
+    padding: 0 2rem;
+}
+
 
 @media screen and (max-width:1024px) {
     .signin-formulario {

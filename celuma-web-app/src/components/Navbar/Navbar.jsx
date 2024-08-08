@@ -4,6 +4,7 @@ import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
+import LogoutModal from "../LogoutModal/LogoutModal";
 
 const Navbar = () => {
     
@@ -11,8 +12,9 @@ const Navbar = () => {
     const location = useLocation();
     const [activeLink, setActiveLink] = useState(location.pathname);
     const {isAuthenticated, logout} = useContext(AuthContext);
+    const [activeModal, setActiveModal] = useState(false);
 
-        const toggleMenu = () => {
+    const toggleMenu = () => {
         setOpenMenu(!openMenu);
     }
 
@@ -20,7 +22,9 @@ const Navbar = () => {
         setActiveLink(path);
     };
 
-
+    const toggleLogout = () => {
+        setActiveModal(!activeModal);
+    }
 
     return(
         <>
@@ -67,11 +71,14 @@ const Navbar = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="" className="" onClick={logout}>
+                                        <Link className="" onClick={toggleLogout}>
                                             <img src="/images/logout.svg" className="navbar-icon" alt="" />
                                         </Link>
 
                                     </li>
+
+                                        
+
                                 </>
                             ) : (
                                 <>
@@ -93,8 +100,8 @@ const Navbar = () => {
                 </button>
 
             </div>
-
         </div>
+        <LogoutModal show={activeModal} handleClose={toggleLogout}/>
         </>
     )
 }
