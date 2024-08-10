@@ -46,6 +46,10 @@
     margin-left: auto;
 }
 
+.navbar-icon {
+    width: 1.5rem;
+}
+
 .menu-btn {
     width: 2.5rem;
     height: 2.5rem;
@@ -61,6 +65,14 @@
     cursor: pointer;
     transition: all 0.4s ease;
     display: none;
+}
+
+.isActive {
+    color: red;
+}
+
+.notActive {
+    color: #000;
 }
 
 @media (max-width:1920px) {
