@@ -10,6 +10,7 @@ const LogoutModal = ({show, handleClose}) => {
     const handleLogout = () => {
         logout();
         handleClose();
+        window.location.href="/";
     };
 
     useEffect(() => {

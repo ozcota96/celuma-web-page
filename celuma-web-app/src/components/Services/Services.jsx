@@ -8,7 +8,6 @@ export const serviceSignIn = async (email, password) => {
     };
 
     try {
-        console.log(data)
         const response = await axios.post('http://localhost:8090/celuma-webapi/api/users/login', data);
         return response;
     } catch (error) {
@@ -31,10 +30,12 @@ export const serviceSignUp = async (username, name, lastname, email, password) =
 
     try {
         const response = await axios.post('http://localhost:8090/celuma-webapi/api/users/register', signUpData)
-        console.log(response)
         return response;
     } catch (error) {
-        console.error("Hubo un error con el registro: ", error);
-        throw error;
+        if (error.response.data.includes('users.username_UNIQUE')) {
+            return "El nombre de usuario ya existe";
+        } else if (error.response.data.includes("users.email_UNIQUE"))
+            return "El correo electrónico ya está registrado";
+        return null;
     }
 }

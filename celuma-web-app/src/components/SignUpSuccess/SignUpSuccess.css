@@ -1,0 +1,33 @@
+.success-wrapper {
+    display: flex;
+}
+
+.success-container {
+    display: grid;
+    justify-items: center
+}
+
+.success-container > img {
+    margin-top: 1rem;
+    height: 15rem;
+}
+
+.success-container > p {
+    font-family: montserrat-regular;
+    font-size: 2rem;
+}
+
+.success-container > button {
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    padding:0.5rem;
+    background-color: #319F44;
+    color: #fff;
+    width: 30%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.success-container > button:hover {
+    scale: 1.02;
+}

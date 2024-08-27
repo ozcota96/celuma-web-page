@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './SignUp.css'
-import { serviceSignUp } from "../Services/Services";
+import { serviceSignIn, serviceSignUp } from "../Services/Services";
+import { AuthContext } from "../AuthContext/AuthContext";
 
 const SignUp = () => {
 
@@ -9,6 +10,9 @@ const SignUp = () => {
     const [lastname, setLastname] = useState('');
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
+    const {login} = useContext(AuthContext);
+    const [warning, setWarning] = useState(false);
+    const [warningMessage, setWarningMessage] = useState('')
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -35,9 +39,15 @@ const SignUp = () => {
         e.preventDefault();
 
         try {
-            const response = await serviceSignUp(username, name, lastname, mail, password,)
+            const response = await serviceSignUp(username, name, lastname, mail, password,);
+            setWarning(true);
+            setWarningMessage(response);
+
+            const loginResponse = await serviceSignIn(username, password);
+            login(response.data.token);
+            window.location.href= "/success";
         } catch (error) {
-            console.error('Hubo un error: ', error)
+            
         }
     }
 
@@ -49,29 +59,33 @@ const SignUp = () => {
             <form className="signup-formulario" onSubmit={handleSubmit}>
                 <label for="username">Nombre de usuario:</label>
                 <br />
-                <input type="text" id="username" name="username" onChange={handleUsernameChange} />
+                <input type="text" id="username" name="username" onChange={handleUsernameChange} required/>
                 <br />
                 <label for="name">Nombre:</label>
                 <br />
-                <input type="text" id="name" name="name" onChange={handleNameChange}/>
+                <input type="text" id="name" name="name" onChange={handleNameChange} required/>
                 <br />
                 <label for="lastname">Apellido</label>
                 <br />
-                <input type="text" id="lastname" name="lastname" onChange={handleLastNameChange}/>
+                <input type="text" id="lastname" name="lastname" onChange={handleLastNameChange} required/>
                 <br />
                 <label for="mail">Correo Electrónico:</label>
                 <br />
-                <input type="text" id="email" name="mail" onChange={handleMailChange}/>
+                <input type="text" id="email" name="mail" onChange={handleMailChange} required/>
                 <br />
                 <label for="password">Contraseña:</label>
                 <br />
-                <input type="password" id="password" name="password" onChange={handlePasswordChange}/>
+                <input type="password" id="password" name="password" onChange={handlePasswordChange} required/>
                 <br />
 
                 <button className="" type="submit">
                     Registrarse
                 </button>
             </form>
+
+            <div className={warning ? "signin-warning-active" : "signin-warning"}>
+                <p>{warningMessage}</p>
+            </div>
 
         </div>
     )
