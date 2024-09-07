@@ -63,6 +63,37 @@ form > a {
     font-size: 0.8rem;
 }
 
+.valid-item {
+    color: green;
+}
+
+.invalid-item {
+    color: lightcoral;
+}
+
+.show-requirements {
+    visibility: visible;
+}
+
+.hide-requirements {
+    visibility: hidden;
+    height: 1px;
+}
+
+.not-valid, .not-valid:hover{
+    background-color: gray;
+}
+
+.valid {
+    background-color: #257d34;
+}
+
+.valid:hover {
+    scale:1.02
+}
+
+
+
 @media screen and (max-width:1024px) {
     .signup-formulario {
         width: 100%;
