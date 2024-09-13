@@ -23,9 +23,9 @@ const SignIn = () => {
         try {
             const response = await serviceSignIn(email, password);
             login(response.data.token);
+            console.log(response);
             window.location.href= "/";
         } catch (error) {
-            console.log(warning);
             setWarning(true);
         }
     };

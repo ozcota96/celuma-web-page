@@ -1,0 +1,40 @@
+.delete-account {
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    color: salmon;
+}
+
+.delete-account:hover {
+    background-color: red;
+    color: #fff;
+    transform: scale(1.01);
+}
+
+.security-options {
+    width: 50%;
+    margin-left: auto;
+}
+
+.security-option {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto 0;
+    display: flex;
+    padding: 0 1rem;
+}
+
+.security-option:hover{
+    background-color: #d3d3d3;
+}
+
+.security-option > img {
+    margin-left: auto;
+    transform: rotate(-90deg);
+    color: #fff;
+}
