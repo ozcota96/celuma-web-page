@@ -1,0 +1,82 @@
+.profile-container {
+    padding: 1rem 0;
+    font-family: montserrat-regular;
+}
+
+.personal-info {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 3rem 0;
+}
+
+.profile-picture-container {
+
+}
+
+.profile-picture-wrapper {
+    background: linear-gradient(to right, #257d34, #319F44); /* Gradient outside the image */
+    padding: 5px; /* Space for the gradient border */
+    border-radius: 50%; /* Make the wrapper circular */
+    display: inline-block; /* Ensure the wrapper sizes to fit the content */
+}
+
+.profile-picture {
+    height: 20rem;
+    width: 20rem;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Make sure the image fits inside properly */
+    display: block; /* Remove extra space below the image */
+}
+
+.new-image {
+    height: 4rem;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    position: absolute;
+    margin-left:-5rem;
+    margin-top: 15rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.new-image:hover {
+    transform: scale(1.2);
+}
+
+.info {
+    margin-left: 10rem;
+}
+
+.info > ul> li {
+    margin: 1rem 0;
+}
+
+.profile-options {
+    width: 50%;
+    margin-left: auto;
+}
+
+.profile-option {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto 0;
+    display: flex;
+    padding: 0 1rem;
+}
+
+.profile-option:hover{
+    background-color: #d3d3d3;
+}
+
+.profile-option > img {
+    margin-left: auto;
+    transform: rotate(-90deg);
+    color: #fff;
+}
+

@@ -76,12 +76,12 @@ const SignUp = () => {
 
 
     useEffect(() => {
-        if (username && name && lastname && mail, passwordValidation) {
+        if (username && name && lastname && mail && passwordValidation) {
             setFormValidation(true);
         } else {
             setFormValidation(false);
         }
-    }, [username, name, lastname, mail])
+    }, [username, name, lastname, mail, passwordValidation])
 
     const handleSubmit = async (e) => {
         e.preventDefault();

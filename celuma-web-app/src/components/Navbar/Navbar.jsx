@@ -61,7 +61,7 @@ const Navbar = () => {
                             {isAuthenticated ? (
                                 <>
                                     <li>
-                                        <Link to="/account" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/account")}>
+                                        <Link to="/profile" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/profile")}>
                                             <img src="/images/account.svg" className="navbar-icon" alt="" />
                                         </Link>
                                     </li>
