@@ -21,3 +21,4 @@
 /celuma-web-app/npm-debug.log*
 /celuma-web-app/yarn-debug.log*
 /celuma-web-app/yarn-error.log*
+node_modules
