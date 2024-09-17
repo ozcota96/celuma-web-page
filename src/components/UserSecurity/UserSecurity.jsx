@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState} from 'react';
 import './UserSecurity.css';
+import GlobalModal from '../GlobalModal/GlobalModal';
+import { userDelete } from '../Services/Services';
 
 const UserSecurity = () => {
+
+    const [activeModal, setActiveModal] = useState(false);
 
     const security_options = [
         {
@@ -18,8 +22,18 @@ const UserSecurity = () => {
     const handleOnClick = (link) => {
         window.location = link;
     }
-    return(
 
+    const toggleGlobalModal = () => {
+        setActiveModal(!activeModal);
+    }
+
+    const getUser_id = () => {
+        const user_id = localStorage.getItem('user_id');
+        userDelete(user_id);
+    }
+
+    return(
+        <>
         <div className="user-security-container">
             
             <div className="security-options">
@@ -31,12 +45,14 @@ const UserSecurity = () => {
                 ))}
             </div>
             
-            <div className="delete-account">
+            <div className="delete-account" onClick={toggleGlobalModal}>
                 <p>Eliminar cuenta</p>
             </div>
         </div>
-
+    <GlobalModal message={<p>¿Estás seguro que quieres eliminar tu cuenta?</p>} option={<p>Eliminar</p>} action={getUser_id} show={activeModal} handleClose={toggleGlobalModal} />
+    </>
     )
+
 }
 
 export default UserSecurity;
