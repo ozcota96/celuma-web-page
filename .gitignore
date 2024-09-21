@@ -9,7 +9,7 @@
 /celuma-web-app/coverage
 
 # production
-/celuma-web-app/build
+/build
 
 # misc
 /celuma-web-app/.DS_Store

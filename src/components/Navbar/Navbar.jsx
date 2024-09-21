@@ -70,7 +70,9 @@ const Navbar = () => {
 
                                     <>
                                         <li>
-                                            Usuarios
+                                            <Link to="/users" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/users")}>
+                                                <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                            </Link>
                                         </li>
 
                                     </>

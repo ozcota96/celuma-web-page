@@ -21,6 +21,7 @@ import { AuthProvider } from "./components/AuthContext/AuthContext";
 import SignUpSuccess from "./components/SignUpSuccess/SignUpSuccess";
 import UserProfile from "./components/UserProfile/UserProfile";
 import UserSecurity from "./components/UserSecurity/UserSecurity";
+import Users from "./components/Users/Users";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/success" element={<SignUpSuccess/>} />
                 <Route path="/profile" element={<UserProfile/>} />
                 <Route path="/security" element={<UserSecurity/>} />
+                <Route path="/users" element={<Users/>} />
               </Routes>
             </div>
           </div>
