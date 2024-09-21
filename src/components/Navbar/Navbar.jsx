@@ -5,6 +5,7 @@ import "../../ReactFonts.css"
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 import LogoutModal from "../LogoutModal/LogoutModal";
+import GlobalModal from "../GlobalModal/GlobalModal";
 
 const Navbar = () => {
     
@@ -13,6 +14,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState(location.pathname);
     const {isAuthenticated, logout} = useContext(AuthContext);
     const [activeModal, setActiveModal] = useState(false);
+    const userType = sessionStorage.getItem('user_type');
 
     const toggleMenu = () => {
         setOpenMenu(!openMenu);
@@ -22,9 +24,13 @@ const Navbar = () => {
         setActiveLink(path);
     };
 
-    const toggleLogout = () => {
+    const toggleGlobalModal = () => {
         setActiveModal(!activeModal);
     }
+
+    const handleLogout = () => {
+        logout();
+    };
 
     return(
         <>
@@ -60,18 +66,39 @@ const Navbar = () => {
                         <ul>
                             {isAuthenticated ? (
                                 <>
+                                {userType == 1 ? ( 
+
+                                    <>
+                                        <li>
+                                            <Link to="/users" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/users")}>
+                                                <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                            </Link>
+                                        </li>
+
+                                    </>
+
+                                ) : (
+                                    
+                                    <>
+                                        <li>
+                                            <Link to="/profile" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/profile")}>
+                                                <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
+                                                <img src="/images/cart.svg" className="navbar-icon" alt="" />
+                                            </Link>
+                                        </li>
+                                    </>
+                                    
+                                    )}
+
+
+
+
                                     <li>
-                                        <Link to="/profile" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/profile")}>
-                                            <img src="/images/account.svg" className="navbar-icon" alt="" />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
-                                            <img src="/images/cart.svg" className="navbar-icon" alt="" />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="" onClick={toggleLogout}>
+                                        <Link className="" onClick={toggleGlobalModal}>
                                             <img src="/images/logout.svg" className="navbar-icon" alt="" />
                                         </Link>
 
@@ -101,7 +128,8 @@ const Navbar = () => {
 
             </div>
         </div>
-        <LogoutModal show={activeModal} handleClose={toggleLogout}/>
+        
+        <GlobalModal message={<p>¿Estás seguro que deseas salir?</p>} option={<p>Salir</p>} action={handleLogout} show={activeModal} handleClose={toggleGlobalModal} />
         </>
     )
 }

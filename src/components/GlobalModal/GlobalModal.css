@@ -1,0 +1,51 @@
+.global-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: montserrat-regular;
+    z-index: 1000;
+}
+
+
+.global-modal-close {
+    height: 1.5rem;
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.global-modal-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    width: auto;
+    left: 50%;
+    height: auto;
+    font-family: montserrat-regular;
+    border-radius: 5%;
+    padding: 1rem 2rem;
+}
+
+.warning {
+    height: 8rem;
+    justify-self: center;
+}
+
+.global-modal-container > button {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.global-modal-container > button:hover {
+    color: #fff;
+    background-color: red;
+    scale: 1.02;
+}

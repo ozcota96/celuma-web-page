@@ -1,5 +1,5 @@
 {
-  "name": "celuma-web-app",
+  "name": "celuma-web-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "celuma-web-app": "file:",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
