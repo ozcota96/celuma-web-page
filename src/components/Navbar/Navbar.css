@@ -75,6 +75,10 @@
     color: #000;
 }
 
+.users {
+    font-size: 5rem;
+}
+
 @media (max-width:1920px) {
     .nav-content ul {
         font-size: 1rem;

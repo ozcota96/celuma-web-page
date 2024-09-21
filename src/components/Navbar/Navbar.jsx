@@ -14,6 +14,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState(location.pathname);
     const {isAuthenticated, logout} = useContext(AuthContext);
     const [activeModal, setActiveModal] = useState(false);
+    const userType = sessionStorage.getItem('user_type');
 
     const toggleMenu = () => {
         setOpenMenu(!openMenu);
@@ -65,16 +66,35 @@ const Navbar = () => {
                         <ul>
                             {isAuthenticated ? (
                                 <>
-                                    <li>
-                                        <Link to="/profile" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/profile")}>
-                                            <img src="/images/account.svg" className="navbar-icon" alt="" />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
-                                            <img src="/images/cart.svg" className="navbar-icon" alt="" />
-                                        </Link>
-                                    </li>
+                                {userType == 1 ? ( 
+
+                                    <>
+                                        <li>
+                                            Usuarios
+                                        </li>
+
+                                    </>
+
+                                ) : (
+                                    
+                                    <>
+                                        <li>
+                                            <Link to="/profile" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/profile")}>
+                                                <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/cart" className={activeLink === "/cart" ? "navbar-active" : ""} onClick={() => handleClick("/cart")}>
+                                                <img src="/images/cart.svg" className="navbar-icon" alt="" />
+                                            </Link>
+                                        </li>
+                                    </>
+                                    
+                                    )}
+
+
+
+
                                     <li>
                                         <Link className="" onClick={toggleGlobalModal}>
                                             <img src="/images/logout.svg" className="navbar-icon" alt="" />

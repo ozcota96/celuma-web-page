@@ -9,8 +9,9 @@ const GlobalModal = ({message, option, action, show, handleClose}) => {
 
     const handleAction = () => {
         action();
-        //handleClose();
-        //window.location.href="/";
+        logout();
+        handleClose();
+        window.location.href="/";
     }; 
 
     useEffect(() => {
