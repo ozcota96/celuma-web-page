@@ -49,3 +49,35 @@
     background-color: red;
     scale: 1.02;
 }
+
+.modal-edit-user, .modal-delete-user{
+    display: grid;
+    justify-items: stretch;
+    font-family: montserrat-regular;
+    
+}
+
+.modal-edit-user > input {
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    padding: 0.25rem;
+    width: 20rem;
+    margin: 0.5rem 0;
+}
+
+.modal-edit-user > button {
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin: 2rem 0;
+    background-color: #319F44;
+    color: #f1f1f1;
+}
+
+.modal-edit-user > button:hover {
+    background-color: #257d34;
+}
+
+.modal-delete-user > img {
+    height: 10rem;
+}

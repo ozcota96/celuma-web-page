@@ -29,6 +29,8 @@ const Navbar = () => {
     }
 
     const handleLogout = () => {
+        setActiveModal(!activeModal);
+        window.location.href= "/";
         logout();
     };
 
@@ -71,7 +73,7 @@ const Navbar = () => {
                                     <>
                                         <li>
                                             <Link to="/users" className={activeLink === "/account" ? "navbar-active" : ""} onClick={() => handleClick("/users")}>
-                                                <img src="/images/account.svg" className="navbar-icon" alt="" />
+                                                <img src="/images/users.svg" className="navbar-icon" alt="" />
                                             </Link>
                                         </li>
 
@@ -129,7 +131,15 @@ const Navbar = () => {
             </div>
         </div>
         
-        <GlobalModal message={<p>¿Estás seguro que deseas salir?</p>} option={<p>Salir</p>} action={handleLogout} show={activeModal} handleClose={toggleGlobalModal} />
+        
+        <GlobalModal show={activeModal} handleClose={() => setActiveModal(false)} option={"Salir"}>
+            <div className="modal-delete-user">
+                <img src="./images/warning.svg" alt="" />
+                <p>¿Estás seguro que deseas salir?</p>
+                <button onClick={handleLogout}>Salir</button>
+            </div>
+
+        </GlobalModal>
         </>
     )
 }

@@ -22,15 +22,28 @@
     font-family: montserrat-regular;
     font-size: 1rem;
     padding:0.5rem;
-    background-color: #319F44;
     color: #fff;
     width: 100%;
     border-radius: 0.5rem;
 }
 
-.productcard-container > button:hover {
+.info-button:hover {
 
     background-color: #257d34;
+
+}
+
+.info-button {
+    background-color: #319F44;
+}
+
+.edit-button {
+    background-color: lightskyblue;
+}
+
+.edit-button:hover {
+
+    background-color: rgb(135, 179, 250);
 
 }
 
