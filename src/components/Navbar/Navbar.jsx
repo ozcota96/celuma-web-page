@@ -134,7 +134,7 @@ const Navbar = () => {
         
         <GlobalModal show={activeModal} handleClose={() => setActiveModal(false)} option={"Salir"}>
             <div className="modal-delete-user">
-                <img src="./images/warning.svg" alt="" />
+                <img src="./images/logout-red.svg" alt="" />
                 <p>¿Estás seguro que deseas salir?</p>
                 <button onClick={handleLogout}>Salir</button>
             </div>

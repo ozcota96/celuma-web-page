@@ -81,3 +81,17 @@
 .modal-delete-user > img {
     height: 10rem;
 }
+
+.modal-delete-user > button {
+    font-family: montserrat-regular;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin: 2rem 0;
+    background-color: #3D2916;
+    color: #f1f1f1;
+}
+
+.modal-delete-user > button:hover {
+    transform: scale(1.01);
+    background-color: #4f3925;
+}
