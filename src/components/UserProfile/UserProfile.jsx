@@ -12,7 +12,7 @@ const UserProfile = () => {
 
     const user_options = [
         {
-            option: 'Datos de tu cuenta',
+            option: 'Actualizar tus datos',
             link: '/EditAccount',
         },
         {

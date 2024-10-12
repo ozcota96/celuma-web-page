@@ -1,0 +1,63 @@
+.users-container {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.users-table-contianer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+.users-table{
+    font-family: montserrat-regular;
+    border-collapse: collapse;
+}
+
+.users-table > tr > th {
+    border: 1px solid lightgray;
+    padding: 0.3rem 1rem;
+}
+
+.users-table > tr > td {
+
+    padding: 0.3rem 1rem;
+}
+
+th {
+    background-color: #97C793;
+}
+
+.action-buttons {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.action-buttons > button {
+    margin: 0 0.5rem;
+}
+
+.action-buttons > button:hover{
+    transform: scale(1.05);
+}
+
+.delete-user{
+    border: 1px solid red;
+    border-radius: 0.5rem;
+
+}
+
+.delete-user > img, .edit-user > img {
+    height: 1.5rem;
+    display: flex;
+}
+
+.edit-user{
+    border: 1px solid #3cb9d3;
+    border-radius: 0.5rem;
+
+}
+
+

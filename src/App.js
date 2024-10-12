@@ -22,6 +22,7 @@ import SignUpSuccess from "./components/SignUpSuccess/SignUpSuccess";
 import UserProfile from "./components/UserProfile/UserProfile";
 import UserSecurity from "./components/UserSecurity/UserSecurity";
 import Users from "./components/Users/Users";
+import EditAccount from "./components/EditAccount/EditAccount";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
                 <Route path="/profile" element={<UserProfile/>} />
                 <Route path="/security" element={<UserSecurity/>} />
                 <Route path="/users" element={<Users/>} />
+                <Route path="/editAccount" element={<EditAccount/>} />
               </Routes>
             </div>
           </div>
