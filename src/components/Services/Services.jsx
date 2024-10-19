@@ -19,7 +19,7 @@ export const getUsers = async () => {
 }
 
 export const getUser = async (user_id) => {
-    const url = 'http://localhost:8090/celuma-webapi/api/users/'+ user_id;
+    const url = 'http://localhost:8090/celuma-webapi/api/users/'+ user_id + '/user';
     const token = localStorage.getItem('user_token');
 
     try {
@@ -30,7 +30,7 @@ export const getUser = async (user_id) => {
         sessionStorage.setItem('stored_lastname' , response.data.lastName);
         return response;
     } catch (error) {
-        console.error('Error al recuperar usuarios: ' + error.response);
+        console.error('Error al recuperar usuario: ' + error.response);
         return false;
     }
 }
@@ -85,7 +85,7 @@ export const serviceSignUp = async (username, name, lastname, email, password) =
 export const userDelete = async (user_id) => {
 
 
-    const url = 'http://localhost:8090/celuma-webapi/api/users/delete/'+ user_id;
+    const url = 'http://localhost:8090/celuma-webapi/api/users/'+ user_id + '/delete';
     const token = localStorage.getItem('user_token');
 
     
@@ -108,14 +108,15 @@ export const userUpdate = async (name, lastname, userId, email) => {
 
     const data = {
         lastName: lastname,
-        firstName: name
+        firstName: name,
+        email: email
     }
 
     try {
         const response = axios.patch(url, data, {
             headers: {Authorization: `Bearer ${token}`}
         })        
-        console.log("update: ya termine");
+
         return response;
     } catch (error) {
         console.log(error);
