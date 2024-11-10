@@ -5,8 +5,10 @@ import Modal from "../Modal/Modal";
 const ProductCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
     const userType = sessionStorage.getItem('user_type');
+    const [modalAction, setModalAction] = useState("");
 
-    const toggleModal = () => {
+    const toggleModal = (action) => {
+        setModalAction(action);
         setShowModal(!showModal);
     };
     
@@ -18,12 +20,12 @@ const ProductCard = ({ item }) => {
                 <img src={firstImage} alt="" />
                 <h1>{item.title}</h1>
 
-                <button className="info-button" onClick={toggleModal}>Leer más...</button>
+                <button className="info-button" onClick={() => toggleModal("more")}>Leer más...</button>
                 {userType == 3 ? ''
                 : 
-                <button className="edit-button" onClick={toggleModal}>Editar</button>}
+                <button className="edit-button" onClick={() => toggleModal("edit")}>Editar</button>}
                 
-                <Modal show={showModal} handleClose={toggleModal} item={item}/>
+                <Modal show={showModal} handleClose={toggleModal} item={item} handleAction={modalAction}/>
             </div>
         </div>
     );

@@ -1,11 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './Modal.css';
 import Portal from '../Portal/Portal.jsx';
 import Slider from 'react-slick';
+import { updateProduct } from '../Services/Services.jsx';
 
-const Modal = ({ show, handleClose, item}) => {
+const Modal = ({ show, handleClose, item, handleAction}) => {
 
     const sliderRef = useRef();
+    const user_type = sessionStorage.getItem("user_type");
+    const [newTitle, setNewTitle] = useState(item.title);
+    const [newContent, setNewContent] = useState(item.description);
+
+    const saveChanges = async () => {
+        const update = await updateProduct(newTitle, newContent);
+    }
 
     const settings = {
         dots: true,
@@ -17,6 +25,14 @@ const Modal = ({ show, handleClose, item}) => {
         autoplaySpeed: 2000
     };
 
+    const handleTitleChange = (e) => {
+        setNewTitle(e.target.value);
+    }
+
+    const handleContentChange = (e) => {
+        setNewContent(e.target.value);
+    }
+
     return (
         show && (
             <Portal>
@@ -24,7 +40,13 @@ const Modal = ({ show, handleClose, item}) => {
                     <div className="modal-main" onClick={(e) => e.stopPropagation()}> 
                         <img className='modal-close' src="./images/cross.svg" alt="" onClick={handleClose}/>
                         <div className='modal-content'>
-                            <h1>{item.title}</h1>
+
+                            <h1>
+                                {handleAction === "edit" ?
+                                <textarea className='edit-title' id="" value={newTitle} onChange={handleTitleChange}></textarea>
+                                :
+                                item.title}
+                            </h1>
 
                             <Slider ref={sliderRef} {...settings} className="slider modal-slider">
                                 {item.images.map((image) => (
@@ -35,12 +57,21 @@ const Modal = ({ show, handleClose, item}) => {
                             </Slider>
 
                             
-                            <p>{item.description}</p>
+                            <p>
+                                {handleAction === "edit" ? 
+                            <textarea className='edit-description' value={newContent} onChange={handleContentChange}></textarea>
+                            :
+                            item.description
+                            }
+                            </p>
                         </div>
 
                         <div className='modal-bottom'>
                             <a href={item.link}>{item.link ? 'Ver en Amazon' : ''}</a>
-                            <button onClick={handleClose}>Cerrar</button>
+
+                            <button onClick={handleAction === 'edit' ? saveChanges : handleClose}>
+                                {handleAction === 'edit' ? 'Guardar cambios' : 'Cerrar'}
+                            </button>
                         </div>
                         
                     </div>

@@ -23,9 +23,22 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import UserSecurity from "./components/UserSecurity/UserSecurity";
 import Users from "./components/Users/Users";
 import EditAccount from "./components/EditAccount/EditAccount";
+import PasswordUpdate from "./components/PasswordUpdate/PasswordUpdate";
 
 function App() {
+
+  if (process.env.NODE_ENV === 'production') {
+    console.log("This is the production environment!");
+  } else {
+    console.log("This is the development environment!");
+  }
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+  console.log("API URL:", apiUrl);
+
   return (
+
+
     <AuthProvider>
       <Router>
         <div className="App">
@@ -56,6 +69,7 @@ function App() {
                 <Route path="/security" element={<UserSecurity/>} />
                 <Route path="/users" element={<Users/>} />
                 <Route path="/editAccount" element={<EditAccount/>} />
+                <Route path="/PasswordUpdate" element={<PasswordUpdate/>} />
               </Routes>
             </div>
           </div>

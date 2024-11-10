@@ -29,6 +29,38 @@
   display: flex;
 }
 
+.global-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  background-color: #319F44;
+  border: #43AB54;
+  color: #fff;
+  font-family: montserrat-regular;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.global-button-disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  background-color: lightgray;
+  border: #43AB54;
+  color: gray;
+  font-family: montserrat-regular;
+  font-size: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}
+
+.global-button:hover {
+  background-color: #257d34;
+}
+
 @media (max-width:768px){
   .container {
     padding:2rem 2rem ;

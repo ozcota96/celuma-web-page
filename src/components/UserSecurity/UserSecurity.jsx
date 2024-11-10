@@ -15,7 +15,7 @@ const UserSecurity = () => {
 
         {
             option: 'Cambiar contraseña',
-            link: '/Security',
+            link: '/PasswordUpdate',
         },
     ];
 
