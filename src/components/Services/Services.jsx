@@ -31,7 +31,7 @@ export const getUser = async (user_id) => {
         sessionStorage.setItem('stored_lastname' , response.data.lastName);
         return response;
     } catch (error) {
-        console.error('Error al recuperar usuarios: ' + error.response);
+        console.error('Error al recuperar usuario: ' + error.response);
         return false;
     }
 }
@@ -111,7 +111,8 @@ export const userUpdate = async (name, lastname, userId, email) => {
 
     const data = {
         lastName: lastname,
-        firstName: name
+        firstName: name,
+        email: email
     }
 
     try {
