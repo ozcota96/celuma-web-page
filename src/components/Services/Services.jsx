@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { AuthContext } from '../AuthContext/AuthContext';
+const apiUrl = process.env.REACT_APP_API_URL;
 
+    // Users
 export const getUsers = async () => {
 
-    const url = 'http://localhost:8090/celuma-webapi/api/users/all'
+    const url = `${apiUrl}/users/all`;
     const token = localStorage.getItem('user_token');
 
     try {
@@ -19,7 +21,7 @@ export const getUsers = async () => {
 }
 
 export const getUser = async (user_id) => {
-    const url = 'http://localhost:8090/celuma-webapi/api/users/'+ user_id + '/user';
+    const url =`${apiUrl}/users` + user_id + '/user';
     const token = localStorage.getItem('user_token');
 
     try {
@@ -43,7 +45,7 @@ export const serviceSignIn = async (username, password) => {
     };
 
     try {
-        const response = await axios.post('http://localhost:8090/celuma-webapi/api/users/login', data);
+        const response = await axios.post(`${apiUrl}/users/login`, data);
         sessionStorage.setItem('stored_username' , response.data.username);
         sessionStorage.setItem('stored_name' , response.data.firstName);
         sessionStorage.setItem('stored_lastname' , response.data.lastName);
@@ -59,7 +61,7 @@ export const serviceSignIn = async (username, password) => {
 
 }
 
-export const serviceSignUp = async (username, name, lastname, email, password) => {
+export const serviceSignUp = async (username, name, lastname, email, password) => { 
 
     const signUpData = {
         firstName: name,
@@ -70,7 +72,7 @@ export const serviceSignUp = async (username, name, lastname, email, password) =
     }
 
     try {
-        const response = await axios.post('http://localhost:8090/celuma-webapi/api/users/register', signUpData)
+        const response = await axios.post(`${apiUrl}/users/register`, signUpData)
         sessionStorage.setItem('stored_username' , response.data.username);
         return response;
     } catch (error) {
@@ -85,7 +87,7 @@ export const serviceSignUp = async (username, name, lastname, email, password) =
 export const userDelete = async (user_id) => {
 
 
-    const url = 'http://localhost:8090/celuma-webapi/api/users/'+ user_id + '/delete';
+    const url = `${apiUrl}/users/${user_id}/delete`;
     const token = localStorage.getItem('user_token');
 
     
@@ -103,7 +105,7 @@ export const userDelete = async (user_id) => {
 
 export const userUpdate = async (name, lastname, userId, email) => {
 
-    const url = 'http://localhost:8090/celuma-webapi/api/users/' + userId + '/update';
+    const url = `${apiUrl}/users/${userId}/update`;
     const token = localStorage.getItem('user_token');
 
     const data = {
@@ -124,3 +126,20 @@ export const userUpdate = async (name, lastname, userId, email) => {
     }
 
 };
+
+    // Products
+export const getProducts = async () => {
+
+    const url = `${apiUrl}/products/all`;
+    const token = localStorage.getItem('user_token');
+
+    try {
+        const response = await axios.get(url, {
+            headers: {Authorization: `Bearer ${token}`}
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error al recuperar productos: ' + error.response);
+        return false;
+    }
+}

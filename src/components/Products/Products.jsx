@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Products.css';
-import { best_sellers, cabello, otros, skincare} from "../../products_data";
 import ProductCard from "../ProductCard/ProductCard";
 import Slider from "react-slick";
 import { useRef } from 'react';
+import { getProducts } from "../Services/Services";
 
 const Products = () => {
 
@@ -43,44 +43,63 @@ const Products = () => {
             }
         ]
     };
+
+    const [products, setProducts] = useState([]);
+    const [skincareProd, setSkincareProd] = useState([]);
+    const [hair, setHairProd] = useState([]);
+    const [otherProd, setOtherProd] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const products_data = await getProducts();
+                console.log("Fetched Products:", products_data);
+                setProducts(products_data);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+    useEffect(() => {
+        setSkincareProd(products.filter(prod => prod.categoryId === 1));
+        setHairProd(products.filter(prod => prod.categoryId === 2));
+        setOtherProd(products.filter(prod => prod.categoryId === 3));
+    }, [products]);
+
     return(
             <div className="products-main">
 
-                <div className="products-section">
-                    {best_sellers.map((item, index) =>(
-                        <div className="products-productcard">
-                            <h5>#{index+1} más vendido</h5>
-                            <ProductCard item={item}/>
-                        </div>
-                    ))}
-                </div>
-
                 <h5>Skincare</h5>
                 <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                    {skincare.map((item) => (
-                            <div className="products-productcard">
-                                <ProductCard item={item}/>
+                    {skincareProd.map((prod, index) => (
+                            <div key={index} className="products-productcard">
+                                <ProductCard item={prod}/>
+                            </div>
+                        ))}
+                </Slider>
+                
+                <h5>Cabello</h5>
+                <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
+                    {hair.map((prod, index) => (
+                            <div key={index} className="products-productcard">
+                                <ProductCard item={prod}/>
                             </div>
                         ))}
                 </Slider>
 
-                <h5>Cabello</h5>
-                <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                {cabello.map((item) => (
-                        <div className="products-productcard">
-                            <ProductCard item={item}/>
-                        </div>
-                    ))}
-                </Slider>
-
                 <h5>Otros</h5>
                 <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                {otros.map((item) => (
-                        <div className="products-productcard">
-                            <ProductCard item={item}/>
-                        </div>
-                    ))}
+                    {otherProd.map((prod, index) => (
+                            <div key={index} className="products-productcard">
+                                <ProductCard item={prod}/>
+                            </div>
+                        ))}
                 </Slider>
+
+
 
             </div>
 

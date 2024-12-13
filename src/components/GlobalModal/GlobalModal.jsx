@@ -38,7 +38,7 @@ const GlobalModal = ({children, option, action, show, handleClose}) => {
                 </div>
             </Portal>
         )
-    )
-}
+    );
+};
 
 export default GlobalModal;
