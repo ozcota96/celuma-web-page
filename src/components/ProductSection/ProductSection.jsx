@@ -47,6 +47,7 @@ const ProductSection = ({item}) => {
 
     return ( 
         <div className="productsection-wrapper">
+
             <h5>{item.name}</h5>
 
             <div className="productsection-container">

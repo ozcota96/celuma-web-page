@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Modal.css';
 import Portal from '../Portal/Portal.jsx';
 import Slider from 'react-slick';
 
-const Modal = ({ show, handleClose, item}) => {
+const Modal = ({children, show, handleClose, item, mode}) => {
 
     const sliderRef = useRef();
 
@@ -23,24 +23,22 @@ const Modal = ({ show, handleClose, item}) => {
                 <div className="modal" onClick={handleClose}>
                     <div className="modal-main" onClick={(e) => e.stopPropagation()}> 
                         <img className='modal-close' src="./images/cross.svg" alt="" onClick={handleClose}/>
-                        <div className='modal-content'>
-                            <h1>{item.title}</h1>
 
-                            <Slider ref={sliderRef} {...settings} className="slider modal-slider">
-                                {item.images.map((image) => (
-                                    <div className="modal-image-container">
-                                        <img src={image } alt="" className='modal-image'/>
-                                    </div>
-                                ))}
-                            </Slider>
-
-                            
-                            <p>{item.description}</p>
+                        {mode == 'show' ?
+                        <div>
+                            <h5>{item.name}</h5>
+                            <p>{item.content}</p>
                         </div>
+                        :
+                        <div className='edit-modal'>
+                            <textarea name="" id="" className='edit-name' >{item.name}</textarea>
+                            <textarea name="" id="" className='edit-content'>{item.content}</textarea>
+                        </div>
+                        }
 
-                        <div className='modal-bottom'>
-                            <a href={item.link}>{item.link ? 'Ver en Amazon' : ''}</a>
-                            <button onClick={handleClose}>Cerrar</button>
+                        <div className='modal-buttons'>
+                            <button className='cancel-button' onClick={handleClose}>Descartar</button>
+                            <button className='save-button'>Guardar cambios</button>
                         </div>
                         
                     </div>

@@ -25,6 +25,11 @@ import Users from "./components/Users/Users";
 import EditAccount from "./components/EditAccount/EditAccount";
 
 function App() {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+  console.log('API URL:', apiUrl);
+  console.log('Mode:', process.env.REACT_APP_MODE);
+
   return (
     <AuthProvider>
       <Router>
