@@ -17,7 +17,7 @@ const ProductCard = ({ item }) => {
         <div className="productcard-wrapper">
             <div className='productcard-container'>
                 
-                <h1>{item.title}</h1>
+                <h1>{item.name}</h1>
 
                 <button className="info-button" onClick={() => toggleModal('show')}>Leer más...</button>
                 {userType == 3 ? ''

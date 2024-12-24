@@ -83,7 +83,7 @@
 }
 
 .edit-modal {
-    display: block;
+    display: inline;
 }
 
 .edit-name {
@@ -126,6 +126,20 @@
 
 .save-button:hover {
     background-color: #745538;
+}
+
+.id {
+    display: flex;
+    margin-right: auto;
+    justify-content: flex-end;
+    font-family: montserrat-regular;
+    font-size: 1.05rem;
+    padding-top: 0.5rem;
+}
+
+.id > input {
+    width: 2rem;
+    margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
