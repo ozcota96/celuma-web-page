@@ -31,6 +31,11 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                         </div>
                         :
                         <div className='edit-modal'>
+                            <div className='id'>
+                                <label htmlFor="">Id:</label>
+                                <input type="text" value={item.productId} disabled />
+                            </div>
+
                             <textarea name="" id="" className='edit-name' >{item.name}</textarea>
                             <textarea name="" id="" className='edit-content'>{item.content}</textarea>
                         </div>
