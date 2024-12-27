@@ -6,25 +6,26 @@ const apiUrl = process.env.REACT_APP_API_URL;
     // Account
     export const serviceSignIn = async (username, password) => {
 
-    const data = {
-        username:username,
-        password: password
-    };
+        const data = {
+            username:username,
+            password: password
+        };
+        const url = `${apiUrl}/users/login`;
 
-    try {
-        const response = await axios.post(`${apiUrl}/users/login`, data);
-        sessionStorage.setItem('stored_username' , response.data.username);
-        sessionStorage.setItem('stored_name' , response.data.firstName);
-        sessionStorage.setItem('stored_lastname' , response.data.lastName);
-        sessionStorage.setItem('stored_email' , response.data.email);
-        sessionStorage.setItem('user_type', response.data.userType)
-        localStorage.setItem('user_token' , response.data.jwt);
-        localStorage.setItem('user_id', response.data.id)
-        return response;
-    } catch (error) {
-        console.error("Hubo un error recuperando la información: ", error);
-        throw error;
-    }
+        try {
+            const response = await axios.post(`${apiUrl}/users/login`, data);
+            sessionStorage.setItem('stored_username' , response.data.username);
+            sessionStorage.setItem('stored_name' , response.data.firstName);
+            sessionStorage.setItem('stored_lastname' , response.data.lastName);
+            sessionStorage.setItem('stored_email' , response.data.email);
+            sessionStorage.setItem('user_type', response.data.userType)
+            localStorage.setItem('user_token' , response.data.jwt);
+            localStorage.setItem('user_id', response.data.id)
+            return response;
+        } catch (error) {
+            console.error("Hubo un error recuperando la información: ", error);
+            throw error;
+        }
     };
 
     export const serviceSignUp = async (username, name, lastname, email, password) => { 
@@ -35,10 +36,12 @@ const apiUrl = process.env.REACT_APP_API_URL;
             username: username,
             email: email,
             password: password,
-        }
+        };
+
+        const url = `${apiUrl}/users/register`;
 
         try {
-            const response = await axios.post(`${apiUrl}/users/register`, signUpData)
+            const response = await axios.post(url, signUpData)
             sessionStorage.setItem('stored_username' , response.data.username);
             return response;
         } catch (error) {
@@ -50,6 +53,28 @@ const apiUrl = process.env.REACT_APP_API_URL;
         }
     };
 
+    export const updatePassword = async (user_id, currentPassword, newPassword) => {
+
+        const url = `${apiUrl}/users/${user_id}/change-password`;
+        const token = localStorage.getItem('user_token');
+
+        const data = {
+            userId: user_id,
+            currentPassword: currentPassword,
+            newPassword: newPassword
+        }
+
+        try {
+            const response = axios.patch(url, data, {
+                headers: { Authorization: `Bearer ${token}`}
+            })
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+
+    };
 
     // Users
     export const getUsers = async () => {

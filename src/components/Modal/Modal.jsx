@@ -1,11 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Modal.css';
 import Portal from '../Portal/Portal.jsx';
 import Slider from 'react-slick';
+import { updateProduct } from '../Services/Services.jsx';
 
 const Modal = ({children, show, handleClose, item, mode}) => {
 
     const sliderRef = useRef();
+    const user_type = sessionStorage.getItem("user_type");
+    const [newTitle, setNewTitle] = useState(item.title);
+    const [newContent, setNewContent] = useState(item.description);
+
+    const saveChanges = async () => {
+        const update = await updateProduct(newTitle, newContent);
+    }
 
     const settings = {
         dots: true,
@@ -16,6 +24,14 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         autoplay: true,
         autoplaySpeed: 2000
     };
+
+    const handleTitleChange = (e) => {
+        setNewTitle(e.target.value);
+    }
+
+    const handleContentChange = (e) => {
+        setNewContent(e.target.value);
+    }
 
     return (
         show && (

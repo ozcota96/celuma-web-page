@@ -23,6 +23,7 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import UserSecurity from "./components/UserSecurity/UserSecurity";
 import Users from "./components/Users/Users";
 import EditAccount from "./components/EditAccount/EditAccount";
+import PasswordUpdate from "./components/PasswordUpdate/PasswordUpdate";
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
   console.log('Mode:', process.env.REACT_APP_MODE);
 
   return (
+
+
     <AuthProvider>
       <Router>
         <div className="App">
@@ -61,6 +64,7 @@ function App() {
                 <Route path="/security" element={<UserSecurity/>} />
                 <Route path="/users" element={<Users/>} />
                 <Route path="/editAccount" element={<EditAccount/>} />
+                <Route path="/PasswordUpdate" element={<PasswordUpdate/>} />
               </Routes>
             </div>
           </div>
