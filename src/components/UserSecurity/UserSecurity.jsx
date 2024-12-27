@@ -49,8 +49,9 @@ const UserSecurity = () => {
                 <p>Eliminar cuenta</p>
             </div>
         </div>
-    <GlobalModal message={<p>¿Estás seguro que quieres eliminar tu cuenta?</p>} option={<p>Eliminar</p>} action={getUser_id} show={activeModal} handleClose={toggleGlobalModal} />
-    </>
+        
+        <GlobalModal message={<p>¿Estás seguro que quieres eliminar tu cuenta?</p>} option={<p>Eliminar</p>} action={getUser_id} show={activeModal} handleClose={toggleGlobalModal} />
+        </>
     )
 
 }

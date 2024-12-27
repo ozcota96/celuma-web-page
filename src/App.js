@@ -27,14 +27,9 @@ import PasswordUpdate from "./components/PasswordUpdate/PasswordUpdate";
 
 function App() {
 
-  if (process.env.NODE_ENV === 'production') {
-    console.log("This is the production environment!");
-  } else {
-    console.log("This is the development environment!");
-  }
-
   const apiUrl = process.env.REACT_APP_API_URL;
-  console.log("API URL:", apiUrl);
+  console.log('API URL:', apiUrl);
+  console.log('Mode:', process.env.REACT_APP_MODE);
 
   return (
 
