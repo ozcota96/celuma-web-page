@@ -164,7 +164,6 @@ const apiUrl = process.env.REACT_APP_API_URL;
             const response = await axios.get(url, {
                 headers: {Authorization: `Bearer ${token}`}
             });
-            console.log(response)
             return response.data;
         } catch (error) {
             console.error('Error al recuperar productos: ' + error.response);
@@ -172,20 +171,28 @@ const apiUrl = process.env.REACT_APP_API_URL;
         }
     };
 
-    export const updateProduct = async (newName, newDescription) => {
+    export const updateProduct = async (newName, newDescription, id, selectedCategory) => {
 
-        const url = `${apiUrl}/prducts/`;
+        const url = `${apiUrl}/products/update`;
         const token = localStorage.getItem('user_token');
 
+        console.log(newName);
+        console.log(newDescription);
+        console.log(id);
+        console.log(selectedCategory);
+    
         const data = {
             name: newName,
-            description: newDescription
+            content: newDescription,
+            productId: id,
+            categoryId: selectedCategory
         }
 
         try {
             const response = axios.patch(url, data, {
                 headers: {Authorization: `Bearer ${token}`}
             });
+            window.location.href = '/products';
         } catch (error) {
             
         }

@@ -53,7 +53,6 @@ const Products = () => {
         const fetchProducts = async () => {
             try {
                 const products_data = await getProducts();
-                console.log("Fetched Products:", products_data);
                 setProducts(products_data);
             } catch (error) {
                 console.error("Error fetching products:", error);
