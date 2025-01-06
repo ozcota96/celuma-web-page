@@ -33,7 +33,6 @@ const PasswordUpdate = () => {
 
     const handleNewPasswordChange = (e) => {
         setNewPassword(e.target.value);
-        console.log(passwordValidation)
     };
 
     const handleConfirmation = (e) => {

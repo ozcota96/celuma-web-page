@@ -28,8 +28,8 @@ import PasswordUpdate from "./components/PasswordUpdate/PasswordUpdate";
 function App() {
 
   const apiUrl = process.env.REACT_APP_API_URL;
-  console.log('API URL:', apiUrl);
-  console.log('Mode:', process.env.REACT_APP_MODE);
+  //console.log('API URL:', apiUrl);
+  //console.log('Mode:', process.env.REACT_APP_MODE);
 
   return (
 
