@@ -95,3 +95,32 @@
     transform: scale(1.01);
     background-color: #4f3925;
 }
+
+.save-button {
+    background-color: #319F44;
+    color: #fff;
+    font-family: montserrat-regular;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.save-button:hover {
+    background-color: #745538;
+}
+
+.cancel-button{
+    border: 1px solid red;
+    color: red;
+    font-family: montserrat-regular;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.cancel-button:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgb(255, 73, 73);
+}

@@ -175,11 +175,6 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
         const url = `${apiUrl}/products/update`;
         const token = localStorage.getItem('user_token');
-
-        console.log(newName);
-        console.log(newDescription);
-        console.log(id);
-        console.log(selectedCategory);
     
         const data = {
             name: newName,
@@ -194,7 +189,30 @@ const apiUrl = process.env.REACT_APP_API_URL;
             });
             window.location.href = '/products';
         } catch (error) {
-            
+            console.log(error);
         }
 
+    };
+
+    export const newProduct = async (name, description, category) => {
+
+        const url = `${apiUrl}/products/new-product`;
+        const token = localStorage.getItem('user_token');
+        
+        const data = {
+            name: name,
+            content: description,
+            category: category
+        }
+
+        try {
+            const response = await axios.post(url, data, {
+                headers: {Authorization: `Bearer ${token}`}
+            });
+            return "Response";
+        } catch (error) {
+            throw error;
+            
+        }
+        
     };
