@@ -196,8 +196,8 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
     export const newProduct = async (name, description, category) => {
 
-        const url = `${apiUrl}/products/new-product`;
-        const token = localStorage.getItem('user_token');
+        const url = `${apiUrl}/products`;
+        const token = localStorage.getItem('user_token');        
         
         const data = {
             name: name,

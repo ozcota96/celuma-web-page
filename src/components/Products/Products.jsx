@@ -103,8 +103,7 @@ const Products = () => {
         
         try {
             const product = await newProduct( newProdName, newProdContent, newProdCategory);
-            console.log(product);
-            //window.location.href="/products"
+            window.location.href="/products"
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
