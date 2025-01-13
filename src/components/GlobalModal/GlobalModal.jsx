@@ -30,7 +30,7 @@ const GlobalModal = ({children, option, action, show, handleClose}) => {
             <Portal>
                 <div className="global-modal-wrapper">
                     <div className="global-modal-container">
-                        <img src="./images/cross.svg" className="global-modal-close" alt="" onClick={handleClose}/>
+                        
 
                         {children}
 

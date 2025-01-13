@@ -107,26 +107,6 @@
     padding-top: 1rem;
 }
 
-.cancel-button{
-    border: 1px solid red;
-    color: red;
-    margin-right: 0.5rem;
-}
-
-.cancel-button:hover {
-    border: 1px solid #fff;
-    color: #fff;
-    background-color: rgb(255, 73, 73);
-}
-
-.save-button {
-    background-color: #3D2916;
-    color: #fff;
-}
-
-.save-button:hover {
-    background-color: #745538;
-}
 
 .id {
     display: flex;
