@@ -34,6 +34,10 @@ const Navbar = () => {
         logout();
     };
 
+    const handleClose = () => {
+        setActiveModal(!activeModal)
+    }
+
     return(
         <>
         <MobileNavbar isOpen={openMenu} toggleMenu={toggleMenu}/>
@@ -137,6 +141,7 @@ const Navbar = () => {
                 <img src="./images/logout-red.svg" alt="" />
                 <p>¿Estás seguro que deseas salir?</p>
                 <button onClick={handleLogout}>Salir</button>
+                <button onClick={handleClose}> Cancelar</button>
             </div>
 
         </GlobalModal>

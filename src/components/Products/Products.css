@@ -37,6 +37,64 @@
     color: #319F44 !important;
 }
 
+.products-add {
+    display: grid;
+}
+
+.products-add > img {
+    height: 2rem;
+    margin-left: auto;
+}
+
+.products-add > img:hover{
+    transform: scale(1.2);
+    transition: transform ease-in-out 0.2s;
+}
+
+.new-product-container {
+    display: grid;
+    justify-content: center;
+}
+
+.new-product-container > div > p {
+    justify-self: center;
+    font-weight: 500;
+}
+
+.new-product-container > form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.new-product-container > form > input {
+        font-family: montserrat-regular;
+    font-size: 1rem;
+}
+
+.new-product-container > form > textarea {
+    resize: none;
+    font-family: montserrat-regular;
+    font-size: 1rem;
+}
+
+.new-product-buttons {
+    margin-left: auto;
+}
+
+.new-product-warning-active {
+    border: 1px red solid;
+    border-radius: 0.5rem;
+    background-color: lightpink;
+    justify-self: center;
+}
+
+.new-product-warning-active > p {
+    margin: 0.5rem;
+    font-size: 0.9rem;
+}
+
+
 @media screen and (max-width:426px) {
     .products-section {
         display: grid;

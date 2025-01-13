@@ -50,6 +50,10 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                         <div>
                             <h5>{item.name}</h5>
                             <p>{item.content}</p>
+
+                            <div className='modal-buttons'>
+                                <button className='cancel-button' onClick={handleClose}>Cerrar</button>
+                            </div>
                         </div>
                         :
                         <div className='edit-modal'>
@@ -98,13 +102,14 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                                     <label htmlFor="">Otros</label>
                                 </form>
                             </div>
+
+                            <div className='modal-buttons'>
+                                <button className='cancel-button' onClick={handleClose}>Cerrar</button>
+                                <button className='save-button' onClick={() => saveChanges()} >Guardar cambios</button>
+                            </div>
                         </div>
                         }
 
-                        <div className='modal-buttons'>
-                            <button className='cancel-button' onClick={handleClose}>Descartar</button>
-                            <button className='save-button' onClick={() => saveChanges()} >Guardar cambios</button>
-                        </div>
                         
                     </div>
                 </div>
