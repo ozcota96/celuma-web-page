@@ -11,6 +11,7 @@ const Products = () => {
 
     const sliderRef = useRef();
     const [activeModal, setActiveModal] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const productsSlidersettings = {
         dots: true,
@@ -115,15 +116,23 @@ const Products = () => {
         }
     }
 
-    
+    useEffect(() => {
+        const user_type = sessionStorage.getItem('user_type');
+        setIsAdmin(user_type === "1");
+    }, []);
+
     
     return(
         <>
 
             <div className="products-main">
+                {isAdmin == true ?
                 <div className="products-add" onClick={toggleGlobalModal}>
                     <img src="/images/add-button.svg" alt=""/>
                 </div>
+                :
+                ""
+                }
 
                 <h5>Skincare</h5>
                 <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
@@ -209,6 +218,7 @@ const Products = () => {
                                     <button className="cancel-button" onClick={handleClose}>Cancelar</button>
                                     <button className="save-button" type="submit" >Guardar productos</button>
                             </div>
+
 
                         </form>
 

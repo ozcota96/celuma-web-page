@@ -216,3 +216,18 @@ const apiUrl = process.env.REACT_APP_API_URL;
         }
         
     };
+
+    export const deleteProduct = async(productId) => {
+        
+        const url = `${apiUrl}/products/delete/` + productId;
+        const token = localStorage.getItem('user_token');
+        
+        try {
+            const product = await axios.delete(url, {
+                headers: {Authorization: `Bearer ${token}`}
+            })
+        } catch (error) {
+            throw error;
+            
+        }
+    };

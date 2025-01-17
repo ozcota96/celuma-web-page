@@ -97,22 +97,25 @@
 }
 
 .save-button {
-    background-color: #319F44;
-    color: #fff;
+    background-color: #257d34;
+    color: white;
     font-family: montserrat-regular;
     font-size: 0.9rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin-left: 0.5rem;
 }
 
 .save-button:hover {
-    background-color: #745538;
+    transform: scale();
+    scale: 1.02;
+    background-color: #319F44;
 }
 
 .cancel-button{
-    border: 1px solid red;
-    color: red;
+    border: 1px solid #3D2916;
+    background-color: #3D2916;
+    color: #fff;
     font-family: montserrat-regular;
     font-size: 0.9rem;
     padding: 0.5rem;
@@ -120,7 +123,8 @@
 }
 
 .cancel-button:hover {
-    border: 1px solid #fff;
     color: #fff;
-    background-color: rgb(255, 73, 73);
+    background-color:#745538;
+    transform: scale();
+    scale: 1.02;
 }
