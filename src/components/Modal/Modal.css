@@ -41,13 +41,15 @@
 
 .modal-close {
     height: 2rem;
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.modal-close:hover{
+    transform:scale();
+    scale: 1.05;
 }
 
 .modal-content{
@@ -107,7 +109,16 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-buttons > p {
+    position: absolute;
+}
+
+.button-hide {
+    visibility: hidden;
 }
 
 .id {
@@ -222,6 +233,10 @@
     border-color: black;
     transform: scale();
     scale: 1.02;
+}
+
+.delete-error  {
+    margin: 0.5rem auto;
 }
 
 

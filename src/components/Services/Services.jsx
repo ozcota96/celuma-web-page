@@ -223,7 +223,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
         const token = localStorage.getItem('user_token');
         
         try {
-            const product = axios.delete(url, {
+            const product = await axios.delete(url, {
                 headers: {Authorization: `Bearer ${token}`}
             })
         } catch (error) {

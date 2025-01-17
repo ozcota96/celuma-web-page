@@ -14,6 +14,7 @@ const Modal = ({children, show, handleClose, item, mode}) => {
     const [selectedCategory, setSelectedCategory] = useState(item.categoryId);
     const [toDeleteProduct, setToDeleteProduct] = useState();
     const [isActive, setIsActive] = useState(false);
+    const [deleteError, setDeleteError] = useState(true);
 
     const settings = {
         dots: true,
@@ -45,13 +46,18 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         setIsActive(!isActive);
     }
 
+    const handleDeleteModal = () => {
+        setIsActive(!isActive);
+        setDeleteError(false);
+    };
+
     const handleDeleteProduct = async (productId) => {
 
         try {
             await deleteProduct(productId);
             window.location.href="/products";
         } catch (error) {
-            console.log(error);
+            setDeleteError(true);
         }
         
     };
@@ -146,13 +152,17 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                 </div>
 
                 <GlobalModal show={isActive}>
+                
                     <div className='delete-product-modal'>
+                        <img src="/images/arrow-back.svg" alt="" className='modal-close' onClick={() => handleDeleteModal()}/>
                         <img className='warning' src="/images/warning-color.svg" alt="" />
                         <p>¿Estás seguro que deseas eliminar este producto?</p>
 
                         <div className='modal-buttons'>
-                            <button  className='cancel-button' onClick={() => toggleGlobalModal()}>Cancelar</button>
-                            <button className='delete-button' onClick={() => handleDeleteProduct(item.productId)}>Eliminar</button>
+                            <button  className={deleteError ? 'button-hide' : 'cancel-button'} onClick={() => toggleGlobalModal()}>Cancelar</button>
+                            <button className={deleteError ? 'button-hide' : 'delete-button'} onClick={() => handleDeleteProduct(item.productId)}>Eliminar</button>
+
+                            <p className={deleteError ? "signin-warning-active" : "signin-warning"}>Hubo un error al intentar borrar el producto.</p>
                         </div>
 
                     </div>

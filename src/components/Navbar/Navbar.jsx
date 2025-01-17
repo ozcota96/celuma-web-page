@@ -4,7 +4,6 @@ import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "../../ReactFonts.css"
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
-import LogoutModal from "../LogoutModal/LogoutModal";
 import GlobalModal from "../GlobalModal/GlobalModal";
 
 const Navbar = () => {

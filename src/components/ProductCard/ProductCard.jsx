@@ -7,6 +7,7 @@ const ProductCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
     const [mode, setMode] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
+    const ADMIN = '1';
 
     const toggleModal = (mode) => {
         setShowModal(!showModal);
@@ -15,7 +16,7 @@ const ProductCard = ({ item }) => {
 
     useEffect(() => {
         const userType = sessionStorage.getItem('user_type');
-        setIsAdmin(userType === '1');
+        setIsAdmin(userType === ADMIN);
     }, []);
     
     return (
