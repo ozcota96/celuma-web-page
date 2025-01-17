@@ -7,10 +7,14 @@ const LogoutModal = ({show, handleClose}) => {
 
     const {isAuthenticated, logout} = useContext(AuthContext);
 
-    const handleLogout = () => {
-        logout();
+    const handleLogout = async () => {
+        console.log("Clearing session and local storage...");
+        sessionStorage.clear();
+        localStorage.clear();
+        console.log("Storage cleared!");
+        /*logout();
         handleClose();
-        window.location.href="/";
+        window.location.href = "/";*/
     };
 
     useEffect(() => {
@@ -33,7 +37,7 @@ const LogoutModal = ({show, handleClose}) => {
                         <img src="./images/cross.svg" className="logout-modal-close" alt="" onClick={handleClose}/>
                         <img src="./images/warning.svg" className="warning" alt="" />
                         <p>¿Estás seguro que deseas salir?</p>
-                        <button onClick={handleLogout}>
+                        <button>
                             Salir
                         </button>
                     </div>

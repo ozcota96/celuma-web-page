@@ -28,10 +28,11 @@ const Navbar = () => {
         setActiveModal(!activeModal);
     }
 
-    const handleLogout = () => {
+    const handleLogout = async () => {
         setActiveModal(!activeModal);
+        sessionStorage.clear();
         window.location.href= "/";
-        logout();
+        await logout();
     };
 
     const handleClose = () => {

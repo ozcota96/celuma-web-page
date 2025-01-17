@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Modal.css';
 import Portal from '../Portal/Portal.jsx';
 import Slider from 'react-slick';
-import { updateProduct } from '../Services/Services.jsx';
+import { deleteProduct, updateProduct } from '../Services/Services.jsx';
+import GlobalModal from '../GlobalModal/GlobalModal.jsx';
 
 const Modal = ({children, show, handleClose, item, mode}) => {
 
@@ -11,6 +12,8 @@ const Modal = ({children, show, handleClose, item, mode}) => {
     const [newTitle, setNewTitle] = useState(item.name);
     const [newContent, setNewContent] = useState(item.content);
     const [selectedCategory, setSelectedCategory] = useState(item.categoryId);
+    const [toDeleteProduct, setToDeleteProduct] = useState();
+    const [isActive, setIsActive] = useState(false);
 
     const settings = {
         dots: true,
@@ -38,10 +41,26 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         updateProduct(newTitle, newContent, item.productId, selectedCategory);
     };
 
+    const toggleGlobalModal = () => {
+        setIsActive(!isActive);
+    }
+
+    const handleDeleteProduct = async (productId) => {
+
+        try {
+            await deleteProduct(productId);
+            window.location.href="/products";
+        } catch (error) {
+            console.log(error);
+        }
+        
+    };
+
 
     return (
         show && (
             <Portal>
+                <>
                 <div className="modal" onClick={handleClose}>
                     <div className="modal-main" onClick={(e) => e.stopPropagation()}> 
                         <img className='modal-close' src="./images/cross.svg" alt="" onClick={handleClose}/>
@@ -104,8 +123,20 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                             </div>
 
                             <div className='modal-buttons'>
-                                <button className='cancel-button' onClick={handleClose}>Cerrar</button>
+                                <button className='cancel-button' onClick={handleClose}>Cancelar</button>
                                 <button className='save-button' onClick={() => saveChanges()} >Guardar cambios</button>
+                            </div>
+                            
+                            <div className='delete-product'>
+
+                                <div className="line-container">
+                                    <span className="line"></span>
+                                    <h4>Eliminar producto</h4>
+                                    <span className="line"></span>
+                                </div>
+                                
+                                <p>¡Cuidado, una vez eliminado no hay vuelta atrás!</p>
+                                <button onClick={toggleGlobalModal}>Eliminar producto</button>
                             </div>
                         </div>
                         }
@@ -113,6 +144,21 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                         
                     </div>
                 </div>
+
+                <GlobalModal show={isActive}>
+                    <div className='delete-product-modal'>
+                        <img className='warning' src="/images/warning-color.svg" alt="" />
+                        <p>¿Estás seguro que deseas eliminar este producto?</p>
+
+                        <div className='modal-buttons'>
+                            <button  className='cancel-button' onClick={() => toggleGlobalModal()}>Cancelar</button>
+                            <button className='delete-button' onClick={() => handleDeleteProduct(item.productId)}>Eliminar</button>
+                        </div>
+
+                    </div>
+                </GlobalModal>
+                </>
+
             </Portal>
         )
     );
