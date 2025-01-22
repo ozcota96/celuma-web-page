@@ -56,16 +56,18 @@ const EditAccount = () => {
 
     return(
         <div className="edit-acount-container">
+            <img src="/images/arrow-back.svg" alt="" className="modal-close" onClick={() => window.location.href="/profile"}/>
+            <p>Editar cuenta</p>
             <form className="edit-account-formulario" >
-                <label for="name">Nombre:</label>
+                <label htmlFor="name">Nombre:</label>
                 <br />
                 <input type="text" id="name" value={name} onChange={handleNameChange}/>
                 <br />
-                <label for="lastname">Apellido:</label>
+                <label htmlFor="lastname">Apellido:</label>
                 <br />
                 <input type="text" id="lastname" value={lastname} onChange={handleLastnameChange}/>
                 <br />
-                <label for="lastname">Correo electrónico:</label>
+                <label htmlFor="lastname">Correo electrónico:</label>
                 <br />
                 <input type="text" id="email" value={email} onChange={handleEmailChange}/>
                 <br />

@@ -8,19 +8,19 @@ const Contact = () => {
                 <p>Contáctanos</p>
 
                 <form className="formulario">
-                    <label for="name">Nombre:</label>
+                    <label htmlFor="name">Nombre:</label>
                     <br />
                     <input type="text" id="name" name="name"/>
                     <br />
-                    <label for="lastname">Apellido:</label>
+                    <label htmlFor="lastname">Apellido:</label>
                     <br />
                     <input type="text" id="lastname" name="lastname"/>
                     <br />
-                    <label for="mail">Correo Electrónico:</label>
+                    <label htmlFor="mail">Correo Electrónico:</label>
                     <br />
                     <input type="text" id="mail" name="mail"/>
                     <br />
-                    <label for="phone">Teléfono:</label>
+                    <label htmlFor="phone">Teléfono:</label>
                     <br />
                     <input type="text" id="phone" name="phone"/>
                 </form>

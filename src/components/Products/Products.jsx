@@ -60,6 +60,7 @@ const Products = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
+
             try {
                 const products_data = await getProducts();
                 setProducts(products_data);

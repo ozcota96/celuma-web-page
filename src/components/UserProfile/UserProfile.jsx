@@ -45,7 +45,7 @@ const UserProfile = () => {
     };
 
     return(
-        <div  className="profile-container">
+        <div className="profile-container">
 
             <h1>Mi cuenta</h1>
             

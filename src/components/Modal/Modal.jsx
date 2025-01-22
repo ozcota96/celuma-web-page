@@ -14,7 +14,7 @@ const Modal = ({children, show, handleClose, item, mode}) => {
     const [selectedCategory, setSelectedCategory] = useState(item.categoryId);
     const [toDeleteProduct, setToDeleteProduct] = useState();
     const [isActive, setIsActive] = useState(false);
-    const [deleteError, setDeleteError] = useState(true);
+    const [deleteError, setDeleteError] = useState(false);
 
     const settings = {
         dots: true,
@@ -69,7 +69,7 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                 <>
                 <div className="modal" onClick={handleClose}>
                     <div className="modal-main" onClick={(e) => e.stopPropagation()}> 
-                        <img className='modal-close' src="./images/cross.svg" alt="" onClick={handleClose}/>
+                        <img className='modal-close' src="./images/arrow-back.svg" alt="" onClick={handleClose}/>
 
                         {mode == 'show' ?
                         <div>
@@ -98,33 +98,41 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                                     <span className="line"></span>
                                 </div>
 
-                                <form action="">
-                                    <input
-                                        type="checkbox"
-                                        name="category1"
-                                        id="category1"
-                                        value="1"
-                                        checked={selectedCategory === 1}
-                                        onChange={() => handleCategoryChange(1)}/>
-                                    <label htmlFor="">Skincare</label>
+                                <form action="" className='category-form'>
 
-                                    <input
-                                        type="checkbox"
-                                        name="category2" 
-                                        id="category2" 
-                                        value="2"
-                                        checked={selectedCategory === 2}
-                                        onChange={() => handleCategoryChange(2)}/>
-                                    <label htmlFor="">Shampoo</label>
+                                    <div className='category-item'>
+                                        <label htmlFor="">Skincare</label>
+                                        <input
+                                            type="checkbox"
+                                            name="category1"
+                                            id="category1"
+                                            value="1"
+                                            checked={selectedCategory === 1}
+                                            onChange={() => handleCategoryChange(1)}/>
+                                    </div>
 
-                                    <input 
+                                    <div className='category-item'>
+                                        <label htmlFor="">Otros</label>
+                                        <input
+                                            type="checkbox"
+                                            name="category2" 
+                                            id="category2" 
+                                            value="2"
+                                            checked={selectedCategory === 2}
+                                            onChange={() => handleCategoryChange(2)}/>
+                                    </div>
+                                    
+                                    <div className='category-item'>
+                                        <label htmlFor="">Shampoo</label>
+                                        <input 
                                         type="checkbox" 
                                         name="category3" 
                                         id="category3" 
                                         value="3"
                                         checked={selectedCategory === 3}
                                         onChange={() => handleCategoryChange(3)}/>
-                                    <label htmlFor="">Otros</label>
+                                    </div>
+                                    
                                 </form>
                             </div>
 
