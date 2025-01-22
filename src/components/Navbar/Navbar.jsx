@@ -30,6 +30,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         setActiveModal(!activeModal);
         sessionStorage.clear();
+        localStorage.clear();
         window.location.href= "/";
         await logout();
     };
@@ -137,11 +138,16 @@ const Navbar = () => {
         
         
         <GlobalModal show={activeModal} handleClose={() => setActiveModal(false)} option={"Salir"}>
-            <div className="modal-delete-user">
+            <div className="modal-logout-container">
                 <img src="./images/logout-red.svg" alt="" />
                 <p>¿Estás seguro que deseas salir?</p>
-                <button onClick={handleLogout}>Salir</button>
-                <button onClick={handleClose}> Cancelar</button>
+
+                <div className="modal-logout-buttons">
+                    <button className="cancel-button" onClick={handleClose}> Cancelar</button>
+                    <button className="save-button" onClick={handleLogout}>Salir</button>
+                    
+                </div>
+
             </div>
 
         </GlobalModal>

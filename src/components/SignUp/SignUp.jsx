@@ -105,23 +105,23 @@ const SignUp = () => {
             <p>Registro</p>
 
             <form className="signup-formulario" onSubmit={handleSubmit}>
-                <label for="username">Nombre de usuario:</label>
+                <label htmlFor="username">Nombre de usuario:</label>
                 <br />
                 <input type="text" id="username" name="username" onChange={handleUsernameChange} required/>
                 <br />
-                <label for="name">Nombre:</label>
+                <label htmlFor="name">Nombre:</label>
                 <br />
                 <input type="text" id="name" name="name" onChange={handleNameChange} required/>
                 <br />
-                <label for="lastname">Apellido</label>
+                <label htmlFor="lastname">Apellido</label>
                 <br />
                 <input type="text" id="lastname" name="lastname" onChange={handleLastNameChange} required/>
                 <br />
-                <label for="mail">Correo Electrónico:</label>
+                <label htmlFor="mail">Correo Electrónico:</label>
                 <br />
                 <input type="text" id="email" name="mail" onChange={handleMailChange} required/>
                 <br />
-                <label for="password">Contraseña:</label>
+                <label htmlFor="password">Contraseña:</label>
                 <br />
                 <input type="password" id="password" name="password" onChange={handlePasswordChange} onFocus={toggleRequirements} onBlur={toggleRequirements} required/>
                 <br />

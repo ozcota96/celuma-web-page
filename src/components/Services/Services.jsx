@@ -161,9 +161,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
         const token = localStorage.getItem('user_token');
 
         try {
-            const response = await axios.get(url, {
-                headers: {Authorization: `Bearer ${token}`}
-            });
+            const response = await axios.get(url);
             return response.data;
         } catch (error) {
             console.error('Error al recuperar productos: ' + error.response);
@@ -175,6 +173,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
         const url = `${apiUrl}/products/update`;
         const token = localStorage.getItem('user_token');
+        
     
         const data = {
             name: newName,

@@ -13,7 +13,7 @@
 }
 
 .profile-picture-container {
-
+    display: block;
 }
 
 .profile-picture-wrapper {
@@ -80,3 +80,31 @@
     color: #fff;
 }
 
+@media screen and (max-width:769px) {
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .personal-info {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .profile-picture-container {
+        margin-top: 5rem;
+    }
+
+    .info {
+        margin-left: 5%;
+    }
+
+    .profile-options{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 5rem;
+        width: 100%;
+    }
+}
