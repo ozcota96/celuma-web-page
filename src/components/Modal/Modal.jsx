@@ -9,9 +9,9 @@ const Modal = ({children, show, handleClose, item, mode}) => {
 
     const sliderRef = useRef();
     const user_type = sessionStorage.getItem("user_type");
-    const [newTitle, setNewTitle] = useState(item.name);
-    const [newContent, setNewContent] = useState(item.content);
-    const [selectedCategory, setSelectedCategory] = useState(item.categoryId);
+    const [newTitle, setNewTitle] = useState(null);
+    const [newContent, setNewContent] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const [toDeleteProduct, setToDeleteProduct] = useState();
     const [isActive, setIsActive] = useState(false);
     const [deleteError, setDeleteError] = useState(false);
@@ -62,6 +62,13 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         
     };
 
+    useEffect(() => {
+        if (item) {
+            setNewTitle(item.name || "");
+            setNewContent(item.content || "");
+            setSelectedCategory(item.categoryId || null);
+        }
+    }, [item]);
 
     return (
         show && (
@@ -160,7 +167,6 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                 </div>
 
                 <GlobalModal show={isActive}>
-                
                     <div className='delete-product-modal'>
                         <img src="/images/arrow-back.svg" alt="" className='modal-close' onClick={() => handleDeleteModal()}/>
                         <img className='warning' src="/images/warning-color.svg" alt="" />

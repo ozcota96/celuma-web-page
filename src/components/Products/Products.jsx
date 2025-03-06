@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { useRef } from 'react';
 import { getProducts, newProduct } from "../Services/Services";
 import GlobalModal from "../GlobalModal/GlobalModal";
+import Modal from "../Modal/Modal";
 
 
 const Products = () => {
@@ -12,6 +13,8 @@ const Products = () => {
     const sliderRef = useRef();
     const [activeModal, setActiveModal] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [list, setList] = useState(false);
+    const [modal, setModal] = useState(true)
 
     const productsSlidersettings = {
         dots: true,
@@ -57,6 +60,9 @@ const Products = () => {
     const [newProdContent, setNewProdContent] = useState('');
     const [newProdCategory, setNewProdCategory] = useState();
     const [errors, setErrors] = useState({});
+    const [showModal, setShowModal] = useState(false)
+    const [currentItem, setCurrentItem] = useState("");
+
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -117,6 +123,35 @@ const Products = () => {
         }
     }
 
+    const displayList = () => {
+        setList(!list);
+    };
+
+    const displayCategory = (categoryId) => {
+        switch (categoryId) {
+            case 1:
+                return 'Skincare'
+                break;
+            case 2:
+                return 'Shampoo'
+                break;
+            case 3:
+                return 'Otros'
+                break;
+            default:
+                break;
+        }
+    };
+
+    const toggleModal = (item) => {
+        setShowModal(!showModal);
+        setCurrentItem(item);
+    };
+
+    const handleModalClose = () => {
+        setShowModal(!showModal)
+    };
+
     useEffect(() => {
         const user_type = sessionStorage.getItem('user_type');
         setIsAdmin(user_type === "1");
@@ -128,40 +163,77 @@ const Products = () => {
 
             <div className="products-main">
                 {isAdmin == true ?
-                <div className="products-add" onClick={toggleGlobalModal}>
-                    <img src="/images/add-button.svg" alt=""/>
+                <div className="products-options">
+                    <div className="products-option" onClick={toggleGlobalModal}>
+                        <img src="/images/add-button.svg" alt=""/>
+                    </div>
+                    <div className="products-option">
+                        <img src={list == true ? "/images/grid.svg" : "/images/list.svg"} alt=""  onClick={displayList}/>
+                    </div>
                 </div>
                 :
                 ""
                 }
 
-                <h5>Skincare</h5>
-                <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                    {skincareProd.map((prod, index) => (
-                            <div key={index} className="products-productcard">
-                                <ProductCard item={prod}/>
-                            </div>
-                        ))}
-                </Slider>
+                {list == false ?
+                <div className="products-carousel">
+                    <h5>Skincare</h5>
+                    <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
+                        {skincareProd.map((prod, index) => (
+                                <div key={index} className="products-productcard">
+                                    <ProductCard item={prod}/>
+                                </div>
+                            ))}
+                    </Slider>
 
-                <h5>Cabello</h5>
-                <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                    {hair.map((prod, index) => (
-                            <div key={index} className="products-productcard">
-                                <ProductCard item={prod}/>
-                            </div>
-                        ))}
-                </Slider>
+                    <h5>Cabello</h5>
+                    <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
+                        {hair.map((prod, index) => (
+                                <div key={index} className="products-productcard">
+                                    <ProductCard item={prod}/>
+                                </div>
+                            ))}
+                    </Slider>
 
-                <h5>Otros</h5>
-                <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
-                    {otherProd.map((prod, index) => (
-                            <div key={index} className="products-productcard">
-                                <ProductCard item={prod}/>
-                            </div>
-                        ))}
-                </Slider>
+                    <h5>Otros</h5>
+                    <Slider ref={sliderRef} {...productsSlidersettings} className="slider products-section">
+                        {otherProd.map((prod, index) => (
+                                <div key={index} className="products-productcard">
+                                    <ProductCard item={prod}/>
+                                </div>
+                            ))}
+                    </Slider>
+                </div>
 
+                :
+
+                <div className="products-table-container">
+                    <table className="products-table">
+                        <tr>
+                            <td>Id</td>
+                            <td>Nombre</td>
+                            <td>Categoría</td>
+                            <td>Acciones</td>
+                        </tr>  
+
+                        {products.map((item, index) => {
+                            return(
+                                <tr key={index}>
+                                    <td className="products-edit-options">{item.productId}</td>
+                                    <td className="products-edit-options">{item.name}</td>
+                                    <td className="products-edit-options">{displayCategory(item.categoryId)}</td>
+                                    <td className="products-edit-options" id={item.id}>
+                                        <button className="edit-user"><img src="./images/edit.svg" alt="" onClick={() => toggleModal(item)}/></button>   
+                                    </td>
+                                </tr>
+                        )
+                    }
+                    )}
+                                            
+                    </table>
+
+                </div>
+                }
             </div>
 
             <GlobalModal option={"Salir"} show={activeModal} handleClose={() => setActiveModal(false)}>
@@ -233,7 +305,11 @@ const Products = () => {
 
             </GlobalModal>
 
+            <Modal show={showModal} item={currentItem} handleClose={handleModalClose}>
+                
+            </Modal>
 
+            
         </>
 
             

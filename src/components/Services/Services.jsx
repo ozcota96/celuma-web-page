@@ -45,11 +45,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
             sessionStorage.setItem('stored_username' , response.data.username);
             return response;
         } catch (error) {
-            if (error.response.data.includes('users.username_UNIQUE')) {
-                return "El nombre de usuario ya existe";
-            } else if (error.response.data.includes("users.email_UNIQUE"))
-                return "El correo electrónico ya está registrado";
-            return null;
+            throw error;
         }
     };
 

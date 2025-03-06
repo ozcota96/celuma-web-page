@@ -85,19 +85,21 @@ const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         try {
-            const response = await serviceSignUp(username, name, lastname, mail, password,);
-            setWarning(true);
-            setWarningMessage(response);
-
+            const response = await serviceSignUp(username, name, lastname, mail, password);
+    
             const loginResponse = await serviceSignIn(username, password);
-            login(response.data.token);
-            window.location.href= "/success";
+            login(loginResponse.data.token);
+            window.location.href = "/success";
         } catch (error) {
-            
+    
+            if (error.response.data.email.includes('Please provide a valid email address.')) {
+                setWarningMessage('Ingrese un correo válido');
+            }
+            setWarning(true);
         }
-    }
+    };
 
     return(
         <div className="signup-container">
