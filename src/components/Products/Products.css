@@ -3,7 +3,7 @@
     padding: 2rem 0;
 }
 
-.products-main > h5 {
+.products-carousel > h5 {
     font-family: montserrat-regular;
     background-color: #319F44;
     color: #fff;
@@ -37,16 +37,20 @@
     color: #319F44 !important;
 }
 
-.products-add {
+.products-options {
     display: grid;
 }
 
-.products-add > img {
+.products-option {
+    padding: 0 0.3rem;
+}
+
+.products-option > img {
     height: 2rem;
     margin-left: auto;
 }
 
-.products-add > img:hover{
+.products-option > img:hover{
     transform: scale(1.2);
     transition: transform ease-in-out 0.2s;
 }
@@ -93,6 +97,40 @@
 .new-product-warning-active > p {
     margin: 0.5rem;
     font-size: 0.9rem;
+}
+
+.products-options {
+    display: flex;
+    flex-direction:row-reverse;
+}
+
+.products-table-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.products-table {
+    font-family: montserrat-regular;
+    border-collapse: collapse;
+    padding: 0.3rem 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.products-table > tr > td {
+    border: 1px solid black;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+
+.products-edit-options > button:hover {
+    transform: scale(1.2);
+    transition: transform ease-in-out 0.2s;
 }
 
 

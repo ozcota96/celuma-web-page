@@ -55,7 +55,7 @@ const SignIn = () => {
             <div className="signin-options">
 
                 <a href=""><p>¿Olvidaste tu contraseña?</p></a>
-                <a href=""><p>¿No tienes cuenta?</p></a>
+                <a href="/signup"><p>¿No tienes cuenta?</p></a>
 
             </div>
 
