@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Modal.css';
 import Portal from '../Portal/Portal.jsx';
 import Slider from 'react-slick';
-import { deleteProduct, updateProduct } from '../Services/Services.jsx';
+import { deleteProduct, updateProduct, uploadProductImage } from '../Services/Services.jsx';
 import GlobalModal from '../GlobalModal/GlobalModal.jsx';
 
 const Modal = ({children, show, handleClose, item, mode}) => {
@@ -15,6 +15,7 @@ const Modal = ({children, show, handleClose, item, mode}) => {
     const [toDeleteProduct, setToDeleteProduct] = useState();
     const [isActive, setIsActive] = useState(false);
     const [deleteError, setDeleteError] = useState(false);
+    const [uploadImage, setUploadImage] = useState(null);
 
     const settings = {
         dots: true,
@@ -62,6 +63,21 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         
     };
 
+    const handleImageUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        try {
+            const res = await uploadProductImage(file, item.productId);
+            setUploadImage(res);
+            window.location.href="/products";
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    console.log(item)
+
     useEffect(() => {
         if (item) {
             setNewTitle(item.name || "");
@@ -79,8 +95,9 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                         <img className='modal-close' src="./images/arrow-back.svg" alt="" onClick={handleClose}/>
 
                         {mode == 'show' ?
-                        <div>
+                        <div className='show-modal'>
                             <h5>{item.name}</h5>
+                            <img src={item.imageUrl} alt="" />
                             <p>{item.content}</p>
 
                             <div className='modal-buttons'>
@@ -95,8 +112,28 @@ const Modal = ({children, show, handleClose, item, mode}) => {
                             </div>
 
                             <textarea name="" id="" className='edit-name' onChange={handleTitleChange} >{item.name}</textarea>
+
+                            <div className='images-container'>
+
+                                <div>
+                                    <img className='product_image' src={item.imageUrl} alt="" />
+                                </div>
+                                
+                                <input 
+                                    id='file-upload'
+                                    type="file"
+                                    accept='image/*'
+                                    onChange={handleImageUpload}
+                                    /*style={{display: 'none'}}*/
+                                    />
+
+                            </div>
+
                             <textarea name="" id="" className='edit-content' onChange={handleContentChange} >{item.content}</textarea>
 
+                            <div>
+                                
+                            </div>
                             
                             <div className="category-container">
                                 <div className="line-container">
