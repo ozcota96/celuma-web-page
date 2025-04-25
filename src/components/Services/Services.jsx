@@ -226,3 +226,26 @@ const apiUrl = process.env.REACT_APP_API_URL;
             
         }
     };
+
+    export const uploadProductImage = async (file, id) => {
+        const url = `${apiUrl}/products/upload-image`;
+        const token = localStorage.getItem('user_token');
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("id", id);
+
+        console.log(formData);
+
+        try {
+            const response = await axios.post(url, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`
+                },
+            });
+        } catch (error) {
+            console.error("Error uploading image:", error);
+            throw error;
+        }
+    };

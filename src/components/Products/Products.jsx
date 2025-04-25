@@ -69,6 +69,7 @@ const Products = () => {
 
             try {
                 const products_data = await getProducts();
+                console.log(products_data)
                 setProducts(products_data);
             } catch (error) {
                 console.error("Error fetching products:", error);
@@ -210,10 +211,10 @@ const Products = () => {
                 <div className="products-table-container">
                     <table className="products-table">
                         <tr>
-                            <td>Id</td>
-                            <td>Nombre</td>
-                            <td>Categoría</td>
-                            <td>Acciones</td>
+                            <td className="products-table-title">Id</td>
+                            <td className="products-table-title">Nombre</td>
+                            <td className="products-table-title">Categoría</td>
+                            <td className="products-table-title">Acciones</td>
                         </tr>  
 
                         {products.map((item, index) => {

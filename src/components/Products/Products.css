@@ -119,14 +119,16 @@
     text-align: center;
 }
 
+.products-table-title {
+    background-color: #97C793;
+}
+
 .products-table > tr > td {
-    border: 1px solid black;
     padding: 0.5rem 2rem;
     text-align: center;
     vertical-align: middle;
     
 }
-
 
 .products-edit-options > button:hover {
     transform: scale(1.2);
