@@ -11,6 +11,7 @@
 # production
 /build
 
+
 # misc
 /celuma-web-app/.DS_Store
 /celuma-web-app/.env.local
@@ -22,3 +23,6 @@
 /celuma-web-app/yarn-debug.log*
 /celuma-web-app/yarn-error.log*
 node_modules
+.idea
+package-lock.json
+package.json
