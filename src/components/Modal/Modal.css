@@ -84,6 +84,15 @@
     align-items: center;
 }
 
+.show-modal {
+    display: grid;
+}
+
+.show-modal > img {
+    width: 90%;
+    justify-self: center;
+}
+
 .edit-modal {
     display: inline;
 }
@@ -256,6 +265,26 @@
     margin: 0.5rem auto;
 }
 
+.images-container {
+    display:block;
+}
+
+.product_image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-icon {
+    height: 5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.upload-icon:hover {
+    transform: scale(1.05);
+}
 
 @media screen and (max-width: 769px) {
     .modal-main {
