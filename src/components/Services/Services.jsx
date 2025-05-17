@@ -235,12 +235,9 @@ const apiUrl = process.env.REACT_APP_API_URL;
         formData.append("file", file);
         formData.append("id", id);
 
-        console.log(formData);
-
         try {
             const response = await axios.post(url, formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
                 },
             });
