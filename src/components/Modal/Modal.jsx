@@ -76,8 +76,6 @@ const Modal = ({children, show, handleClose, item, mode}) => {
         }
     };
 
-    console.log(item)
-
     useEffect(() => {
         if (item) {
             setNewTitle(item.name || "");
